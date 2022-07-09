@@ -1,6 +1,7 @@
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
+	signingKey = D3B0F28F40F33CEF
 [init]
 	defaultBranch = main
 [core]
@@ -10,6 +11,8 @@
 	fileMode = True
 [color]
 	ui = auto
+[commit]
+	gpgSign = true
 [pull]
 	rebase = true
 [merge]
@@ -27,5 +30,3 @@
 [help]
 	format = man
 	browser = man
-[commit]
-	gpgSign = true
