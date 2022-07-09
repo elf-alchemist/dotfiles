@@ -27,3 +27,5 @@
 [help]
 	format = man
 	browser = man
+[commit]
+	gpgSign = true
