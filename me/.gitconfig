@@ -1,0 +1,29 @@
+[user]
+	name = Guilherme M. Miranda
+	email = alchemist.software@proton.me
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	editor = nano
+	pager = less -MR
+	fileMode = True
+[color]
+	ui = auto
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = diff3
+[log]
+	date = iso8601
+[alias]
+	aa = add .
+	st = status --short --branch
+	cm = commit -m 
+	dc = diff --cached
+	stash4later = stash --include-untracked
+	log4me = log --decorate --oneline --graph
+	log2short = shortlog --numbered --email --summary
+[help]
+	format = man
+	browser = man
