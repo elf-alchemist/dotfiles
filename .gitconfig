@@ -1,12 +1,11 @@
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
-	signingKey = D3B0F28F40F33CEF
 [init]
 	defaultBranch = main
 [core]
 	autocrlf = input
-	editor = nano
+	editor = vim
 	pager = less -MR
 	fileMode = True
 [color]
