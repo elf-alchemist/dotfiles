@@ -8,3 +8,13 @@ tab_width = 4
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.{html,css,json,jsonc,js,ts,jsx,tsx}]
+indent_style = tab
+indent_size = 2
+tab_width = 2
+
+[*.{c,h}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
