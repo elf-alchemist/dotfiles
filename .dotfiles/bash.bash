@@ -25,9 +25,9 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
 	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	color_prompt=yes
+		color_prompt=yes
 	else
-	color_prompt=
+		color_prompt=
 	fi
 fi
 
@@ -50,11 +50,14 @@ esac
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+	elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
-  fi
+	fi
 fi
 
-source ./user.bash
+export DOTFILES="$HOME/.dotfiles"
+source $DOTFILES/alias.bash
+source $DOTFILES/git.bash
+source $DOTFILES/user.bash

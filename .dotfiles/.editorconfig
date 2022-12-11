@@ -1,4 +1,3 @@
-# the alkemist's editorconfig
 root = true
 
 [*]
@@ -10,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{html,css,json,jsonc,js,ts,jsx,tsx}]
+[*.{html,css,json,jsonc}]
 indent_style = tab
 indent_size = 2
 tab_width = 2

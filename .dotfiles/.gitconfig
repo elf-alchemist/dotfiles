@@ -1,4 +1,3 @@
-# the alkemist's gitconfig
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
@@ -7,19 +6,29 @@
 [core]
 	autocrlf = input
 	editor = vim
-	pager = less -MR
-	fileMode = True
+	pager = less
+	fileMode = true
 [color]
 	ui = auto
-[pull]
-	rebase = true
-[merge]
-	conflictstyle = diff3
+[status]
+	relativePaths = false
+	branch = true
+	short = true
+	aheadBehind = true
+	showStash = true
+	showUntrackedFiles = normal
 [log]
 	date = iso8601
+[pull]
+	rebase = false
+[merge]
+	conflictstyle = diff3
+[help]
+	format = man
+	browser = man
 [alias]
 	aa = add .
-	st = status --short --branch
+	st = status
 	cm = commit -m
 	qc = commit -m "changes"
 	dc = diff --cached
@@ -27,7 +36,4 @@
 	log4me = log --decorate --oneline --graph
 	log2short = shortlog --numbered --email --summary
 	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
-[help]
-	format = man
-	browser = man
 
