@@ -1,6 +1,7 @@
 #!/bin/usr/bash
 
 source "$HOME/.dotfiles/git.bash"
+source "$HOME/.dotfiles/deno.bash"
 source "$HOME/.cargo/env"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
