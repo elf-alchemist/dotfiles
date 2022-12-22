@@ -1,7 +1,8 @@
 #!/bin/usr/bash
 
 source "$HOME/.dotfiles/git.sh"
-source "$HOME/.dotfiles/deno.bash"
+source "$HOME/.dotfiles/comp/deno.bash"
+source "$HOME/.dotfiles/comp/rustup.bash"
 source "$HOME/.cargo/env"
 export DENO_INSTALL="$HOME/.deno"
 export DVM_DIR="$HOME/.dvm"
