@@ -35,9 +35,7 @@
 	"explorer.enableUndo": true,
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": true,
-	"explorer.fileNesting.patterns": {
-		"Cargo.toml": "Cargo.lock"
-	},
+	"explorer.fileNesting.patterns": { "Cargo.toml": "Cargo.lock" },
 	"workbench.startupEditor": "none",
 	"workbench.preferredDarkColorTheme": "Default Dark+",
 	"workbench.productIconTheme": "Default",
