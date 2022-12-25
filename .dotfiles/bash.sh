@@ -73,7 +73,5 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-
-
 # Alkemist's custom stuff
-source $HOME/.dotfiles/user.bash
+source "$HOME/.dotfiles/user.sh"

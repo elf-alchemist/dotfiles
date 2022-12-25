@@ -40,7 +40,7 @@
 	"workbench.preferredDarkColorTheme": "Default Dark+",
 	"workbench.productIconTheme": "Default",
 	"workbench.colorTheme": "Default Dark+",
-	"workbench.iconTheme": "vscode-icons",
+	"workbench.iconTheme": "icons",
 	"python.analysis.autoImportCompletions": true,
 	"python.analysis.autoSearchPaths": true,
 	"python.analysis.completeFunctionParens": true,
