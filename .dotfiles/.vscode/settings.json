@@ -2,6 +2,7 @@
 	"breadcrumbs.enabled": false,
 	"telemetry.telemetryLevel": "off",
 	"window.menuBarVisibility": "toggle",
+	"terminal.integrated.scrollback": 50000,
 	"editor.minimap.enabled": false,
 	"editor.autoIndent": "advanced",
 	"editor.bracketPairColorization.enabled": true,
@@ -11,6 +12,7 @@
 	"editor.guides.indentation": true,
 	"editor.guides.highlightActiveBracketPair": false,
 	"editor.guides.highlightActiveIndentation": false,
+	"editor.smoothScrolling": true,
 	"editor.renderWhitespace": "trailing",
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
@@ -90,5 +92,8 @@
 	"[typescript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[javascript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[typescriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
-	"[javascriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "denoland.vscode-deno"
+	},
+	"git.confirmSync": false,
 }
