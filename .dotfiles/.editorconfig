@@ -9,6 +9,11 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+[*.min.{html,css,js,ts,json,jsonc}]
+end_of_line = lf
+insert_final_newline = false
+trim_trailing_whitespace = false
+
 [*.{html,css,json,jsonc}]
 indent_style = tab
 indent_size = 2
