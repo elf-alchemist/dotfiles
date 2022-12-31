@@ -95,5 +95,7 @@
 	"[javascriptreact]": {
 		"editor.defaultFormatter": "denoland.vscode-deno"
 	},
-	"git.confirmSync": false,
+	"files.associations": {
+		".bashrc": "shellscript"
+	},
 }
