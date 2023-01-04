@@ -28,6 +28,10 @@
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"files.trimFinalNewlines": false,
+	"files.associations": {
+		".css": "tailwindcss",
+		".bashrc": "shellscript",
+	},
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
 	"explorer.confirmUndo": "default",
@@ -92,10 +96,5 @@
 	"[typescript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[javascript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[typescriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
-	"[javascriptreact]": {
-		"editor.defaultFormatter": "denoland.vscode-deno"
-	},
-	"files.associations": {
-		".bashrc": "shellscript"
-	},
+	"[javascriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
 }
