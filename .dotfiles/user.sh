@@ -13,6 +13,4 @@ export DVM_DIR="$HOME/.dvm"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$DVM_DIR/bin:$PATH"
 
-# alias curl-init='bash -c "curl-deno"'
-# alias repo-init='bash -c "repo-init"'
 PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
