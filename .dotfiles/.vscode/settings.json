@@ -3,6 +3,7 @@
 	"telemetry.telemetryLevel": "off",
 	"window.menuBarVisibility": "toggle",
 	"terminal.integrated.scrollback": 50000,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"editor.minimap.enabled": false,
 	"editor.autoIndent": "advanced",
 	"editor.bracketPairColorization.enabled": true,
@@ -97,4 +98,17 @@
 	"[javascript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[typescriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[javascriptreact]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+	"settingsSync.ignoredExtensions": [
+		"dart-code.dart-code",
+		"dbaeumer.vscode-eslint",
+		"dart-code.flutter",
+		"codezombiech.gitignore",
+		"ecmel.vscode-html-css",
+		"george-alisson.html-preview-vscode",
+		"orta.vscode-jest",
+		"ritwickdey.liveserver",
+		"esbenp.prettier-vscode",
+		"qwtel.sqlite-viewer",
+		"rangav.vscode-thunder-client"
+	],
 }
