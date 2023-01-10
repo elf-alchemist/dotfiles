@@ -9,17 +9,17 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.min.{html,css,js,ts,json,jsonc}]
-end_of_line = lf
-insert_final_newline = false
-trim_trailing_whitespace = false
-
-[*.{html,css,json,jsonc}]
-indent_style = tab
-indent_size = 2
-tab_width = 2
-
 [*.{c,h}]
 indent_style = tab
 indent_size = 8
 tab_width = 8
+
+[*.{html,css,json,jsonc,prisma}]
+indent_style = tab
+indent_size = 2
+tab_width = 2
+
+[*.min.{html,css,js,ts,json,jsonc}]
+end_of_line = lf
+insert_final_newline = false
+trim_trailing_whitespace = false

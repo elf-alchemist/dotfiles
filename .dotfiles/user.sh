@@ -14,3 +14,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$DVM_DIR/bin:$PATH"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

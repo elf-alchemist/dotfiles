@@ -50,8 +50,10 @@
 	"workbench.startupEditor": "none",
 	"workbench.preferredDarkColorTheme": "Default Dark+",
 	"workbench.productIconTheme": "Default",
-	"workbench.colorTheme": "Default Dark+",
 	"workbench.iconTheme": "icons",
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.ignoreMissingGitWarning": true,
 	"python.analysis.autoImportCompletions": true,
 	"python.analysis.autoSearchPaths": true,
 	"python.analysis.completeFunctionParens": true,
@@ -109,6 +111,7 @@
 		"ritwickdey.liveserver",
 		"esbenp.prettier-vscode",
 		"qwtel.sqlite-viewer",
-		"rangav.vscode-thunder-client"
+		"rangav.vscode-thunder-client",
+		"antfu.browse-lite"
 	],
 }

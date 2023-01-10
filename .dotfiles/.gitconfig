@@ -28,20 +28,18 @@
 	browser = man
 [alias]
 	gl = config --global --list
-	la = !git config --list | grep ^alias\\.
 	aa = add .
 	st = status
-	fc = log ORIG_HEAD.. --stat --no-merges
-	lc = log -1 HEAD --stat
-	dc = diff --cached
-	cm = commit --message
-	qc = commit --message "changes"
-	ud = reset --soft HEAD^
-	rv = remote --verbose
+	dica = diff --cached
+	comm = commit --message
+	quic = commit --message "changes"
+	undo = reset --soft HEAD^
+	reve = remote --verbose
 
 	stash4later = stash --include-untracked
 	log4me = log --decorate --oneline --graph
-	log2short = shortlog --numbered --email --summary
+	log2push = log origin/main..main --stat --no-merges
+	log1prev = log -1 HEAD --stat
 
 	toptal = "!_gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _gi"
 
