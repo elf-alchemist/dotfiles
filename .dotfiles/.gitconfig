@@ -28,8 +28,9 @@
 	browser = man
 [alias]
 	gl = config --global --list
-	aa = add .
+	aa = !git add . && git status
 	st = status
+	ch = !git checkout \"$1\" && git status
 	dica = diff --cached
 	comm = commit --message
 	quic = commit --message "changes"
