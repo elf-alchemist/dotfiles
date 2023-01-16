@@ -13,8 +13,8 @@ export DENO_INSTALL="$HOME/.deno"
 export DVM_DIR="$HOME/.dvm"
 export NVM_DIR="$HOME/.nvm"
 
-export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="$DVM_DIR/bin:$PATH"
+export PATH="$DVM_DIR/bin:$DENO_INSTALL/bin:$PATH"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 

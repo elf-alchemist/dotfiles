@@ -30,8 +30,9 @@
 	"files.trimTrailingWhitespace": true,
 	"files.trimFinalNewlines": false,
 	"files.associations": {
-		".css": "tailwindcss",
 		".bashrc": "shellscript",
+		"*.css": "postcss",
+		"*.pgsql": "sql"
 	},
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
@@ -48,8 +49,9 @@
 		"deno.json": "deno.lock",
 	},
 	"workbench.startupEditor": "none",
-	"workbench.preferredDarkColorTheme": "Default Dark+",
-	"workbench.productIconTheme": "Default",
+	"workbench.preferredDarkColorTheme": "Vitesse Dark",
+	"workbench.productIconTheme": "icons-carbon",
+	"workbench.colorTheme": "Vitesse Dark",
 	"workbench.iconTheme": "icons",
 	"git.autofetch": true,
 	"git.confirmSync": false,
@@ -73,8 +75,8 @@
 	"deno.enable": true,
 	"deno.unstable": false,
 	"deno.lint": true,
-	"deno.codeLens.references": false,
 	"deno.codeLens.implementations": true,
+	"deno.codeLens.references": false,
 	"deno.codeLens.referencesAllFunctions": false,
 	"deno.inlayHints.enumMemberValues.enabled": false,
 	"deno.inlayHints.functionLikeReturnTypes.enabled": false,
@@ -112,6 +114,6 @@
 		"esbenp.prettier-vscode",
 		"qwtel.sqlite-viewer",
 		"rangav.vscode-thunder-client",
-		"antfu.browse-lite"
+		"ms-azuretools.vscode-docker"
 	],
 }
