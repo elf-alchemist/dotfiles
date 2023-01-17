@@ -31,7 +31,7 @@
 	"files.trimFinalNewlines": false,
 	"files.associations": {
 		".bashrc": "shellscript",
-		"*.css": "postcss",
+		"*.css": "tailwindcss",
 		"*.pgsql": "sql"
 	},
 	"explorer.confirmDelete": false,
@@ -50,8 +50,8 @@
 	},
 	"workbench.startupEditor": "none",
 	"workbench.preferredDarkColorTheme": "Vitesse Dark",
-	"workbench.productIconTheme": "icons-carbon",
 	"workbench.colorTheme": "Vitesse Dark",
+	"workbench.productIconTheme": "icons-carbon",
 	"workbench.iconTheme": "icons",
 	"git.autofetch": true,
 	"git.confirmSync": false,
