@@ -28,16 +28,20 @@
 	browser = man
 [alias]
 	gl = config --global --list
+	al = config --global --list
 	aa = !git add . && git status
 	st = status
 	ch = !git checkout \"$1\" && git status
+
 	dica = diff --cached
 	comm = commit --message
 	quic = commit --message "changes"
 	undo = reset --soft HEAD^
 	reve = remote --verbose
 
+	up2date = !git stash --include-untracked && git fetch && git status
 	stash4later = stash --include-untracked
+
 	log4me = log --decorate --oneline --graph
 	log2push = log origin/main..main --stat --no-merges
 	log1prev = log -1 HEAD --stat
