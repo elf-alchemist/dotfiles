@@ -1,11 +1,13 @@
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
+	useConfigOnly = true
 [init]
 	defaultBranch = main
 [core]
 	autocrlf = input
 	editor = vim
+	eol = lf
 	pager = less
 	fileMode = true
 [color]
@@ -26,11 +28,13 @@
 [help]
 	format = man
 	browser = man
+	autoCorrect = prompt
 [alias]
-	gl = config --global --list
-	al = config --global --list
-	aa = !git add . && git status
-	st = status
+	gl = !git config --global --list
+	al = !git config --global --get-regexp alias | sed "s/alias\\.//g"
+	aw = !git config --global --get-regexp alias | sed "s/alias\\.//g" | awk '{printf \"%-12s -> %s\\n\", $1, $0}'
+	aa = !git add --all && git status
+	st = !git status -uall
 	ch = !git checkout \"$1\" && git status
 
 	dica = diff --cached
@@ -39,10 +43,11 @@
 	undo = reset --soft HEAD^
 	reve = remote --verbose
 
-	up2date = !git stash --include-untracked && git fetch && git status
-	stash4later = stash --include-untracked
+	stash4later = !git stash --include-untracked
+	fetch2date  = !git stash --include-untracked && git fetch && git status
+	bring2date  = !git fetch && git pull
 
-	log4me = log --decorate --oneline --graph
+	log4me   = log --decorate --oneline --graph
 	log2push = log origin/main..main --stat --no-merges
 	log1prev = log -1 HEAD --stat
 
