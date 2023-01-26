@@ -11,6 +11,7 @@
 	"editor.autoIndent": "advanced",
 	"editor.bracketPairColorization.enabled": true,
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"editor.codeLens": false,
 	"editor.guides.bracketPairs": false,
 	"editor.guides.bracketPairsHorizontal": true,
 	"editor.guides.indentation": true,
