@@ -9,7 +9,7 @@ source "$HOME/.dotfiles/bash/rustup.sh"
 source "$HOME/.dotfiles/bash/cargo.sh"
 source "$HOME/.dotfiles/sh/git.sh"
 source "$HOME/.dotfiles/sh/nvm.sh"
-# source "$HOME/.dotfiles/sh/util.sh"
+source "$HOME/.dotfiles/sh/util.sh"
 source "$HOME/.cargo/env"
 
 export DENO_INSTALL="$HOME/.deno"

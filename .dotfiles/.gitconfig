@@ -31,8 +31,7 @@
 	autoCorrect = prompt
 [alias]
 	gl = !git config --global --list
-	al = !git config --global --get-regexp alias | sed "s/alias\\.//g"
-	aw = !git config --global --get-regexp alias | sed "s/alias\\.//g" | awk '{printf \"%-12s -> %s\\n\", $1, $0}'
+	la = !bash -c __git_la
 	aa = !git add --all && git status
 	st = !git status -uall
 	ch = !git checkout \"$1\" && git status
