@@ -34,8 +34,10 @@
 	la = !bash -c __git_la
 	aa = !git add --all && git status
 	st = !git status -uall
-	ch = !git checkout \"$1\" && git status
+	ch = !git checkout $1 && git status
 
+	self = !git clone https://github.com/lambda-alchemist/$1
+	hurl = !git clone https://github.com/$1
 	dica = !git diff --cached
 	comm = !git commit --message
 	quic = !git commit --message "changes"
