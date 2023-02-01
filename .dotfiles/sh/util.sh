@@ -13,10 +13,14 @@ function __repo_init() {
 	git init
 }
 
-function __git_la() {
-  git config --global --get-regexp alias | sed "s/alias\.//g" | awk '{printf "| %-12s | %s\n", $1, $0}' | sed '1,3d'
+function __git_list_alias() {
+	git config --global --get-regexp alias | sed "s/alias\.//g" | awk '{printf "| %-12s | %s\n", $1, $0}' | sed '1,3d'
 }
 
-function __gi() {
+function __git_list_config() {
+	git config --global --list | sed '/^alias/d'
+}
+
+function __git_toptal() {
 	curl -sL https://www.toptal.com/developers/gitignore/api/$@
 }

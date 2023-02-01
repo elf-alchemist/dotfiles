@@ -30,8 +30,8 @@
 	browser = man
 	autoCorrect = prompt
 [alias]
-	gl = !git config --global --list
-	la = !bash -c __git_la
+	gl = !bash -c __git_list_config
+	la = !bash -c __git_list_alias
 	aa = !git add --all && git status
 	st = !git status -uall
 	ch = !git checkout $1 && git status
@@ -53,5 +53,5 @@
 	log2push = !git log origin/main..main --stat --no-merges
 	log1prev = !git log -1 HEAD --stat
 
-	toptal = "!_gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _gi"
+	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
 

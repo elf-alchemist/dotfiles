@@ -74,6 +74,7 @@
 	"python.logging.level": "warn",
 	"python.experiments.enabled": false,
 	"python.experiments.optInto": ["All"],
+	"tailwindCSS.emmetCompletions": true,
 	"deno.enable": true,
 	"deno.unstable": false,
 	"deno.lint": true,
@@ -98,8 +99,6 @@
 		"https://x.nest.land": false,
 		"https://crux.land": false
 	},
-	"[astro]":           { "editor.defaultFormatter": "astro-build.astro-vscode"},
-	"[css]":             { "editor.defaultFormatter": "bradlc.vscode-tailwindcss" },
 	"[json]":            { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[jsonc]":           { "editor.defaultFormatter": "denoland.vscode-deno" },
 	"[typescript]":      { "editor.defaultFormatter": "denoland.vscode-deno" },
