@@ -154,18 +154,14 @@
 	"tailwindCSS.lint.invalidTailwindDirective": "error",
 	"tailwindCSS.lint.invalidVariant": "error",
 	"tailwindCSS.lint.recommendedVariantOrder": "error",
-	"tailwindCSS.classAttributes": [
-		"class",
-		"className",
-		"ngClass"
-	],
+	"tailwindCSS.classAttributes": [ "class", "className", "ngClass" ],
 	"tailwindCSS.includeLanguages": {
 		"html": "html",
 		"css": "css",
-		"javascript": "javascript",
-		"typescript": "typescript",
 		"sass": "css",
 		"scss": "css",
+		"javascript": "javascript",
+		"typescript": "typescript",
 	},
 	"deno.enable": true,
 	"deno.unstable": false,
