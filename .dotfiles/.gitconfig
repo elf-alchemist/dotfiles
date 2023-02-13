@@ -45,13 +45,13 @@
 	reve = !git remote --verbose
 	quik = !git aa && git quic && git push
 
-	stash4later = !git stash --include-untracked
-	fetch2date  = !git stash --include-untracked && git fetch && git status
-	bring2date  = !git pull && git status
-
 	log4me   = !git log --decorate --oneline --graph
 	log2push = !git log origin/main..main --stat --no-merges
 	log1prev = !git log -1 HEAD --stat
+
+	stash4later = !git stash --include-untracked
+	fetch2date  = !git stash --include-untracked && git fetch && git status
+	bring2date  = !git pull && git status
 
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
 
