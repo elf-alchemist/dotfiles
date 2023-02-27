@@ -18,7 +18,3 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$DVM_DIR/bin:$DENO_INSTALL/bin:$PATH"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
-
-source "$HOME/code/shell-mommy/shell-mommy.sh"
-export PROMPT_COMMAND="mommy \\$\\(exit \$?\\); $PROMPT_COMMAND"
-export SHELL_MOMMYS_LITTLE="boy"
