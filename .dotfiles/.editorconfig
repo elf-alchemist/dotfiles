@@ -14,7 +14,7 @@ indent_style = tab
 indent_size = 8
 tab_width = 8
 
-[*.{html,css,json,jsonc,prisma}]
+[*.{html,css,json,jsonc,wat,prisma}]
 indent_style = tab
 indent_size = 2
 tab_width = 2
