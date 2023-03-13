@@ -9,12 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{c,h,cc,hh,cpp,hpp,rust}]
-indent_style = tab
-indent_size = 8
-tab_width = 8
-
-[*.{html,css,json,jsonc,wat,prisma}]
+[*.{html,css,json,jsonc,prisma}]
 indent_style = tab
 indent_size = 2
 tab_width = 2
