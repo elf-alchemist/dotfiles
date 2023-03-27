@@ -11,10 +11,10 @@ source "$HOME/.dotfiles/sh/git.sh"
 source "$HOME/.dotfiles/sh/nvm.sh"
 source "$HOME/.dotfiles/sh/util.sh"
 
-export DENO_INSTALL="$HOME/.deno"
-export DVM_DIR="$HOME/.dvm"
 export NVM_DIR="$HOME/.nvm"
+export DVM_DIR="$HOME/.dvm"
+export DENO_INSTALL="$HOME/.deno"
 
-export PATH="$DVM_DIR/bin:$DENO_INSTALL/bin:$PATH"
+export PATH="$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
