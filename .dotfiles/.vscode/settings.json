@@ -10,6 +10,9 @@
 	"window.titleSeparator": " - ",
 	"window.zoomLevel": 0,
 	"breadcrumbs.enabled": false,
+	"breadcrumbs.filePath": "last",
+	"breadcrumbs.symbolPath": "on",
+	"breadcrumbs.symbolSortOrder": "position",
 	"editor.minimap.enabled": false,
 	"editor.autoIndent": "advanced",
 	"editor.bracketPairColorization.enabled": true,
@@ -21,11 +24,19 @@
 	"editor.autoClosingQuotes": "always",
 	"editor.autoSurround": "never",
 	"editor.codeLens": false,
+	"editor.cursorStyle": "line",
+	"editor.detectIndentation": false,
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "modifications",
 	"editor.guides.bracketPairs": false,
 	"editor.guides.bracketPairsHorizontal": true,
 	"editor.guides.indentation": true,
 	"editor.guides.highlightActiveBracketPair": false,
 	"editor.guides.highlightActiveIndentation": false,
+	"editor.maxTokenizationLineLength": 5000,
 	"editor.smoothScrolling": true,
 	"editor.renderWhitespace": "trailing",
 	"editor.insertSpaces": false,
@@ -33,12 +44,6 @@
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.defaultProfile.linux": "bash",
 	"terminal.integrated.defaultProfile.osx": "bash",
-	"editor.detectIndentation": false,
-	"editor.fontFamily": "Fira Code",
-	"editor.fontLigatures": true,
-	"editor.formatOnSave": true,
-	"editor.cursorStyle": "line",
-	"editor.maxTokenizationLineLength": 5000,
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 1,
 	"files.eol": "\n",
@@ -130,20 +135,32 @@
 	"workbench.colorTheme": "Default Dark+",
 	"workbench.productIconTheme": "Default",
 	"workbench.iconTheme": "vs-seti",
-	"emmet.excludeLanguages": [ "markdown"],
+	"emmet.excludeLanguages": [
+		"markdown"
+	],
 	"emmet.optimizeStylesheetParsing": true,
 	"emmet.showAbbreviationSuggestions": true,
 	"emmet.showExpandedAbbreviation": "always",
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.useInlineCompletions": false,
-	"emmet.variables": { "lang": "en-US", "charset": "UTF-8" },
+	"emmet.variables": {
+		"lang": "en-US",
+		"charset": "UTF-8"
+	},
 	"emmet.preferences": {
 		"filter.commentAfter": "\n<!-- /[#ID][.CLASS] -->",
 		"filter.commentBefore": "",
-		"filter.commentTrigger": ["id", "class"],
-		"format.forceIndentationForTags": ["body"],
-		"format.noIndentTags": ["html"],
+		"filter.commentTrigger": [
+			"id",
+			"class"
+		],
+		"format.forceIndentationForTags": [
+			"body"
+		],
+		"format.noIndentTags": [
+			"html"
+		],
 		"profile.allowCompactBoolean": false,
 		"output.inlineBreak": 0,
 		"output.reverseAttributes": false,
@@ -216,10 +233,16 @@
 		"**/*.sass",
 		"**/*.less"
 	],
-	"stylelint.enable": true,
+	"stylelint.enable": false,
 	"stylelint.packageManager": "npm",
-	"stylelint.validate": [ "css", "postcss" ],
-	"stylelint.snippet":  [ "css", "postcss" ],
+	"stylelint.validate": [
+		"css",
+		"postcss"
+	],
+	"stylelint.snippet": [
+		"css",
+		"postcss",
+	],
 	"postcss.validate": false,
 	"tailwindCSS.validate": false,
 	"tailwindCSS.emmetCompletions": true,
@@ -259,7 +282,9 @@
 	"eslint.ignoreUntitled": false,
 	"eslint.codeActionsOnSave.rules": null,
 	"eslint.codeActionsOnSave.mode": "all",
-	"eslint.codeAction.showDocumentation": { "enable": true },
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
 	"eslint.codeAction.disableRuleComment": {
 		"enable": true,
 		"location": "separateLine",
@@ -327,5 +352,7 @@
 	"python.envFile": "${workspaceFolder}/.env",
 	"python.logging.level": "warn",
 	"python.experiments.enabled": false,
-	"python.experiments.optInto": ["All"],
+	"python.experiments.optInto": [
+		"All",
+	],
 }
