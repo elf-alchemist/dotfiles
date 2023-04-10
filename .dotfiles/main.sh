@@ -14,7 +14,16 @@ source "$HOME/.dotfiles/sh/util.sh"
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
-
 export PATH="$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
-PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_STATESEPARATOR=" "
+GIT_PS1_COMPRESSSPARSESTATE=true
+GIT_PS1_SHOWCONFLICTSTATE="yes"
+GIT_PS1_DESCRIBE_STYLE="default"
+GIT_PS1_SHOWCOLORHINTS=true
+# PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
+PROMPT_COMMAND='__git_ps1 "\[\033[01;34m\]\W\[\033[00m\]" " → "'
