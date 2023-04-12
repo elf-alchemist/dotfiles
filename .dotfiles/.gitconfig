@@ -52,6 +52,7 @@
 	stash4later = !git stash --include-untracked
 	fetch2date  = !git stash --include-untracked && git fetch && git status
 	bring2date  = !git pull && git status
+	prev1branch = !git checkout -
 
+	cleanmain = !git fetch origin && !git reset --hard origin/main && !git clean -df
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
-
