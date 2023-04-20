@@ -9,12 +9,43 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{html,css,bash,json,jsonc,yaml,toml,prisma}]
-indent_style = tab
-indent_size = 2
-tab_width = 2
-
-[*.min.{html,css,js,ts,json,jsonc}]
+[*.min.{html,css,js,json,jsonc}]
 end_of_line = lf
 insert_final_newline = false
 trim_trailing_whitespace = false
+
+[*.{json,json5,jsonc,webmanifest}]
+indent_size = 2
+tab_width = 2
+
+[*.{yml,yaml}]
+indent_size = 2
+tab_width = 2
+
+[*.{md,mdx}]
+indent_size = 2
+tab_width = 2
+
+[*.{htm,html,svg}]
+indent_size = 2
+tab_width = 2
+
+[*.{css,pcss,sass,scss,less,styl}]
+indent_size = 2
+tab_width = 2
+
+[*.{js,jsx,cjs,cjsx,mjs,mjsx}]
+indent_size = 2
+tab_width = 2
+
+[*.{}]
+indent_size = 2
+tab_width = 2
+
+[*.{}]
+indent_size = 2
+tab_width = 2
+
+[*.{}]
+indent_size = 2
+tab_width = 2

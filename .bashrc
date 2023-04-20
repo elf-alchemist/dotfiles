@@ -25,5 +25,7 @@ GIT_PS1_COMPRESSSPARSESTATE=true
 GIT_PS1_SHOWCONFLICTSTATE="yes"
 GIT_PS1_DESCRIBE_STYLE="default"
 GIT_PS1_SHOWCOLORHINTS=true
-# PS1='\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)") → '
-PROMPT_COMMAND='__git_ps1 "\[\033[01;34m\]\W\[\033[00m\]" " "'
+
+PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
+PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
+PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
