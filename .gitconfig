@@ -32,6 +32,10 @@
 	format = man
 	browser = man
 	autoCorrect = prompt
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
 [alias]
 	lg = !git config --global --list | sed '/^alias/d'
 	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
