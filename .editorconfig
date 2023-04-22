@@ -3,49 +3,48 @@ root = true
 [*]
 charset = utf-8
 indent_style = tab
-indent_size = 4
+indent_size = tab
 tab_width = 4
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.min.{html,css,js,json,jsonc}]
-end_of_line = lf
+[*.min.{html,css,js,json}]
 insert_final_newline = false
-trim_trailing_whitespace = false
 
 [*.{json,json5,jsonc,webmanifest}]
-indent_size = 2
 tab_width = 2
 
 [*.{yml,yaml}]
-indent_size = 2
 tab_width = 2
 
 [*.{md,mdx}]
-indent_size = 2
 tab_width = 2
 
-[*.{htm,html,svg}]
-indent_size = 2
+[*.{html,htm,xhtml,svg,vue}]
 tab_width = 2
 
-[*.{css,pcss,sass,scss,less,styl}]
-indent_size = 2
+[*.{css,pcss}]
 tab_width = 2
 
-[*.{js,jsx,cjs,cjsx,mjs,mjsx}]
-indent_size = 2
+[*.{sass,scss,less,styl}]
+tab_width = 2
+
+[*.{js,cjs,mjs}]
+tab_width = 2
+
+[*.{ts,cts,mts}]
+tab_width = 2
+
+[*.{jsx,cjsx,mjsx}]
+tab_width = 2
+
+[*.{tsx,ctsx,mtsx}]
 tab_width = 2
 
 [*.{}]
-indent_size = 2
 tab_width = 2
 
 [*.{}]
-indent_size = 2
 tab_width = 2
 
-[*.{}]
-indent_size = 2
-tab_width = 2

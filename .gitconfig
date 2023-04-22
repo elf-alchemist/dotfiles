@@ -30,20 +30,27 @@
 	browser = man
 	autoCorrect = prompt
 [alias]
-	gl = !bash -c __git_list_config
-	la = !bash -c __git_list_alias
+	lg = !git config --global --get-regexp
+	la = !git config --global --get-regexp
 	aa = !git add --all && git status
 	st = !git status -uall
 	ch = !git checkout $1 && git status
 
-	self = !git clone https://github.com/lambda-alchemist/$1
-	hurl = !git clone https://github.com/$1
 	dica = !git diff --cached
 	comm = !git commit --message
 	quic = !git commit --message "changes"
 	undo = !git reset --soft HEAD^
 	reve = !git remote --verbose
 	quik = !git aa && git quic && git push
+
+	hub = !git clone https://github.com/$1
+	lab = !git clone https://gitlab.com/$1
+
+	hub-self = !git clone https://github.com/lambda-alchemist/$1
+	hub-conf = !git clone https://github.com/lambda-alchemist/.dotfiles.git
+
+	lab-self = !git clone https://gitlab.com/alkemista1/$1
+	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
 	log4me   = !git log --decorate --oneline --graph
 	log2push = !git log origin/main..main --stat --no-merges
