@@ -27,5 +27,5 @@ GIT_PS1_DESCRIBE_STYLE="default"
 GIT_PS1_SHOWCOLORHINTS=true
 
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
-PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
+#PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'

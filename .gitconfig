@@ -5,10 +5,10 @@
 [init]
 	defaultBranch = main
 [core]
-	autocrlf = input
 	editor = vim
-	eol = lf
 	pager = less
+	autocrlf = input
+	eol = lf
 	fileMode = true
 [color]
 	ui = auto
@@ -21,6 +21,9 @@
 	showUntrackedFiles = normal
 [log]
 	date = iso8601
+[push]
+	default = current
+	followTags = true
 [pull]
 	rebase = false
 [merge]
@@ -30,10 +33,11 @@
 	browser = man
 	autoCorrect = prompt
 [alias]
-	lg = !git config --global --get-regexp
-	la = !git config --global --get-regexp
-	aa = !git add --all && git status
+	lg = !git config --global --list | sed '/^alias/d'
+	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
+	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 	st = !git status -uall
+	aa = !git add --all && git status
 	ch = !git checkout $1 && git status
 
 	dica = !git diff --cached
@@ -43,12 +47,11 @@
 	reve = !git remote --verbose
 	quik = !git aa && git quic && git push
 
-	hub = !git clone https://github.com/$1
-	lab = !git clone https://gitlab.com/$1
-
+	hub      = !git clone https://github.com/$1
 	hub-self = !git clone https://github.com/lambda-alchemist/$1
 	hub-conf = !git clone https://github.com/lambda-alchemist/.dotfiles.git
 
+	lab      = !git clone https://gitlab.com/$1
 	lab-self = !git clone https://gitlab.com/alkemista1/$1
 	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
@@ -63,3 +66,4 @@
 
 	cleanmain = !git fetch origin && !git reset --hard origin/main && !git clean -df
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
+
