@@ -59,7 +59,7 @@
 	"workbench.startupEditor": "welcomePageInEmptyWorkbench",
 	"workbench.settings.editor": "json",
 	"workbench.productIconTheme": "Default",
-	"workbench.iconTheme": "vs-seti",
+	"workbench.iconTheme": "vscode-icons",
 	"workbench.colorTheme": "Default Dark+",
 	"workbench.preferredDarkColorTheme": "Default Dark+",
 	"workbench.preferredLightColorTheme": "Default Light+",

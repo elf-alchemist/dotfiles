@@ -42,9 +42,5 @@ tab_width = 2
 [*.{tsx,ctsx,mtsx}]
 tab_width = 2
 
-[*.{}]
+[*.{sh,bash,zsh}]
 tab_width = 2
-
-[*.{}]
-tab_width = 2
-

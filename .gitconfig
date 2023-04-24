@@ -33,23 +33,33 @@
 	browser = man
 	autoCorrect = prompt
 [credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [alias]
 	lg = !git config --global --list | sed '/^alias/d'
 	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
 	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
-	st = !git status -uall
+
+	stat = !git status -uall
 	aa = !git add --all && git status
-	ch = !git checkout $1 && git status
 
 	dica = !git diff --cached
 	comm = !git commit --message
 	quic = !git commit --message "changes"
 	undo = !git reset --soft HEAD^
 	reve = !git remote --verbose
-	quik = !git aa && git quic && git push
+	main = !git checkout main
+	prev = !git checkout -
+	chek = !git checkout $1
+
+	log4me   = !git log --decorate --oneline --graph
+	log2push = !git log origin/main..main --stat --no-merges
+	log1prev = !git log -1 HEAD --stat
+
+	stash4later = !git stash --include-untracked
+	fetch2date  = !git stash --include-untracked && git fetch && git status
+	bring2date  = !git pull && git status
 
 	hub      = !git clone https://github.com/$1
 	hub-self = !git clone https://github.com/lambda-alchemist/$1
@@ -59,15 +69,5 @@
 	lab-self = !git clone https://gitlab.com/alkemista1/$1
 	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
-	log4me   = !git log --decorate --oneline --graph
-	log2push = !git log origin/main..main --stat --no-merges
-	log1prev = !git log -1 HEAD --stat
-
-	stash4later = !git stash --include-untracked
-	fetch2date  = !git stash --include-untracked && git fetch && git status
-	bring2date  = !git pull && git status
-	prev1branch = !git checkout -
-
 	cleanmain = !git fetch origin && !git reset --hard origin/main && !git clean -df
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
-
