@@ -7,15 +7,14 @@
 [core]
 	editor = vim
 	pager = less
-	autocrlf = input
 	eol = lf
+	autocrlf = input
 	fileMode = true
 [color]
 	ui = auto
 [status]
 	relativePaths = false
 	branch = true
-	# short = true
 	aheadBehind = true
 	showStash = true
 	showUntrackedFiles = normal
@@ -41,18 +40,17 @@
 	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
 	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
-	st = !git status --untracked-files=all --short show-stash
+	st = !git status --untracked-files=all --short --show-stash
 	aa = !git add --all && git status
 
 	c   = !git commit
 	cm  = !git commit --message
 	cmc = !git commit --message "changes"
 	ca  = !git commit --amend
-	can = !git commit --amend --no-edit
 
+	ch   = !git checkout $1
 	main = !git checkout main
 	prev = !git checkout -
-	chek = !git checkout $1
 
 	undo = !git reset --soft HEAD^
 
