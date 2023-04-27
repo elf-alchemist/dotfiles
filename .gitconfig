@@ -36,42 +36,46 @@
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
 [alias]
+	# List Config: General, Alias, Alias Enhanced
 	lg = !git config --global --list | sed '/^alias/d' | sed '/^credential/d'
 	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
 	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
+	# Basic Commands
 	st = !git status --untracked-files=all --short --show-stash
-	aa = !git add --all && git status
+	as = !git add --all && git status
+	co = !git commit --message
+	ca = !git commit --amend
 
-	c   = !git commit
-	cm  = !git commit --message
-	ca  = !git commit --amend
-	cmc = !git commit --message "changes"
-	can = !git commit --amend --no-edit
+	# Checkout, misc
+	ch      = !git checkout $1
+	ch-main = !git checkout main
+	ch-prev = !git checkout -
+	undo    = !git reset --soft HEAD^
+	reve    = !git remote --verbose
 
-	ch   = !git checkout $1
-	main = !git checkout main
-	prev = !git checkout -
-	undo = !git reset --soft HEAD^
-	reve = !git remote --verbose
+	# Updating
+	fetch2date = !git stash --include-untracked && git fetch && git status
+	pull2date  = !git stash --include-untracked && git pull && git status
 
-	fetch2date  = !git stash --include-untracked && git fetch && git status
-	bring2date  = !git pull && git status
+	# Logging
+	log-prev = !git log -1 HEAD --stat
+	log-all  = !git log --decorate --oneline --graph
+	log-main = !git log origin/main..main --stat --no-merges
+	log-head = !git log origin/HEAD..HEAD --stat --no-merges
 
-	log1prev = !git log -1 HEAD --stat
-	log2main = !git log origin/main..main --stat --no-merges
-	log2head = !git log origin/HEAD..HEAD --stat --no-merges
-	log4me   = !git log --decorate --oneline --graph
-
+	# Cloning GitHub
 	hub      = !git clone https://github.com/$1
 	hub-fs   = !git clone https://github.com/$1 $2
 	hub-self = !git clone https://github.com/lambda-alchemist/$1
 	hub-conf = !git clone https://github.com/lambda-alchemist/.dotfiles.git
 
+	# Cloning GitLab
 	lab      = !git clone https://gitlab.com/$1
 	lab-fs   = !git clone https://gitlab.com/$1 $2
 	lab-self = !git clone https://gitlab.com/alkemista1/$1
 	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
+	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
 
