@@ -72,7 +72,7 @@
 	"explorer.decorations.colors": false,
 	"explorer.enableDragAndDrop": true,
 	"explorer.enableUndo": true,
-	"explorer.fileNesting.enabled": false,
+	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": false,
 	"explorer.fileNesting.patterns": {
 		"*.asax": "$(capture).*.cs, $(capture).*.vb",
@@ -253,8 +253,8 @@
 		"css",
 		"postcss",
 	],
-	"postcss.validate": false,
-	"tailwindCSS.validate": false,
+	"postcss.validate": true,
+	"tailwindCSS.validate": true,
 	"tailwindCSS.emmetCompletions": true,
 	"tailwindCSS.codeActions": true,
 	"tailwindCSS.colorDecorators": true,
@@ -281,7 +281,7 @@
 		"**/.hg/**",
 		"**/.svn/**"
 	],
-	"eslint.enable": ,
+	"eslint.enable": true,
 	"eslint.format.enable": false,
 	"eslint.lintTask.enable": false,
 	"eslint.debug": false,
