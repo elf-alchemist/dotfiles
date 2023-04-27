@@ -4,29 +4,31 @@
 source "$HOME/.dotfiles/bash/bash.sh"
 
 # Define autocompletion
+source "$HOME/.dotfiles/bash/npm.sh"
+source "$HOME/.dotfiles/bash/nvm.sh"
 source "$HOME/.dotfiles/bash/deno.sh"
 source "$HOME/.dotfiles/bash/dvm.sh"
-source "$HOME/.dotfiles/bash/nvm.sh"
 source "$HOME/.dotfiles/bash/supa.sh"
 source "$HOME/.dotfiles/bash/rustup.sh"
 source "$HOME/.dotfiles/bash/cargo.sh"
 
-# Define utilities
+
+# Define utils
 source "$HOME/.dotfiles/sh/git.sh"
 source "$HOME/.dotfiles/sh/nvm.sh"
 source "$HOME/.dotfiles/sh/util.sh"
 
-# Define location variables
+# Define location vars
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
-# Define 'xdg_config' related variables
+# Define 'xdg_config' related vars
 export RANGER_LOAD_DEAFULT_RC=false
-export HTOPRC="$HOME/.htoprc"
+export HTOPRC="$HOME/.config/htop/.htoprc"
 
-# Define git shell prompt variables
+# Define git shell prompt vars
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -39,7 +41,5 @@ GIT_PS1_SHOWCOLORHINTS=true
 
 # Define shell prompt
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
-#PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
+PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
-
-
