@@ -36,7 +36,7 @@
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
 [alias]
-	lg = !git config --global --list | sed '/^alias/d'
+	lg = !git config --global --list | sed '/^alias/d' | sed '/^credential/d'
 	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
 	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
@@ -45,15 +45,14 @@
 
 	c   = !git commit
 	cm  = !git commit --message
-	cmc = !git commit --message "changes"
 	ca  = !git commit --amend
+	cmc = !git commit --message "changes"
+	can = !git commit --amend --no-edit
 
 	ch   = !git checkout $1
 	main = !git checkout main
 	prev = !git checkout -
-
 	undo = !git reset --soft HEAD^
-
 	reve = !git remote --verbose
 
 	log1prev = !git log -1 HEAD --stat
@@ -74,3 +73,4 @@
 	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
+
