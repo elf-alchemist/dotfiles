@@ -1,16 +1,16 @@
 #!/usr/bin/bash
 
-# Default caseonfig - Debian-based
-source "$HOME/.dotfiles/bash/bash.sh"
+# Default config - Debian-based
+source "$HOME/.dotfiles/sh/bash/debian.sh"
 
 # Define autocompletion
-source "$HOME/.dotfiles/bash/npm.sh"
-source "$HOME/.dotfiles/bash/nvm.sh"
-source "$HOME/.dotfiles/bash/deno.sh"
-source "$HOME/.dotfiles/bash/dvm.sh"
-source "$HOME/.dotfiles/bash/supa.sh"
-source "$HOME/.dotfiles/bash/rustup.sh"
-source "$HOME/.dotfiles/bash/cargo.sh"
+source "$HOME/.dotfiles/sh/bash/npm.sh"
+source "$HOME/.dotfiles/sh/bash/nvm.sh"
+source "$HOME/.dotfiles/sh/bash/deno.sh"
+source "$HOME/.dotfiles/sh/bash/dvm.sh"
+source "$HOME/.dotfiles/sh/bash/supa.sh"
+source "$HOME/.dotfiles/sh/bash/rustup.sh"
+source "$HOME/.dotfiles/sh/bash/cargo.sh"
 
 
 # Define utils
