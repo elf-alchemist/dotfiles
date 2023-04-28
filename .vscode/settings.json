@@ -306,12 +306,12 @@
 		"commentStyle": "line"
 	},
 	"prettier.enable": true,
-	"prettier.configPath": "",
-	"prettier.ignorePath": "",
+	"prettier.configPath": "prettier.config.cjs",
+	"prettier.ignorePath": ".prettierignore",
 	"prettier.resolveGlobalModules": true,
 	"prettier.withNodeModules": false,
 	"prettier.requireConfig": true,
-	"prettier.useEditorConfig": true,
+	"prettier.useEditorConfig": false,
 	"prettier.documentSelectors": [
 		"**/*.astro"
 	],
