@@ -1,5 +1,6 @@
 root = true
 
+# Default Config
 [*]
 charset = utf-8
 indent_style = tab
@@ -9,27 +10,32 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# Minified Web Content
 [*.min.{html,css,js,json}]
 insert_final_newline = false
 
+# Serial Data Language
 [*.{json,json5,jsonc,webmanifest}]
 tab_width = 2
 
 [*.{yml,yaml}]
 tab_width = 2
 
+# Markup Language
 [*.{md,mdx}]
 tab_width = 2
 
 [*.{html,htm,xhtml,svg,vue}]
 tab_width = 2
 
+# Cascading Stylesheets
 [*.{css,pcss}]
 tab_width = 2
 
 [*.{sass,scss,less,styl}]
 tab_width = 2
 
+# ECMAScript
 [*.{js,cjs,mjs}]
 tab_width = 2
 
@@ -42,5 +48,6 @@ tab_width = 2
 [*.{tsx,ctsx,mtsx}]
 tab_width = 2
 
+# Shell Scripting
 [*.{sh,bash,zsh}]
 tab_width = 2
