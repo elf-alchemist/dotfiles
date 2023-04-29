@@ -1,6 +1,12 @@
 
 .vscode
 
+.config/Code/Cache
+.config/Code/CachedData
+.config/Code/CachedExtensionVSIXs
+.config/Code/CachedProfilesData
+.config/Code/Code\ Cache
+.config/Code/Crashpad
 .config/Code/databases
 .config/Code/Dictionaries
 .config/Code/GPUCache
@@ -10,6 +16,8 @@
 .config/Code/Service\ Worker
 .config/Code/Session\ Storage
 .config/Code/WebStorage
+
+.config/Code/code.lock
 .config/Code/Cookies
 .config/Code/Cookies-journal
 .config/Code/languagepacks.json
@@ -20,8 +28,12 @@
 
 .config/Code/User/globalStorage
 .config/Code/User/History
-.config/Code/User/profile
 .config/Code/User/snippets
 .config/Code/User/sync
 .config/Code/User/workspaceStorage
+
+.config/Code/User/profiles/*/globalStorage
+.config/Code/User/profiles/*/snippets
+
+.config/Code/User/profiles/*/extensions.json
 
