@@ -20,9 +20,8 @@
 
 .config/Code/User/globalStorage
 .config/Code/User/History
+.config/Code/User/profile
 .config/Code/User/snippets
 .config/Code/User/sync
 .config/Code/User/workspaceStorage
-
-.config/Code/User/profiles/*/globalStorage
 
