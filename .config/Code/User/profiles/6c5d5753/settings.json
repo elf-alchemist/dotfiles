@@ -62,11 +62,11 @@
 	"files.trimFinalNewlines": true,
 	"workbench.startupEditor": "welcomePageInEmptyWorkbench",
 	"workbench.settings.editor": "json",
-	"workbench.productIconTheme": "Default",
+	"workbench.productIconTheme": "icons-carbon",
 	"workbench.iconTheme": "vscode-icons",
 	"workbench.colorTheme": "Vitesse Dark",
-	"workbench.preferredDarkColorTheme": "Default Dark+",
-	"workbench.preferredLightColorTheme": "Default Light+",
+	"workbench.preferredDarkColorTheme": "Vitesse Dark",
+	"workbench.preferredLightColorTheme": "Vitesse Light",
 	"workbench.preferredHighContrastColorTheme": "Default High Contrast",
 	"workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
 	"explorer.enableDragAndDrop": true,
@@ -177,7 +177,7 @@
 	},
 	"emmet.variables": {
 		"lang": "en-US",
-		"charset": "UTF-8",
+		"charset": "UTF-8"
 	},
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.useInlineCompletions": false,
@@ -245,7 +245,7 @@
 		"**/*.scss",
 		"**/*.sass",
 		"**/*.less",
-		"**/*.styl",
+		"**/*.styl"
 	],
 	"stylelint.enable": false,
 	"stylelint.packageManager": "npm",
@@ -255,7 +255,7 @@
 	],
 	"stylelint.snippet": [
 		"css",
-		"postcss",
+		"postcss"
 	],
 	"postcss.validate": true,
 	"tailwindCSS.validate": true,
@@ -371,5 +371,6 @@
 	"python.experiments.enabled": false,
 	"python.experiments.optInto": [
 		"All"
-	],
+	]
 }
+
