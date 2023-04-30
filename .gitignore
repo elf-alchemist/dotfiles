@@ -1,6 +1,42 @@
 
 .vscode
 
+
+.config/autostart
+.config/Bitwarden
+.config/cef_user_data
+.config/chromium
+.config/dconf
+.config/doomseeker
+.config/Duelyst2
+.config/enchant
+.config/eog
+.config/evolution
+.config/gedit
+.config/gh
+.config/gh-dash
+.config/gnome-session
+.config/goa-1.0
+.config/gtk-3.0
+.config/gtk-4.0
+.config/ibus
+.config/libreoffice
+.config/menus
+.config/nautilus
+.config/pipewire-media-session
+.config/procps
+.config/pulse
+.config/totem
+.config/vscode-sqltools
+
+.config/monitors.xml
+.config/monitors.xml~
+
+.config/tmux/plugins
+
+
+.config/Code/Backups
+.config/Code/blob_storage
 .config/Code/Cache
 .config/Code/CachedData
 .config/Code/CachedExtensionVSIXs
@@ -17,6 +53,7 @@
 .config/Code/Session\ Storage
 .config/Code/WebStorage
 
+
 .config/Code/code.lock
 .config/Code/Cookies
 .config/Code/Cookies-journal
@@ -31,6 +68,7 @@
 .config/Code/User/snippets
 .config/Code/User/sync
 .config/Code/User/workspaceStorage
+
 
 .config/Code/User/profiles/*/globalStorage
 .config/Code/User/profiles/*/snippets

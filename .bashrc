@@ -12,7 +12,6 @@ source "$HOME/.dotfiles/sh/bash/supa.sh"
 source "$HOME/.dotfiles/sh/bash/rustup.sh"
 source "$HOME/.dotfiles/sh/bash/cargo.sh"
 
-
 # Define utils
 source "$HOME/.dotfiles/sh/git.sh"
 source "$HOME/.dotfiles/sh/nvm.sh"
@@ -24,11 +23,16 @@ export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
-# Define 'xdg_config' related vars
-export RANGER_LOAD_DEAFULT_RC=false
-export HTOPRC="$HOME/.config/htop/.htoprc"
+# Define bin vars
+export EDITOR="vim"
+export VISUAL="vi"
+export PAGER="less"
 
-# Define git shell prompt vars
+# Define xdg_config vars
+export RANGER_LOAD_DEAFULT_RC=true
+export HTOPRC="$HOME/.config/htop/htoprc"
+
+# Define git prompt vars
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -43,3 +47,4 @@ GIT_PS1_SHOWCOLORHINTS=true
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
+
