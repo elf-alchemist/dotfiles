@@ -2,7 +2,9 @@
 .vscode
 
 
+
 .config/autostart
+.config/balena-etcher
 .config/Bitwarden
 .config/cef_user_data
 .config/chromium
