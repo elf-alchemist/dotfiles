@@ -18,13 +18,15 @@ source "$HOME/.dotfiles/sh/nvm.sh"
 source "$HOME/.dotfiles/sh/util.sh"
 
 # Define location vars
+export HOMEBREW="/home/linuxbrew/.linuxbrew"
+export CARGO_HOME="$HOME/.cargo"
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
+export PATH="$HOMEBREW/bin:$CARGO_HOME/bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
 # Define bin vars
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="vi"
 export PAGER="less"
 
