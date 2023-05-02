@@ -23,7 +23,7 @@ export CARGO_HOME="$HOME/.cargo"
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
-export PATH="$HOMEBREW/bin:$CARGO_HOME/bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
+export PATH="$HOMEBREW/sbin:$HOMEBREW/bin:$CARGO_HOME/bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
 # Define bin vars
 export EDITOR="nvim"

@@ -23,6 +23,7 @@
 .config/libreoffice
 .config/menus
 .config/nautilus
+.config/nvim
 .config/pipewire-media-session
 .config/procps
 .config/pulse
