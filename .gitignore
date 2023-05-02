@@ -1,7 +1,4 @@
-
 .vscode
-
-
 
 .config/autostart
 .config/balena-etcher
@@ -37,7 +34,6 @@
 
 .config/tmux/plugins
 
-
 .config/Code/Backups
 .config/Code/blob_storage
 .config/Code/Cache
@@ -55,7 +51,6 @@
 .config/Code/Service\ Worker
 .config/Code/Session\ Storage
 .config/Code/WebStorage
-
 
 .config/Code/code.lock
 .config/Code/Cookies
