@@ -1,4 +1,5 @@
 .vscode
+debug.log
 
 .config/autostart
 .config/balena-etcher
