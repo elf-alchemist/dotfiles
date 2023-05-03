@@ -79,3 +79,5 @@
 	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
 
+[credential]
+	credentialStore = plaintext
