@@ -20,10 +20,12 @@ source "$HOME/.dotfiles/sh/util.sh"
 # Define location vars
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
 export CARGO_HOME="$HOME/.cargo"
+export WASMER_DIR="$HOME/.wasmer"
+export WASMER_CACHE_DIR="$WASMER_DIR/cache"
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
-export PATH="$HOMEBREW/sbin:$HOMEBREW/bin:$CARGO_HOME/bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
+export PATH="$HOMEBREW/sbin:$HOMEBREW/bin:$CARGO_HOME/bin:$WASMER_DIR/bin:$WASMER_DIR/globals/wapm_packages/.bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
 
 # Define bin vars
 export EDITOR="nvim"
@@ -49,3 +51,4 @@ GIT_PS1_SHOWCOLORHINTS=true
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
+

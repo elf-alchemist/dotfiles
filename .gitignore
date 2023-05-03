@@ -1,4 +1,5 @@
 .vscode
+*.swp
 debug.log
 
 .config/autostart
