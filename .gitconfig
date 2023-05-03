@@ -1,7 +1,6 @@
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
-	useConfigOnly = true
 [init]
 	defaultBranch = main
 [core]
@@ -32,8 +31,10 @@
 	browser = man
 	autoCorrect = prompt
 [credential "https://github.com"]
+	username = lambda-alchemist
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
+	username = lambda-alchemist
 	helper = !gh auth git-credential
 [alias]
 	# List Config: General, Alias, Alias Enhanced
@@ -79,5 +80,3 @@
 	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
 
-[credential]
-	credentialStore = plaintext
