@@ -9,3 +9,6 @@ alias __curl_nvm="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/
 alias __curl_deno="curl -fsSL https://deno.land/x/install/install.sh | bash"
 alias __curl_dvm="curl -fsSL https://dvm.deno.dev | bash"
 
+alias __source_brew="source ./brew.sh"
+# alias __source_=""
+

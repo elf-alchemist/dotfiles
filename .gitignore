@@ -29,6 +29,7 @@ debug.log
 .config/pipewire-media-session
 .config/procps
 .config/pulse
+.config/tea
 .config/totem
 .config/vscode-sqltools
 

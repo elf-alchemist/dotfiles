@@ -51,3 +51,4 @@ tab_width = 2
 # Shell Scripting
 [*.{sh,bash,zsh}]
 tab_width = 2
+

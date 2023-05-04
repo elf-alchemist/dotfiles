@@ -1,18 +1,48 @@
 tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/linux-fonts"
 tap "microsoft/git"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Programmable completion for Bash 4.2+
+brew "bash-completion@2"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
 brew "git"
 # Open-source GitLab command-line tool
 brew "glab"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Improved top (interactive process viewer)
 brew "htop"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # File browser
 brew "ranger"
 # Command-line tool to interact with Gitea servers
 brew "tea"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Internet file retriever
+brew "wget"
+# Homebrew, but with Docker images
+brew "whalebrew"
