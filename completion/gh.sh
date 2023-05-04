@@ -25,7 +25,7 @@ __gh_get_completion_results() {
     args=("${words[@]:1}")
     requestComp="${words[0]} __complete ${args[*]}"
 
-    lastParam=${words[$((${#words[@]}-1))]}
+    lastParam=${words[$((${#words[@]}-1 ))]}
     lastChar=${lastParam:$((${#lastParam}-1)):1}
     __gh_debug "lastParam ${lastParam}, lastChar ${lastChar}"
 

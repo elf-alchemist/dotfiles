@@ -1,21 +1,20 @@
 #!/usr/bin/bash
 
 # Default config - Debian-based
-source "$HOME/.dotfiles/sh/bash/debian.sh"
+source "$HOME/.dotfiles/bash/debian.sh"
 
 # Define autocompletion
-source "$HOME/.dotfiles/sh/bash/npm.sh"
-source "$HOME/.dotfiles/sh/bash/nvm.sh"
-source "$HOME/.dotfiles/sh/bash/deno.sh"
-source "$HOME/.dotfiles/sh/bash/dvm.sh"
-source "$HOME/.dotfiles/sh/bash/supa.sh"
-source "$HOME/.dotfiles/sh/bash/rustup.sh"
-source "$HOME/.dotfiles/sh/bash/cargo.sh"
+source "$HOME/.dotfiles/completion/rustup.sh"
+source "$HOME/.dotfiles/completion/cargo.sh"
+source "$HOME/.dotfiles/completion/npm.sh"
+source "$HOME/.dotfiles/completion/nvm.sh"
+source "$HOME/.dotfiles/completion/deno.sh"
+source "$HOME/.dotfiles/completion/dvm.sh"
+source "$HOME/.dotfiles/completion/supa.sh"
 
 # Define utils
-source "$HOME/.dotfiles/sh/git.sh"
-source "$HOME/.dotfiles/sh/nvm.sh"
-source "$HOME/.dotfiles/sh/util.sh"
+source "$HOME/.dotfiles/util/git.sh"
+source "$HOME/.dotfiles/util/curl.sh"
 
 # Define location vars
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
@@ -25,7 +24,14 @@ export WASMER_CACHE_DIR="$WASMER_DIR/cache"
 export NVM_DIR="$HOME/.nvm"
 export DVM_DIR="$HOME/.dvm"
 export DENO_INSTALL="$HOME/.deno"
-export PATH="$HOMEBREW/sbin:$HOMEBREW/bin:$CARGO_HOME/bin:$WASMER_DIR/bin:$WASMER_DIR/globals/wapm_packages/.bin:$DENO_INSTALL/bin:$DVM_DIR/bin:$PATH"
+
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$DVM_DIR/bin:$PATH"
+export PATH="$WASMER_DIR/globals/wapm_packages/.bin:$PATH"
+export PATH="$WASMER_DIR/bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$HOMEBREW/bin:$PATH"
+export PATH="$HOMEBREW/sbin:$PATH"
 
 # Define bin vars
 export EDITOR="nvim"
@@ -51,4 +57,3 @@ GIT_PS1_SHOWCOLORHINTS=true
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") → '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
-
