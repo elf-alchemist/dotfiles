@@ -4,37 +4,44 @@
 source "$HOME/.dotfiles/bash/debian.sh"
 
 # Define location vars
-export HOMEBREW="/home/linuxbrew/.linuxbrew"
-export DOTFILES="$HOME/.dotfiles"
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export HOMEBREW="/home/linuxbrew/.linuxbrew"
 
-export CARGO_HOME="$HOME/.cargo"
-export WASMER_DIR="$HOME/.wasmer"
+export RUSTUP_HOME="$XDG_DATA_HOME/RUSTUP_HOME"
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export WASMER_DIR="$XDG_DATA_HOME/wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"
-export NVM_DIR="$HOME/.nvm"
-export DVM_DIR="$HOME/.dvm"
-export DENO_INSTALL="$HOME/.deno"
 
-[ -s "$HOMEBREW/opt/dvm/dvm.sh" ] && . "$HOMEBREW/opt/dvm/dvm.sh"
-[ -s "$HOMEBREW/opt/nvm/nvm.sh" ] && . "$HOMEBREW/opt/nvm/nvm.sh"
-[ -s "$HOMEBREW/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW/opt/nvm/etc/bash_completion.d/nvm"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
-export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="$DVM_DIR/bin:$PATH"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NI_CONFIG_FILE="$XDG_CONFIG_HOME/ni/nirc"
+
+export RANGER_LOAD_DEAFULT_RC=true
+export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+
 export PATH="$WASMER_DIR/globals/wapm_packages/.bin:$PATH"
 export PATH="$WASMER_DIR/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 export PATH="$HOMEBREW/bin:$PATH"
 export PATH="$HOMEBREW/sbin:$PATH"
 
-# Define bin vars
-export EDITOR="nvim"
-export VISUAL="vi"
-export PAGER="less"
+[ -s "$HOMEBREW/opt/nvm/nvm.sh" ] && . "$HOMEBREW/opt/nvm/nvm.sh"
+[ -s "$HOMEBREW/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW/opt/nvm/etc/bash_completion.d/nvm"
 
-# Define xdg_config vars
-export RANGER_LOAD_DEAFULT_RC=true
-export HTOPRC="$HOME/.config/htop/htoprc"
+# Define bin vars
+export SHELL="bash"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export PAGER="less"
 
 # Define git vars
 GIT_PS1_SHOWDIRTYSTATE=true
