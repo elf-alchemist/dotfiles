@@ -4,17 +4,7 @@
 source "$HOME/.dotfiles/bash/debian.sh"
 
 # Define autocompletion
-source "$HOME/.dotfiles/completion/rustup.sh"
-source "$HOME/.dotfiles/completion/cargo.sh"
-source "$HOME/.dotfiles/completion/npm.sh"
-source "$HOME/.dotfiles/completion/nvm.sh"
-source "$HOME/.dotfiles/completion/deno.sh"
-source "$HOME/.dotfiles/completion/dvm.sh"
-source "$HOME/.dotfiles/completion/supa.sh"
-
-# Define utils
-source "$HOME/.dotfiles/util/git.sh"
-source "$HOME/.dotfiles/util/curl.sh"
+# TODO: look into brwe autocompletion feat
 
 # Define location vars
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
@@ -42,7 +32,7 @@ export PAGER="less"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$HOME/.config/htop/htoprc"
 
-# Define git prompt vars
+# Define git vars
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true

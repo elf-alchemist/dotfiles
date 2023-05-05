@@ -42,4 +42,3 @@ brew install htop
 brew install ranger
 brew install tree
 brew install ffmpeg
-
