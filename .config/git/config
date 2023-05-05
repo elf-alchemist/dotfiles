@@ -30,12 +30,6 @@
 	format = man
 	browser = man
 	autoCorrect = prompt
-[credential "https://github.com"]
-	username = lambda-alchemist
-	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	username = lambda-alchemist
-	helper = !gh auth git-credential
 [alias]
 	# List Config: General, Alias, Alias Enhanced
 	lg = !git config --global --list | sed '/^alias/d' | sed '/^credential/d'

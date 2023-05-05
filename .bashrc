@@ -5,6 +5,9 @@ source "$HOME/.dotfiles/bash/debian.sh"
 
 # Define location vars
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
+export DOTFILES="$HOME/.dotfiles"
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export CARGO_HOME="$HOME/.cargo"
 export WASMER_DIR="$HOME/.wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"

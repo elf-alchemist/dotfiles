@@ -31,7 +31,6 @@ brew install gnupg
 brew install wasmer
 brew install wapm
 brew install nvm
-brew install dvm
 brew install rust
 
 brew install docker
