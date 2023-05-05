@@ -12,6 +12,8 @@ brew "coreutils"
 brew "curl"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
+# Docker Version Manager
+brew "dvm"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
@@ -34,6 +36,8 @@ brew "htop"
 brew "moreutils"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Manage multiple Node.js versions
+brew "nvm"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
 # File browser
