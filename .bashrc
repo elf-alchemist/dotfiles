@@ -10,6 +10,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
 
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export RUSTUP_HOME="$XDG_DATA_HOME/RUSTUP_HOME"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
