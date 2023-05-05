@@ -16,6 +16,8 @@ brew "docker"
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -36,12 +38,18 @@ brew "neovim"
 brew "openssh"
 # File browser
 brew "ranger"
+# Safe, concurrent, practical language
+brew "rust"
 # Command-line tool to interact with Gitea servers
 brew "tea"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# WebAssembly Package Manager (CLI)
+brew "wapm"
+# 🚀 The Universal WebAssembly Runtime
+brew "wasmer"
 # Internet file retriever
 brew "wget"
 # Homebrew, but with Docker images

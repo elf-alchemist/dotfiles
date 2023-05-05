@@ -23,22 +23,29 @@ if ! fgrep -q "${HOMEBREW}/bin/bash" /etc/shells; then
 fi;
 
 # Actual programs I want
+brew install curl
+brew install wget
+brew install openssh
+brew install gnupg
+
+brew install wasmer
+brew install wapm
+brew install nvm
+brew install dvm
+brew install rust
+
+brew install docker
+brew install whalebrew
+
 brew install git
 brew install gh
 brew install glab
 brew install tea
 
-brew install docker
-brew install whalebrew
-
-brew install openssh
-brew install gnupg
-brew install curl
-brew install wget
-
 brew install tmux
 brew install neovim
 brew install htop
+brew install ffmpeg
 brew install ranger
 brew install tree
-brew install ffmpeg
+brew install fzf
