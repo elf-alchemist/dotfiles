@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/linux-fonts"
-tap "microsoft/git"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
@@ -12,8 +11,8 @@ brew "coreutils"
 brew "curl"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Docker Version Manager
-brew "dvm"
+# Isolated development environments using Docker
+brew "docker-compose"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
@@ -36,10 +35,14 @@ brew "htop"
 brew "moreutils"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Platform built on V8 to build network applications
+brew "node"
 # Manage multiple Node.js versions
 brew "nvm"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# 📦🚀 Fast, disk space efficient package manager
+brew "pnpm"
 # File browser
 brew "ranger"
 # Safe, concurrent, practical language
@@ -58,3 +61,5 @@ brew "wasmer"
 brew "wget"
 # Homebrew, but with Docker images
 brew "whalebrew"
+# JavaScript package manager
+brew "yarn"
