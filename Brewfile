@@ -9,8 +9,8 @@ brew "bash-completion@2"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# File comparison utilities
-brew "diffutils"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
