@@ -1,18 +1,18 @@
 #!/usr/bin/bash
 
-# =============================================================================
+#==============================================================================
 #
-# Default config - Debian-based
+# Select base config - Default: Debain
 #
-# =============================================================================
+#==============================================================================
 
 source "$HOME/.dotfiles/bash/debian.sh"
 
-# =============================================================================
+#==============================================================================
 #
-# Define location vars
+# Define location & path vars
 #
-# =============================================================================
+#==============================================================================
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -20,11 +20,11 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_GOOGLE_ANALYTICS=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-# export HOMEBREW=
-[ -r "$HOMEBREW/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW/etc/profile.d/bash_completion.sh"
+export HOMEBREW_NO_ANALYTICS=true
+export HOMEBREW_NO_GOOGLE_ANALYTICS=true
+export HOMEBREW_NO_INSTALL_CLEANUP=true
+[ -f "$HOMEBREW/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW/etc/profile.d/bash_completion.sh"
+[ -f "$HOMEBREW/etc/bash_completion.d/brew" ] && . "$HOMEBREW/etc/bash_completion.d/brew"
 
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export RUSTUP_HOME="$XDG_DATA_HOME/RUSTUP_HOME"
@@ -61,22 +61,22 @@ export PATH="$CARGO_HOME/bin:$PATH"
 export PATH="$HOMEBREW/bin:$PATH"
 export PATH="$HOMEBREW/sbin:$PATH"
 
-# =============================================================================
+#==============================================================================
 #
 # Define bin vars
 #
-# =============================================================================
+#==============================================================================
 
 export SHELL="bash"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"
 
-# =============================================================================
+#==============================================================================
 #
-# Define git vars
+# Define prompt  & git vars
 #
-# =============================================================================
+#==============================================================================
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
@@ -87,18 +87,12 @@ GIT_PS1_COMPRESSSPARSESTATE=true
 GIT_PS1_SHOWCONFLICTSTATE="yes"
 GIT_PS1_DESCRIBE_STYLE="default"
 GIT_PS1_SHOWCOLORHINTS=true
+
 GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 GIT_COMPLETION_SHOW_ALL=1
 GIT_COMPLETION_IGNORE_CASE=1
 
-# =============================================================================
-#
-# Define shell prompt
-#
-# =============================================================================
-
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PS1='$PROMPT_TEXT$(__git_ps1 " (%s)") '
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
-
