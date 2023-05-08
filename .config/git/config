@@ -1,6 +1,7 @@
 [user]
 	name = Guilherme M. Miranda
 	email = alchemist.software@proton.me
+	useConfigOnly = true
 [init]
 	defaultBranch = main
 [core]
@@ -21,7 +22,7 @@
 	date = iso8601
 [push]
 	default = current
-	followTags = true
+	autoSetupRemote = true
 [pull]
 	rebase = false
 [merge]
@@ -31,10 +32,11 @@
 	browser = man
 	autoCorrect = prompt
 [alias]
-	# List Config: General, Alias, Alias Enhanced
-	lg = !git config --global --list | sed '/^alias/d' | sed '/^credential/d'
-	la = !git config --global --get-regexp alias | sed 's/alias\\.//g'
-	le = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
+	# List Config: General, Alias, Where, Enhanced
+	list-global   = !git config --list --global  | sed '/^alias/d'
+	list-where    = !git config --list --show-origin
+	list-alias    = !git config --global --get-regexp alias | sed 's/alias\\.//g'
+	list-enhanced = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
 	# Basic Commands
 	st = !git status --untracked-files=all --short --show-stash
@@ -42,22 +44,33 @@
 	co = !git commit --message
 	ca = !git commit --amend
 
-	# Checkout, misc
-	ch      = !git checkout $1
-	ch-main = !git checkout main
-	ch-prev = !git checkout -
-	undo    = !git reset --soft HEAD^
-	reve    = !git remote --verbose
+	# Checkout, branching
+	br      = !git checkout
+	br-main = !git checkout main
+	br-prev = !git checkout -
+	br-new  = !git checkout -b
+	br-all  = !git branch --list --all
+	br-del  = !git branch --delete
+
+	# Remote management
+	url-all    = !git remote --verbose
+	url-remote = !git remote get-url --all
+	url-origin = !git remote get-url --all origin
+	url-change = !git remote set-url --add origin $1
+
+	# Undo
+	un-soft = !git reset --soft HEAD~1
+	un-hard = !git reset --hard HEAD~1
 
 	# Updating
 	fetch2date = !git stash --include-untracked && git fetch && git status
-	pull2date  = !git stash --include-untracked && git pull && git status
+	pull2date  = !git stash --include-untracked && git pull  && git status
 
 	# Logging
 	log-prev = !git log -1 HEAD --stat
 	log-all  = !git log --decorate --oneline --graph
-	log-main = !git log origin/main..main --stat --no-merges
-	log-head = !git log origin/HEAD..HEAD --stat --no-merges
+	log-main = !git log main..origin/main --stat --no-merges
+	log-head = !git log HEAD..origin/HEAD --stat --no-merges
 
 	# Cloning GitHub
 	hub      = !git clone https://github.com/$1
