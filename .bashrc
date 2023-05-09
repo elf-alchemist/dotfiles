@@ -18,6 +18,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
 
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_BASH="$HOMEBREW/etc/bash_completion.d"
@@ -25,7 +27,7 @@ export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_GOOGLE_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 [ -e "$HOMEBREW/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW/etc/bash_completion.d/brew" ]       && source "$HOMEBREW/etc/bash_completion.d/brew"
+[ -e "$HOMEBREW_BASH/brew" ]       && source "$HOMEBREW_BASH/brew"
 
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
@@ -38,7 +40,7 @@ export WASMER_CACHE_DIR="$WASMER_DIR/cache"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
-[ -e "$HOMEBREW/etc/bash_completion.d/whalebrew" ] && source "$HOMEBREW/etc/bash_completion.d/whalebrew"
+[ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
 
 [ -e "$HOMEBREW_BASH/git-prompt.sh" ]     && source "$HOMEBREW_BASH/git-prompt.sh"
 [ -e "$HOMEBREW_BASH/git-completion.sh" ] && source "$HOMEBREW_BASH/git-completion.sh"
@@ -51,6 +53,7 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export NI_CONFIG_FILE="$XDG_CONFIG_HOME/ni/nirc"
 [ -e "$HOMEBREW/opt/nvm/nvm.sh" ] && source "$HOMEBREW/opt/nvm/nvm.sh"
 [ -e "$HOMEBREW_BASH/npm" ]  && source "$HOMEBREW_BASH/npm"
@@ -58,10 +61,16 @@ export NI_CONFIG_FILE="$XDG_CONFIG_HOME/ni/nirc"
 [ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
 [ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
 
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
-[ -e "$HOMEBREW/etc/bash_completion.d/tmux" ] && source "$HOMEBREW/etc/bash_completion.d/tmux"
+export FFMPEG_DATADIR="$XDG_CONFIG_HOME"/ffmpeg
+[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 
+export PATH="$XDG_DATA_HOME/npm/bin:$PATH"
+export PATH="$XDG_DATA_HOME/yarn/global/node_modules/.bin:$PATH"
+export PATH="$XDG_DATA_HOME/pnpm:$PATH"
 export PATH="$WASMER_DIR/globals/wapm_packages/.bin:$PATH"
 export PATH="$WASMER_DIR/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
