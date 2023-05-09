@@ -35,15 +35,13 @@ export RUSTUP_HOME="$XDG_DATA_HOME/RUSTUP_HOME"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export MODCACHE="$XDG_CACHE_HOME/go-build"
 export WASMER_DIR="$XDG_DATA_HOME/wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"
 
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
-
-[ -e "$HOMEBREW_BASH/git-prompt.sh" ]     && source "$HOMEBREW_BASH/git-prompt.sh"
-[ -e "$HOMEBREW_BASH/git-completion.sh" ] && source "$HOMEBREW_BASH/git-completion.sh"
 
 [ -e "$HOMEBREW_BASH/gh" ]   && source "$HOMEBREW_BASH/gh"
 [ -e "$HOMEBREW_BASH/gh" ]   && source "$HOMEBREW_BASH/gh"
@@ -65,6 +63,7 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+export LYNX_CFG_PATH="$XDG_CONFIG_HOME/lynx.cfg"
 export FFMPEG_DATADIR="$XDG_CONFIG_HOME"/ffmpeg
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 
@@ -90,9 +89,12 @@ export PAGER="less"
 
 #==============================================================================
 #
-# Define prompt  & git vars
+# Define prompt & git vars
 #
 #==============================================================================
+
+[ -e "$HOMEBREW_BASH/git-prompt.sh" ]     && source "$HOMEBREW_BASH/git-prompt.sh"
+[ -e "$HOMEBREW_BASH/git-completion.sh" ] && source "$HOMEBREW_BASH/git-completion.sh"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true

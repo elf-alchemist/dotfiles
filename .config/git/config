@@ -45,10 +45,10 @@
 	ca = !git commit --amend
 
 	# Checkout, branching
-	br      = !git checkout
-	br-main = !git checkout main
-	br-prev = !git checkout -
-	br-new  = !git checkout -b
+	ch      = !git checkout
+	ch-main = !git checkout main
+	ch-prev = !git checkout -
+	ch-new  = !git checkout -b
 	br-all  = !git branch --list --all
 	br-del  = !git branch --delete
 

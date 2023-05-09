@@ -31,16 +31,19 @@ fi;
 #
 #==============================================================================
 
+echo -e "\n# Setting up the System"
 brew install curl wget openssh gnupg
 brew install gcc make cmake ctags
 brew install lua luajit stylua
 
+echo -e "\n# Setting up langs and env"
 brew install wasmer wapm rust
 brew install node deno nvm yarn pnpm
 brew install docker docker-compose whalebrew
 
+echo -e "\n# Setting up Git and other tools"
 brew install git gh glab tea
-brew install tmux neovim htop ranger tree fzf ffmpeg
+brew install tmux neovim htop ranger lynx tree fzf ffmpeg
 brew install font-fira-code font-fira-code-nerd-font
 
 #==============================================================================
@@ -49,6 +52,7 @@ brew install font-fira-code font-fira-code-nerd-font
 #
 #==============================================================================
 
+echo -e "\n# Setting Node binaries"
 npm  install --global @antfu/ni eslint prettier
 yarn global  add      @antfu/ni eslint prettier
 pnpm add     --global @antfu/ni eslint prettier
@@ -59,6 +63,7 @@ pnpm add     --global @antfu/ni eslint prettier
 #
 #==============================================================================
 
+echo -e "\n# Setting up terminal tools"
 rm -rf $XDG_CONFIG_HOME/tmux/plugins/tpm
 rm -rf $XDG_CONFIG_HOME/nvim
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
