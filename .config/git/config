@@ -9,6 +9,7 @@
 	pager = less
 	eol = lf
 	autocrlf = input
+	safecrlf = true
 	fileMode = true
 [color]
 	ui = auto
@@ -20,27 +21,39 @@
 	showUntrackedFiles = normal
 [log]
 	date = iso8601
+	decorate = full
+	showSignatures = true
+[diff]
+	tool = nvimdiff
+	guitool = nvimdiff
 [push]
 	default = current
 	autoSetupRemote = true
 [pull]
+	ff = true
 	rebase = false
+	twohead = manual
+	octopus = manual
 [merge]
-	conflictstyle = diff3
+	log = false
+	ff = true
+	tool = nvimdiff
+	guitool = nvimdiff
+	conflictstyle = merge
 [help]
 	format = man
 	browser = man
 	autoCorrect = prompt
 [alias]
 	# List Config: General, Alias, Where, Enhanced
-	list-global = !git config --list --global  | sed '/^alias/d'
-	list-where  = !git config --list --show-origin
-	list-alias  = !git config --global --get-regexp alias | sed 's/alias\\.//g'
-	list-better = !git la | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
+	ls-global = !git config --list --global  | sed '/^alias/d'
+	ls-where  = !git config --list --show-origin
+	ls-alias  = !git config --global --get-regexp alias | sed 's/alias\\.//g'
+	ls-better = !git ls-alias | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
 	# Basic Commands
 	st = !git status --untracked-files=all --short --show-stash
-	as = !git add --all && git status
+	as = !git add    --all && git status
 	co = !git commit --message
 	ca = !git commit --amend
 
@@ -53,34 +66,35 @@
 	br-del  = !git branch --delete
 
 	# Remote management
-	url-all    = !git remote --verbose
-	url-remote = !git remote get-url --all
-	url-origin = !git remote get-url --all origin
-	url-change = !git remote set-url --add origin
+	url-all = !git remote --verbose
+	url-get = !git remote get-url --all origin
+	url-set = !git remote set-url origin
+	url-add = !git remote set-url --add
 
 	# Undo
-	undo       = !git reset --soft HEAD~1
-	undo-clean = !git reset --hard HEAD~1
+	undo      = !git reset HEAD~1
+	undo-soft = !git reset HEAD~1 --soft
+	undo-hard = !git reset HEAD~1 --hard
 
 	# Updating
 	fetch2date = !git stash --include-untracked && git fetch && git status
 	pull2date  = !git stash --include-untracked && git pull  && git status
 
 	# Logging
-	log-prev = !git log -1 HEAD --stat
-	log-all  = !git log --decorate --oneline --graph
-	log-main = !git log main..origin/main --stat --no-merges
-	log-head = !git log HEAD..origin/HEAD --stat --no-merges
+	log-prev   = !git log --stat -1 HEAD
+	log-all    = !git log --all --oneline --graph
+	log-head   = !git log --stat HEAD~1..origin/HEAD
+	log-main   = !git log --stat main~1..origin/main
+	log-trunk  = !git log --stat trunk~1..origin/trunk
+	log-master = !git log --stat master~1..origin/master
 
 	# Cloning GitHub
 	hub      = !git clone https://github.com/$1
-	hub-fs   = !git clone https://github.com/$1 $2
 	hub-self = !git clone https://github.com/lambda-alchemist/$1
 	hub-conf = !git clone https://github.com/lambda-alchemist/.dotfiles.git
 
 	# Cloning GitLab
 	lab      = !git clone https://gitlab.com/$1
-	lab-fs   = !git clone https://gitlab.com/$1 $2
 	lab-self = !git clone https://gitlab.com/alkemista1/$1
 	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
 
