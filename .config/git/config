@@ -21,7 +21,7 @@
 	showUntrackedFiles = normal
 [log]
 	date = iso8601
-	decorate = full
+	decorate = short
 	showSignatures = true
 [diff]
 	tool = nvimdiff
@@ -58,35 +58,30 @@
 	ca = !git commit --amend
 
 	# Checkout, branching
-	ch      = !git checkout
-	ch-main = !git checkout main
-	ch-prev = !git checkout -
-	ch-new  = !git checkout -b
-	br-all  = !git branch --list --all
-	br-del  = !git branch --delete
+	cb      = !git checkout
+	cb-main = !git checkout main
+	cb-prev = !git checkout -
+	cb-new  = !git checkout -b
+	cb-all  = !git branch --list --all
+	cb-url  = !git branch --list --remotes
+	cb-del  = !git branch --delete
 
-	# Remote management
+	# Remotes management
 	url-all = !git remote --verbose
 	url-get = !git remote get-url --all origin
 	url-set = !git remote set-url origin
 	url-add = !git remote set-url --add
 
 	# Undo
-	undo      = !git reset HEAD~1
-	undo-soft = !git reset HEAD~1 --soft
-	undo-hard = !git reset HEAD~1 --hard
-
-	# Updating
-	fetch2date = !git stash --include-untracked && git fetch && git status
-	pull2date  = !git stash --include-untracked && git pull  && git status
+	undo      = !git reset HEAD
+	undo-soft = !git reset HEAD --soft
+	undo-hard = !git reset HEAD --hard
 
 	# Logging
-	log-prev   = !git log --stat -1 HEAD
-	log-all    = !git log --all --oneline --graph
+	log-prev   = !git log --stat --decorate=full --full-diff --max-count=1 HEAD~1
+	log-all    = !git log --oneline --graph
+	log-stat   = !git log --stat --oneline --graph
 	log-head   = !git log --stat HEAD~1..origin/HEAD
-	log-main   = !git log --stat main~1..origin/main
-	log-trunk  = !git log --stat trunk~1..origin/trunk
-	log-master = !git log --stat master~1..origin/master
 
 	# Cloning GitHub
 	hub      = !git clone https://github.com/$1

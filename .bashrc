@@ -22,7 +22,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONFIG_DIRS="/etc/xdg"
 
-# Brew dirs
+# Homebrew dirs
 export HOMEBREW="/home/linuxbrew/.linuxbrew"
 export HOMEBREW_BASH="$HOMEBREW/etc/bash_completion.d"
 export HOMEBREW_NO_ANALYTICS=true
@@ -50,11 +50,16 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 # Additional git related cli
 [ -e "$HOMEBREW_BASH/gh" ]   && source "$HOMEBREW_BASH/gh"
-[ -e "$HOMEBREW_BASH/gh" ]   && source "$HOMEBREW_BASH/gh"
 [ -e "$HOMEBREW_BASH/glab" ] && source "$HOMEBREW_BASH/glab"
 [ -e "$HOMEBREW_BASH/tea" ]  && source "$HOMEBREW_BASH/tea"
 
-# ECMAScript is pain
+# ECMAScript is pain, We should only need NPM... should;
+# But it is a very bad, no good, package manager;
+# Yarn improved things, PNPM is even better;
+# A person may be smart, but people are stupid;
+# A new tool is created to solve a problem that an
+# established tool has, but not everyone uses the new one,
+# And so cycle moves on
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
@@ -127,3 +132,11 @@ GIT_COMPLETION_IGNORE_CASE=1
 
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
+
+#==============================================================================
+#
+# Define shell aliases
+#
+#==============================================================================
+
+alias list="exa --all --group-directories-first --long --no-user --octal-permissions --no-permissions --extended --git --ignore-glob .git"

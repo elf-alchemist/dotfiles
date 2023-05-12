@@ -6,7 +6,7 @@
 #
 #==============================================================================
 
-echo -e "\n# Updating Homebrew"
+echo -e "\n\t# Updating Homebrew\n"
 brew update
 brew upgrade
 
@@ -16,13 +16,13 @@ brew upgrade
 #
 #==============================================================================
 
-echo -e "\n# Updating NPM"
+echo -e "\n\t# Updating NPM\n"
 npm update --global
 
-echo -e "\n# Updating Yarn"
+echo -e "\n\t# Updating Yarn\n"
 yarn global upgrade
 
-echo -e "\n# Updating PNPM"
+echo -e "\n\t# Updating PNPM\n"
 pnpm update --global
 
 #==============================================================================
@@ -31,18 +31,20 @@ pnpm update --global
 #
 #==============================================================================
 
-echo -e "\n# Updating APT"
+echo -e "\n\t# Updating APT\n"
 sudo apt update
 sudo apt list --upgradable
 
-echo -e "\n"
-read -p "Do you wish to upgrade? [Y/n] " yesno
+echo -en "\nDo you wish to upgrade? [Y/n] " && read yesno
 case $yesno in
+	[Yy]* )
+		echo -e "\nOperation cancelled, moving on."
+		sudo apt upgrade -y
+	;;
 	[Nn]* )
 		echo -e "\nOperation cancelled, not upgrading."
 	;;
 	* )
-		echo -e "\nOperation accepted, moving on\n"
-		sudo apt upgrade
+		echo -e "\nOperation cancelled; Invalid input.\n"
 	;;
 esac
