@@ -17,12 +17,16 @@ brew tap "homebrew/linux-fonts"
 #
 #==============================================================================
 
-echo -e "\n\t# Tapping the Brew\n"
-brew install coreutils moreutils findutils gnu-sed binutils
-brew install bash bash-completion@2
+echo -e "\n\t# Brewing the Base System\n"
+brew reinstall \
+	coreutils moreutils \
+	findutils binutils \
+	gnu-sed bash \
+	bash-completion@2
+
 if ! fgrep -q "${HOMEBREW}/bin/bash" /etc/shells; then
-  echo "${HOMEBREW}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${HOMEBREW}/bin/bash";
+	echo "${HOMEBREW}/bin/bash" | sudo tee -a /etc/shells;
+	chsh -s "${HOMEBREW}/bin/bash";
 fi;
 
 #==============================================================================
@@ -32,20 +36,24 @@ fi;
 #==============================================================================
 
 echo -e "\n\t# Setting up the System\n"
-brew install curl wget openssh gnupg
-brew install gcc make cmake ctags
-brew install lua luajit stylua
+brew install \
+	curl wget openssh gnupg \
+	gcc make cmake ctags \
+	lua luajit luarocks stylua
 
 echo -e "\n\t# Setting up langs and env\n"
-brew install wasmer wapm rust
-brew install node deno nvm yarn pnpm
-brew install docker docker-compose whalebrew
+brew install \
+	wasmer wapm rust \
+	node yarn pnpm deno \
+	docker docker-compose \
+	podman podman-compose whalebrew
 
 echo -e "\n\t# Setting up Git and other tools\n"
-brew install git gh glab tea
-brew install tmux neovim htop ranger lynx
-brew install tree exa fzf ffmpeg
-brew install font-fira-code font-fira-code-nerd-font
+brew install \
+	git gh glab tea \
+	tmux neovim htop ranger lynx \
+	tree exa fzf ffmpeg \
+	font-fira-code font-fira-code-nerd-font
 
 #==============================================================================
 #
@@ -54,9 +62,9 @@ brew install font-fira-code font-fira-code-nerd-font
 #==============================================================================
 
 echo -e "\n\t# Setting Node binaries\n"
-npm  install --global @antfu/ni eslint prettier
-yarn global  add      @antfu/ni eslint prettier
-pnpm add     --global @antfu/ni eslint prettier
+npm  install --global @antfu/ni
+yarn global  add      @antfu/ni
+pnpm add     --global @antfu/ni
 
 #==============================================================================
 #
