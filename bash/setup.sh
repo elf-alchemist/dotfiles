@@ -20,7 +20,8 @@ brew tap "homebrew/linux-fonts"
 echo -e "\n\t# Brewing the Base System\n"
 brew reinstall \
 	coreutils moreutils \
-	findutils binutils \
+	findutils diffutils \
+	inetutils binutils \
 	gnu-sed bash \
 	bash-completion@2
 
@@ -45,8 +46,7 @@ echo -e "\n\t# Setting up langs and env\n"
 brew install \
 	wasmer wapm rust \
 	node yarn pnpm deno \
-	docker docker-compose \
-	podman podman-compose whalebrew
+	docker podman whalebrew
 
 echo -e "\n\t# Setting up Git and other tools\n"
 brew install \
@@ -61,10 +61,8 @@ brew install \
 #
 #==============================================================================
 
-echo -e "\n\t# Setting Node binaries\n"
-npm  install --global @antfu/ni
-yarn global  add      @antfu/ni
-pnpm add     --global @antfu/ni
+echo -e "\n\t# Setting Node globals\n"
+pnpm add --global @antfu/ni
 
 #==============================================================================
 #
@@ -79,3 +77,4 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad    ~/.config/nvim --depth 1
 
 tmux source-file $XDG_CONFIG_HOME/tmux/tmux.conf
+
