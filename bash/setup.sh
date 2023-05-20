@@ -18,12 +18,12 @@ brew tap "homebrew/linux-fonts"
 #==============================================================================
 
 echo -e "\n\t# Brewing the Base System\n"
-brew reinstall \
+brew install \
 	coreutils moreutils \
 	findutils diffutils \
-	inetutils binutils \
-	gnu-sed bash \
-	bash-completion@2
+	binutils elfutils \
+	gnu-sed inetutils \
+	bash bash-completion@2
 
 if ! fgrep -q "${HOMEBREW}/bin/bash" /etc/shells; then
 	echo "${HOMEBREW}/bin/bash" | sudo tee -a /etc/shells;
@@ -39,17 +39,12 @@ fi;
 echo -e "\n\t# Setting up the System\n"
 brew install \
 	curl wget openssh gnupg \
-	gcc make cmake ctags \
-	lua luajit luarocks stylua
-
-echo -e "\n\t# Setting up langs and env\n"
-brew install \
+	glibc gcc \
+	make cmake ctags \
 	wasmer wapm rust \
 	node yarn pnpm deno \
-	docker podman whalebrew
-
-echo -e "\n\t# Setting up Git and other tools\n"
-brew install \
+	lua luajit luarocks stylua \
+	docker podman whalebrew \
 	git gh glab tea \
 	tmux neovim htop ranger lynx \
 	tree exa fzf ffmpeg \
@@ -73,6 +68,8 @@ pnpm add --global @antfu/ni
 echo -e "\n\t# Setting up terminal tools\n"
 rm -rf $XDG_CONFIG_HOME/tmux/plugins/tpm
 rm -rf $XDG_CONFIG_HOME/nvim
+rm -rf $XDG_STATE_HOME/nvim
+rm -rf $XDG_DATA_HOME/nvim
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad    ~/.config/nvim --depth 1
 
