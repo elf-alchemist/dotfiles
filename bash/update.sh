@@ -16,13 +16,7 @@ brew upgrade
 #
 #==============================================================================
 
-echo -e "\n\t# Updating NPM\n"
-npm update --global
-
-echo -e "\n\t# Updating Yarn\n"
-yarn global upgrade
-
-echo -e "\n\t# Updating PNPM\n"
+echo -e "\n\t# Updating Node Globals\n"
 pnpm update --global
 
 #==============================================================================
