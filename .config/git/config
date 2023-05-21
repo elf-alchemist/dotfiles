@@ -1,13 +1,13 @@
 [user]
-	name = Guilherme M. Miranda
-	email = alchemist.software@proton.me
+	name          = Guilherme M. Miranda
+	email         = alchemist.software@proton.me
 	useConfigOnly = true
 [init]
 	defaultBranch = main
 [core]
-	editor = vim
-	pager = less
-	eol = lf
+	editor   = vim
+	pager    = less
+	eol      = lf
 	autocrlf = input
 	safecrlf = true
 	fileMode = true
@@ -15,83 +15,85 @@
 	ui = auto
 [status]
 	relativePaths = false
-	branch = true
-	aheadBehind = true
-	showStash = true
+	branch        = true
+	aheadBehind   = true
+	showStash     = true
 	showUntrackedFiles = normal
 [log]
-	date = iso8601
-	decorate = short
+	date           = iso8601
+	decorate       = short
 	showSignatures = true
 [diff]
-	tool = nvimdiff
+	tool    = nvimdiff
 	guitool = nvimdiff
 [push]
-	default = current
+	default         = current
 	autoSetupRemote = true
 [pull]
-	ff = true
-	rebase = false
+	ff      = true
+	rebase  = false
 	twohead = manual
 	octopus = manual
 [merge]
-	log = false
-	ff = true
-	tool = nvimdiff
-	guitool = nvimdiff
+	log           = false
+	ff            = true
+	tool          = nvimdiff
+	guitool       = nvimdiff
 	conflictstyle = merge
 [help]
-	format = man
-	browser = man
+	format      = man
+	browser     = man
 	autoCorrect = prompt
 [alias]
 	# List Config: General, Alias, Where, Enhanced
-	ls-global = !git config --list --global  | sed '/^alias/d'
-	ls-where  = !git config --list --show-origin
+	ls        = !git config --list --global             | sed '/^alias/d'
+	ls-where  = !git config --list --show-origin        | sed '/^alias/d'
 	ls-alias  = !git config --global --get-regexp alias | sed 's/alias\\.//g'
 	ls-better = !git ls-alias | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
 
 	# Basic Commands
-	st = !git status --untracked-files=all --short --show-stash
-	as = !git add    --all && git status
-	co = !git commit --message
-	ca = !git commit --amend
+	st = status --short --branch --ahead-behind --untracked-files=all
+	as = add    .
+	aa = add    --all
+	ca = commit --amend
+	ce = commit --amend --no-edit
+	co = commit --message
+	cm = commit --message "changes"
 
 	# Checkout, branching
-	cb      = !git checkout
-	cb-main = !git checkout main
-	cb-prev = !git checkout -
-	cb-new  = !git checkout -b
-	cb-all  = !git branch --list --all
-	cb-url  = !git branch --list --remotes
-	cb-del  = !git branch --delete
+	cb      = checkout
+	cb-main = checkout main
+	cb-prev = checkout -
+	cb-new  = checkout -b
+	cb-all  = branch --list --all
+	cb-url  = branch --list --remotes
+	cb-del  = branch --delete
 
 	# Remotes management
-	url-all = !git remote --verbose
-	url-get = !git remote get-url --all origin
-	url-set = !git remote set-url origin
-	url-add = !git remote set-url --add
+	url     = remote
+	url-all = remote --verbose
+	url-get = remote get-url --all origin
+	url-set = remote set-url origin
+	url-add = remote set-url --add
 
 	# Undo
-	undo      = !git reset HEAD
-	undo-soft = !git reset HEAD --soft
-	undo-hard = !git reset HEAD --hard
+	undo      = reset HEAD
+	undo-soft = reset HEAD --soft
+	undo-hard = reset HEAD --hard
 
 	# Logging
-	log-prev   = !git log --stat --decorate=full --full-diff --max-count=1 HEAD~1
-	log-all    = !git log --oneline --graph
-	log-stat   = !git log --stat --oneline --graph
-	log-head   = !git log --stat HEAD~1..origin/HEAD
+	log-all  = log --oneline --graph
+	log-stat = log --oneline --graph --stat
+	log-prev = log --stat --decorate=full --full-diff --max-count=1 HEAD~1
+	log-head = log --stat HEAD~1..origin/HEAD
 
 	# Cloning GitHub
-	hub      = !git clone https://github.com/$1
-	hub-self = !git clone https://github.com/lambda-alchemist/$1
-	hub-conf = !git clone https://github.com/lambda-alchemist/.dotfiles.git
+	hub      = clone https://github.com/$1
+	hub-self = clone https://github.com/lambda-alchemist/$1
 
 	# Cloning GitLab
-	lab      = !git clone https://gitlab.com/$1
-	lab-self = !git clone https://gitlab.com/alkemista1/$1
-	lab-conf = !git clone https://gitlab.com/alkemista1/dotfiles.git
+	lab      = clone https://gitlab.com/$1
+	lab-self = clone https://gitlab.com/alkemista1/$1
 
 	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
