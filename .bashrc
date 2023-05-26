@@ -29,10 +29,7 @@ export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_GOOGLE_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 [ -e "$HOMEBREW/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW_BASH/brew" ]       && source "$HOMEBREW_BASH/brew"
-
-# Net utils
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+[ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
 
 # Lang setup
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -42,12 +39,7 @@ export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export MODCACHE="$XDG_CACHE_HOME/go-build"
 export WASMER_DIR="$XDG_DATA_HOME/wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"
-
-# Container env
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
-[ -e "$HOMEBREW_BASH/docker" ]    && source "$HOMEBREW_BASH/docker"
-[ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # ECMAScript is pain, We should only need NPM... should;
 # But it is a very bad, no good, package manager;
@@ -70,6 +62,12 @@ export NI_CONFIG_FILE="$XDG_CONFIG_HOME/ni/nirc"
 [ -e "$HOMEBREW_BASH/npm" ]  && source "$HOMEBREW_BASH/npm"
 [ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
 [ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
+
+# Container env
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
+[ -e "$HOMEBREW_BASH/docker" ]    && source "$HOMEBREW_BASH/docker"
+[ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
 export TERMINFO="$XDG_DATA_HOME/terminfo"
@@ -139,4 +137,3 @@ GIT_COMPLETION_IGNORE_CASE=1
 
 PROMPT_TEXT="\[\033[01;34m\]\W\[\033[00m\]"
 PROMPT_COMMAND='__git_ps1 "$PROMPT_TEXT" " "'
-

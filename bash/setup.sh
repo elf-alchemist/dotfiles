@@ -38,18 +38,18 @@ fi;
 
 echo -e "\n\t# Setting up the System\n"
 brew install \
-	curl wget openssh gnupg \
-	glibc gcc \
+	glibc gcc llvm \
 	make cmake ctags \
 	wasmer wapm rust \
 	node yarn pnpm deno \
 	lua luajit luarocks stylua \
+	curl wget openssh gnupg \
 	docker podman whalebrew \
 	docker-compose podman-compose \
 	git gh glab tea \
 	tmux neovim htop ranger lynx \
 	tree exa fzf ffmpeg \
-	font-fira-code font-fira-code-nerd-font
+	font-fira-code
 
 #==============================================================================
 #
@@ -77,4 +77,3 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad    ~/.config/nvim --depth 1
 
 tmux source-file $XDG_CONFIG_HOME/tmux/tmux.conf
-

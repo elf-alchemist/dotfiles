@@ -49,7 +49,7 @@
 	ls        = !git config --list --global             | sed '/^alias/d'
 	ls-where  = !git config --list --show-origin        | sed '/^alias/d'
 	ls-alias  = !git config --global --get-regexp alias | sed 's/alias\\.//g'
-	ls-better = !git ls-alias | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,3d'
+	ls-better = !git ls-alias | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,4d'
 
 	# Basic Commands
 	st = status --short --branch --ahead-behind --untracked-files=all

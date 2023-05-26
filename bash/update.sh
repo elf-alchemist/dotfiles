@@ -32,7 +32,7 @@ sudo apt list --upgradable
 echo -en "\nDo you wish to upgrade? [Y/n] " && read yesno
 case $yesno in
 	[Yy]* )
-		echo -e "\nOperation cancelled, moving on."
+		echo -e "\nOperation confirmed, moving on."
 		sudo apt upgrade -y
 	;;
 	[Nn]* )
@@ -42,4 +42,3 @@ case $yesno in
 		echo -e "\nOperation cancelled; Invalid input.\n"
 	;;
 esac
-
