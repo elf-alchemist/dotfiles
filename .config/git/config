@@ -1,6 +1,6 @@
 [user]
-	name          = Guilherme M. Miranda
-	email         = alchemist.software@proton.me
+	name  = Guilherme M. Miranda
+	email = alchemist.software@proton.me
 [init]
 	defaultBranch = main
 [core]
@@ -29,8 +29,8 @@
 	default         = current
 	autoSetupRemote = true
 [pull]
-	ff      = true
-	rebase  = false
+	ff     = true
+	rebase = false
 [merge]
 	log           = false
 	ff            = true
