@@ -1,7 +1,6 @@
 [user]
 	name          = Guilherme M. Miranda
 	email         = alchemist.software@proton.me
-	useConfigOnly = true
 [init]
 	defaultBranch = main
 [core]
@@ -14,10 +13,10 @@
 [color]
 	ui = auto
 [status]
-	relativePaths = false
-	branch        = true
-	aheadBehind   = true
-	showStash     = true
+	relativePaths      = false
+	branch             = true
+	aheadBehind        = true
+	showStash          = true
 	showUntrackedFiles = normal
 [log]
 	date           = iso8601
@@ -32,8 +31,6 @@
 [pull]
 	ff      = true
 	rebase  = false
-	twohead = manual
-	octopus = manual
 [merge]
 	log           = false
 	ff            = true
@@ -77,23 +74,18 @@
 	url-add = remote set-url --add
 
 	# Undo
-	undo      = reset HEAD
-	undo-soft = reset HEAD --soft
-	undo-hard = reset HEAD --hard
+	undo      = reset HEAD~1
+	undo-soft = reset HEAD~1 --soft
+	undo-hard = reset HEAD~1 --hard
 
 	# Logging
 	log-all  = log --oneline --graph
 	log-stat = log --oneline --graph --stat
 	log-prev = log --stat --decorate=full --full-diff --max-count=1 HEAD~1
-	log-head = log --stat HEAD~1..origin/HEAD
 
 	# Cloning GitHub
 	hub      = clone https://github.com/$1
 	hub-self = clone https://github.com/lambda-alchemist/$1
-
-	# Cloning GitLab
-	lab      = clone https://gitlab.com/$1
-	lab-self = clone https://gitlab.com/alkemista1/$1
 
 	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
