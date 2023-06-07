@@ -1,5 +1,22 @@
 {
 	"recommendations": [
-		"astro-build.astro-vscode"
+		"antfu.file-nesting",
+		"astro-build.astro-vscode",
+		"bradlc.vscode-tailwindcss",
+		"christian-kohler.npm-intellisense",
+		"christian-kohler.path-intellisense",
+		"dbaeumer.vscode-eslint",
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode",
+		"mattpocock.ts-error-translator",
+		"ms-vscode-remote.remote-wsl",
+		"rangav.vscode-thunder-client",
+		"vscodevim.vim",
+		"vscode-icons-team.vscode-icons",
+		"vunguyentuan.vscode-css-variables",
+		"vunguyentuan.vscode-postcss",
+		"yoavbls.pretty-ts-errors",
+
+		// TODO: add vue related exts
 	]
 }
