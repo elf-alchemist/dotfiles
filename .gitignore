@@ -47,6 +47,7 @@ debug.log
 .config/Code/Code\ Cache
 .config/Code/Crashpad
 .config/Code/databases
+.config/Code/DawnCache
 .config/Code/Dictionaries
 .config/Code/GPUCache
 .config/Code/IndexedDB
