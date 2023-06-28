@@ -22,6 +22,7 @@ debug.log
 .config/gtk-3.0
 .config/gtk-4.0
 .config/ibus
+.config/iterm2
 .config/libreoffice
 .config/menus
 .config/nautilus
