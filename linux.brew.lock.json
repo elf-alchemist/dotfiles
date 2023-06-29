@@ -1,0 +1,29 @@
+{
+  "entries": {
+    "tap": {
+      "homebrew/linux-fonts": {
+        "revision": "8bfc2857374f4a88126ac2c9a3636f1eb0941d28"
+      }
+    },
+    "brew": {
+      "homebrew/linux-fonts/font-fira-code": {
+        "version": "6.2",
+        "bottle": false
+      },
+      "homebrew/linux-fonts/font-fira-code-nerd-font": {
+        "version": "3.0.2",
+        "bottle": false
+      }
+    }
+  },
+  "system": {
+    "linux": {
+      "Debian GNU/Linux 12 (bookworm) (bookworm)": {
+        "HOMEBREW_VERSION": "4.0.26",
+        "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
+        "Homebrew/homebrew-core": "api",
+        "GCC": null
+      }
+    }
+  }
+}

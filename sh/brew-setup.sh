@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 # Setup base taps
-
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
 brew tap "homebrew/core"
@@ -29,7 +28,7 @@ brew install \
 	curl wget openssh gnupg \
 	docker docker-compose \
 	whalebrew \
-	git gh glab tea \
+	git gh \
 	tmux neovim htop ranger \
 	tree exa fzf \
 

@@ -1,0 +1,3 @@
+tap "homebrew/linux-fonts"
+brew "homebrew/linux-fonts/font-fira-code"
+brew "homebrew/linux-fonts/font-fira-code-nerd-font"
