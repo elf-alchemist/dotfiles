@@ -25,7 +25,6 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 # Define path & bin
-
 export PATH="$XDG_DATA_HOME/npm/bin:$PATH"
 export PATH="$XDG_DATA_HOME/yarn/global/node_modules/.bin:$PATH"
 export PATH="$XDG_DATA_HOME/pnpm:$PATH"

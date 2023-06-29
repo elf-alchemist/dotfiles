@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
 # Homebrew is very nice
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	export HOMEBREW="/home/linuxbrew/.linuxbrew"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	export HOMEBREW="/usr/local/"
-fi
+case "$(uname)" in
+  Linux*)
+    export HOMEBREW="/home/linuxbrew/.linuxbrew"
+    ;;
+  Darwin*)
+    export HOMEBREW="/usr/local"
+    ;;
+  *)
+    export HOMEBREW="$(brew --prefix)"
+    ;;
+esac
 export HOMEBREW_BASH="$HOMEBREW/etc/bash_completion.d"
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_GOOGLE_ANALYTICS=true
@@ -44,9 +50,6 @@ export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 
 # Define location & path
-export PATH="$WASMER_DIR/globals/wapm_packages/.bin:$PATH"
-export PATH="$WASMER_DIR/bin:$PATH"
-export PATH="$CARGO_HOME/bin:$PATH"
 export PATH="$HOMEBREW/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW/opt/binutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW/opt/inetutils/libexec/gnubin:$PATH"
