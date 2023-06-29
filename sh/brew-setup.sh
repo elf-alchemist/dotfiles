@@ -25,9 +25,9 @@ brew install \
 	gnu-sed inetutils \
 	bash bash-completion@2
 
-if ! fgrep -q "${HOMEBREW}/bin/bash" /etc/shells; then
-	echo "${HOMEBREW}/bin/bash" | sudo tee -a /etc/shells;
-	chsh -s "${HOMEBREW}/bin/bash";
+if ! fgrep -q "$(brew --prefix)/bin/bash" /etc/shells; then
+	echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells;
+	chsh -s "$(brew --prefix)/bin/bash";
 fi;
 
 #==============================================================================
@@ -38,18 +38,15 @@ fi;
 
 echo -e "\n\t# Setting up the System\n"
 brew install \
-	glibc gcc llvm \
-	make cmake ctags \
+	glibc gcc make \
 	wasmer wapm rust \
 	node yarn pnpm deno \
-	lua luajit luarocks stylua \
 	curl wget openssh gnupg \
-	docker podman whalebrew \
-	docker-compose podman-compose \
+	docker docker-compose \
+	whalebrew \
 	git gh glab tea \
-	tmux neovim htop ranger lynx \
-	tree exa fzf ffmpeg \
-	font-fira-code
+	tmux neovim htop ranger \
+	tree exa fzf \
 
 #==============================================================================
 #
@@ -68,12 +65,12 @@ pnpm add --global @antfu/ni
 
 echo -e "\n\t# Setting up terminal tools\n"
 
-rm -rf $XDG_CONFIG_HOME/tmux/plugins/tpm
-rm -rf $XDG_CONFIG_HOME/nvim
-rm -rf $XDG_STATE_HOME/nvim
-rm -rf $XDG_DATA_HOME/nvim
+rm -rf $HOME/.config/tmux/plugins/tpm
+rm -rf $HOME/.config/nvim
+rm -rf $HOME/.local/state/nvim
+rm -rf $HOME/.local/share/nvim
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad    ~/.config/nvim --depth 1
 
-tmux source-file $XDG_CONFIG_HOME/tmux/tmux.conf
+tmux source-file $HOME/.config/tmux/tmux.conf

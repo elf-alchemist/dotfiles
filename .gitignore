@@ -34,6 +34,8 @@ debug.log
 .config/totem
 .config/vscode-sqltools
 
+.config/.gsd-keyboard.settings-ported
+.config/gnome-initial-setup-done
 .config/monitors.xml
 .config/monitors.xml~
 
@@ -42,6 +44,7 @@ debug.log
 .config/Code/Backups
 .config/Code/blob_storage
 .config/Code/Cache
+.config/Code/CachedConfigurations
 .config/Code/CachedData
 .config/Code/CachedExtensionVSIXs
 .config/Code/CachedProfilesData
