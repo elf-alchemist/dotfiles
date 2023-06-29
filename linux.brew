@@ -1,3 +1,5 @@
 tap "homebrew/linux-fonts"
+brew "elfutils"
+brew "glibc"
 brew "homebrew/linux-fonts/font-fira-code"
 brew "homebrew/linux-fonts/font-fira-code-nerd-font"
