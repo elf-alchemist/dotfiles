@@ -202,7 +202,7 @@
 	},
 	"emmet.variables": {
 		"lang": "en-US",
-		"charset": "UTF-8",
+		"charset": "UTF-8"
 	},
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.useInlineCompletions": false,
@@ -307,7 +307,7 @@
 		"**/*.scss",
 		"**/*.sass",
 		"**/*.less",
-		"**/*.styl",
+		"**/*.styl"
 	],
 	"stylelint.enable": false,
 	"stylelint.packageManager": "npm",
@@ -317,7 +317,7 @@
 	],
 	"stylelint.snippet": [
 		"css",
-		"postcss",
+		"postcss"
 	],
 	"postcss.validate": true,
 	"tailwindCSS.validate": true,
@@ -597,5 +597,5 @@
 	"intellicodeCompletions.parseErrorFilter": true,
 	"intellicodeCompletions.language.javascript": true,
 	"intellicodeCompletions.language.typescript": true,
-	"intellicodeCompletions.language.python": false,
+	"intellicodeCompletions.language.python": false
 }

@@ -1,22 +1,12 @@
 #!/usr/bin/bash
 
-#==============================================================================
-#
 # Setup base taps
-#
-#==============================================================================
 
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
 brew tap "homebrew/core"
-brew tap "homebrew/linux-fonts"
 
-#==============================================================================
-#
-# Main Utilities of the OS
-#
-#==============================================================================
-
+# Main utilities
 echo -e "\n\t# Brewing the Base System\n"
 brew install \
 	coreutils moreutils \
@@ -30,12 +20,7 @@ if ! fgrep -q "$(brew --prefix)/bin/bash" /etc/shells; then
 	chsh -s "$(brew --prefix)/bin/bash";
 fi;
 
-#==============================================================================
-#
 # Actual programs I want
-#
-#==============================================================================
-
 echo -e "\n\t# Setting up the System\n"
 brew install \
 	glibc gcc make \
@@ -48,21 +33,7 @@ brew install \
 	tmux neovim htop ranger \
 	tree exa fzf \
 
-#==============================================================================
-#
-# Node binaries
-#
-#==============================================================================
-
-echo -e "\n\t# Setting Node globals\n"
-pnpm add --global @antfu/ni
-
-#==============================================================================
-#
 # Terminal programs
-#
-#==============================================================================
-
 echo -e "\n\t# Setting up terminal tools\n"
 
 rm -rf $HOME/.config/tmux/plugins/tpm
