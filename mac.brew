@@ -1,0 +1,5 @@
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "visual-studio-code"
