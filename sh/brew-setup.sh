@@ -10,19 +10,18 @@ echo -e "\n\t# Brewing the Base System\n"
 brew install \
 	coreutils moreutils \
 	findutils diffutils \
-	binutils elfutils \
-	gnu-sed inetutils \
-	bash bash-completion@2
+	binutils inetutils \
+	gnu-sed bash bash-completion@2
 
-if ! fgrep -q "$(brew --prefix)/bin/bash" /etc/shells; then
-	echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells;
-	chsh -s "$(brew --prefix)/bin/bash";
+if ! fgrep -q "$HOMEBREW/bin/bash" /etc/shells; then
+	echo "$HOMEBREW/bin/bash" | sudo tee -a /etc/shells;
+	chsh -s "$HOMEBREW/bin/bash";
 fi;
 
 # Actual programs I want
 echo -e "\n\t# Setting up the System\n"
 brew install \
-	glibc gcc make \
+	gcc make \
 	wasmer wapm rust \
 	node yarn pnpm deno \
 	curl wget openssh gnupg \
