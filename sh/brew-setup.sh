@@ -11,7 +11,8 @@ brew install \
 	coreutils moreutils \
 	findutils diffutils \
 	binutils inetutils \
-	gnu-sed bash bash-completion@2
+	recutils gnu-sed \
+	bash bash-completion@2
 
 if ! fgrep -q "$HOMEBREW/bin/bash" /etc/shells; then
 	echo "$HOMEBREW/bin/bash" | sudo tee -a /etc/shells;
