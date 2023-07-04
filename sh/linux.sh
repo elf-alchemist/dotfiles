@@ -32,4 +32,4 @@ export PATH="$WASMER_DIR/globals/wapm_packages/.bin:$PATH"
 export PATH="$WASMER_DIR/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 
-source "$HOME/.dotfiles/sh/common.sh"
+source "$HOME/.dotfiles/sh/home.sh"

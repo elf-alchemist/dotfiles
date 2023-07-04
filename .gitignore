@@ -2,6 +2,12 @@
 *.swp
 debug.log
 
+.config/.ssh/known_hosts
+.config/.ssh/known_hosts.old
+.config/.ssh/id_ed25519
+.config/.ssh/id_ed25519.pub
+
+
 .config/autostart
 .config/balena-etcher
 .config/Bitwarden
