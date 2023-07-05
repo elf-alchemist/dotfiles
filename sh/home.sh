@@ -90,5 +90,23 @@ GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 GIT_COMPLETION_SHOW_ALL=1
 GIT_COMPLETION_IGNORE_CASE=1
 
+# TODO: finish this later
+#PROMPT_COLOR="\[$(tput setf 0)\]"
+#PROMPT_COLOR="\[$(tput setf 1)\]"
+#PROMPT_COLOR="\[$(tput setf 2)\]"
+#PROMPT_COLOR="\[$(tput setf 3)\]"
+#PROMPT_COLOR="\[$(tput setf 4)\]"
+#PROMPT_COLOR="\[$(tput setf 5)\]"
+#PROMPT_COLOR="\[$(tput setf 6)\]"
+#PROMPT_COLOR="\[$(tput setf 7)\]"
+#PROMPT_COLOR="\[$(tput setb 0)\]"
+#PROMPT_COLOR="\[$(tput setb 1)\]"
+#PROMPT_COLOR="\[$(tput setb 2)\]"
+#PROMPT_COLOR="\[$(tput setb 3)\]"
+#PROMPT_COLOR="\[$(tput setb 4)\]"
+#PROMPT_COLOR="\[$(tput setb 5)\]"
+#PROMPT_COLOR="\[$(tput setb 6)\]"
+#PROMPT_COLOR="\[$(tput setb 7)\]"
+
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
 
