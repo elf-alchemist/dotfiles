@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
 source "$HOME/.dotfiles/sh/home.sh"
 
 # Fig post block. Keep at the bottom of this file.
