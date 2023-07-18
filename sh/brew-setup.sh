@@ -3,7 +3,6 @@
 # Setup base taps
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
-brew tap "homebrew/core"
 
 # Main utilities
 echo -e "\n\t# Brewing the Base System\n"

@@ -14,7 +14,6 @@ case "$(uname)" in
 esac
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 export HOMEBREW_NO_ANALYTICS=true
-export HOMEBREW_NO_GOOGLE_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
