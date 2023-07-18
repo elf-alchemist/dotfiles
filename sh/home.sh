@@ -29,11 +29,6 @@ export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
-# export SHELL="bash"
-# export EDITOR="nvim"
-# export VISUAL="nvim"
-# export PAGER="less"
-
 alias list="exa --all --group-directories-first --long --no-user --octal-permissions --no-permissions --extended --git --ignore-glob .git"
 
 # ECMAScript is pain, We should only need NPM... should;
