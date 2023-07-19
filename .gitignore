@@ -7,7 +7,6 @@ debug.log
 .config/.ssh/id_ed25519
 .config/.ssh/id_ed25519.pub
 
-
 .config/autostart
 .config/balena-etcher
 .config/Bitwarden
@@ -46,6 +45,8 @@ debug.log
 .config/monitors.xml~
 
 .config/tmux/plugins
+
+.config/raycast/config.json
 
 .config/raycast/extensions
 
