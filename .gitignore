@@ -47,6 +47,8 @@ debug.log
 
 .config/tmux/plugins
 
+.config/raycast/extensions
+
 .config/Code/Backups
 .config/Code/blob_storage
 .config/Code/Cache
