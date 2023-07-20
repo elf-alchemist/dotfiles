@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 # Homebrew is very nice
-case "$(uname)" in
+case "$(uname -s -m)" in
   Linux*)
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+    ;;
+  Darwin*arm*)
+    export HOMEBREW_PREFIX="/opt/homebrew"
     ;;
   Darwin*)
     export HOMEBREW_PREFIX="/usr/local"
@@ -19,6 +22,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 [ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
 
 # Define location & path
+export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/binutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/inetutils/libexec/gnubin:$PATH"

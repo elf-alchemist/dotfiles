@@ -3,33 +3,31 @@
 # Setup base taps
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
+brew tap "homebrew/services"
+
+brew_list="coreutils moreutils findutils diffutils binutils inetutils gnu-sed"
+brew_list="${brew_list} bash bash-completion@2 gcc make wasmer wapm rust"
+brew_list="${brew_list} node yarn pnpm deno curl wget openssh gnupg"
+brew_list="${brew_list} git gh tmux neovim htop ranger tree exa fzf"
+
+case "$(uname)" in
+Linux*)
+    brew_list="${brew_list} elfutils docker docker-compose"
+    ;;
+Darwin*)
+    brew_list="${brew_list} --cask steam gzdoom iterm2 raycast docker"
+    ;;
+esac
+
 
 # Main utilities
 echo -e "\n\t# Brewing the Base System\n"
-brew install \
-	coreutils moreutils \
-	findutils diffutils \
-	binutils inetutils \
-	recutils gnu-sed \
-	bash bash-completion@2
+brew install $brew_list
 
 if ! fgrep -q "$HOMEBREW/bin/bash" /etc/shells; then
 	echo "$HOMEBREW/bin/bash" | sudo tee -a /etc/shells;
 	chsh -s "$HOMEBREW/bin/bash";
 fi;
-
-# Actual programs I want
-echo -e "\n\t# Setting up the System\n"
-brew install \
-	gcc make \
-	wasmer wapm rust \
-	node yarn pnpm deno \
-	curl wget openssh gnupg \
-	docker docker-compose \
-	whalebrew \
-	git gh \
-	tmux neovim htop ranger \
-	tree exa fzf \
 
 # Terminal programs
 echo -e "\n\t# Setting up terminal tools\n"
