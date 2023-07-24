@@ -75,9 +75,10 @@
 	url-add = remote set-url --add
 
 	# Undo
-	undo      = reset HEAD~1
-	undo-soft = reset HEAD~1 --soft
-	undo-hard = reset HEAD~1 --hard
+	un       = reset HEAD~1
+	un-soft  = reset HEAD~1 --soft
+	un-hard  = reset HEAD~1 --hard
+	un-stage = restore --staged
 
 	# Logging
 	log-all  = log --oneline --graph

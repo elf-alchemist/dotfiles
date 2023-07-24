@@ -33,7 +33,8 @@ export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
-alias list="exa --all --group-directories-first --long --no-user --octal-permissions --no-permissions --extended --git --ignore-glob .git"
+alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions -@laI .git"
+alias lst="tree --dirsfirst -a -L 2 -C -I .git"
 
 # ECMAScript is pain, We should only need NPM... should;
 # But it is a very bad, no good, package manager;
