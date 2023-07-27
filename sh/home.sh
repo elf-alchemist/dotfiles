@@ -103,7 +103,7 @@ GIT_COMPLETION_IGNORE_CASE=1
 #PROMPT_COLOR="\[$(tput setb 6)\]"
 #PROMPT_COLOR="\[$(tput setb 7)\]"
 
-export TIME_STYLE="full-iso"
+export TIME_STYLE="long-iso"
 
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 alias lst="tree --dirsfirst -a -L 2 -C -I .git"
