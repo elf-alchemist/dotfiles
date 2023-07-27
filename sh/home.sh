@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Homebrew is very nice
 case "$(uname -s -m)" in
   Linux*)
@@ -22,6 +20,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 [ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
 
 # Define location & path
+export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/binutils/libexec/gnubin:$PATH"
@@ -32,9 +31,6 @@ export PATH="$HOMEBREW_PREFIX/opt/moreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
-
-alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions -@laI .git"
-alias lst="tree --dirsfirst -a -L 2 -C -I .git"
 
 # ECMAScript is pain, We should only need NPM... should;
 # But it is a very bad, no good, package manager;
@@ -56,7 +52,7 @@ alias lst="tree --dirsfirst -a -L 2 -C -I .git"
 
 # Container env
 export DOCKER_CONFIG="$HOME/.config/docker"
-[ -e "$HOMEBREW_BASH/docker" ]    && source "$HOMEBREW_BASH/docker"
+[ -e "$HOMEBREW_BASH/docker"    ] && source "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
@@ -67,7 +63,7 @@ export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 
 # Define shell prompt && git vars
-[ -e "$HOMEBREW_BASH/git-prompt.sh" ]       && source "$HOMEBREW_BASH/git-prompt.sh"
+[ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
 [ -e "$HOMEBREW_BASH/git-completion.bash" ] && source "$HOMEBREW_BASH/git-completion.bash"
 
 [ -e "$HOMEBREW_BASH/gh"   ] && source "$HOMEBREW_BASH/gh"
@@ -106,6 +102,12 @@ GIT_COMPLETION_IGNORE_CASE=1
 #PROMPT_COLOR="\[$(tput setb 5)\]"
 #PROMPT_COLOR="\[$(tput setb 6)\]"
 #PROMPT_COLOR="\[$(tput setb 7)\]"
+
+export TIME_STYLE="full-iso"
+
+alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions -@laI .git"
+alias lst="tree --dirsfirst -a -L 2 -C -I .git"
+alias lsl="ls -blahs --time-style=long-iso --color=auto"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
 

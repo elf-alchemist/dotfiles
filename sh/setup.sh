@@ -1,28 +1,30 @@
-#!/usr/bin/bash
-
 # Setup base taps
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
 brew tap "homebrew/services"
 
 brew_list="coreutils moreutils findutils diffutils binutils inetutils gnu-sed"
-brew_list="${brew_list} bash bash-completion@2 gcc make wasmer wapm rust"
-brew_list="${brew_list} node yarn pnpm deno curl wget openssh gnupg"
-brew_list="${brew_list} git gh tmux neovim htop ranger tree exa fzf"
+brew_list="${brew_list} bash bash-completion@2 curl wget openssh gnupg"
+brew_list="${brew_list} gcc make openjdk node yarn pnpm deno"
+brew_list="${brew_list} git tmux neovim htop ranger tree exa fzf"
 
 case "$(uname)" in
 Linux*)
     brew_list="${brew_list} elfutils docker docker-compose"
     ;;
 Darwin*)
-    brew_list="${brew_list} --cask steam gzdoom iterm2 raycast docker"
+    cask_list="--cask epic-games steam gzdoom iterm2 raycast docker"
     ;;
 esac
 
 
 # Main utilities
-echo -e "\n\t# Brewing the Base System\n"
+echo -e "\n\t# Brewing the system\n"
 brew install $brew_list
+
+echo -e "\n\t# Casking the system\n"
+brew install $cask_list
+
 
 if ! fgrep -q "$HOMEBREW/bin/bash" /etc/shells; then
 	echo "$HOMEBREW/bin/bash" | sudo tee -a /etc/shells;
