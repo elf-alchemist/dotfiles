@@ -105,7 +105,7 @@ GIT_COMPLETION_IGNORE_CASE=1
 
 export TIME_STYLE="full-iso"
 
-alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions -@laI .git"
+alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 alias lst="tree --dirsfirst -a -L 2 -C -I .git"
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 

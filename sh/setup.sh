@@ -3,7 +3,7 @@ echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
 brew tap "homebrew/services"
 
-brew_list="coreutils moreutils findutils diffutils binutils inetutils gnu-sed"
+brew_list="coreutils moreutils findutils diffutils binutils inetutils gnu-sed gnu-tar"
 brew_list="${brew_list} bash bash-completion@2 curl wget openssh gnupg"
 brew_list="${brew_list} gcc make openjdk node yarn pnpm deno"
 brew_list="${brew_list} git tmux neovim htop ranger tree exa fzf"
