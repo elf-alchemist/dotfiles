@@ -13,9 +13,11 @@ case "$(uname -s -m)" in
     export HOMEBREW_PREFIX="$(brew --prefix)"
     ;;
 esac
-export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
+
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
+
+export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
 
@@ -58,9 +60,11 @@ export DOCKER_CONFIG="$HOME/.config/docker"
 # Misc
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$HOME/.config/htop/htoprc"
-export LYNX_CFG_PATH="$HOME/.config/lynx.cfg"
 export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
+
+[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/exa"  ] && source "$HOMEBREW_BASH/exa"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
