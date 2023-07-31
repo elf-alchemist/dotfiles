@@ -42,7 +42,7 @@ brew install \
   pnpm \
   deno \
 
-  if [ "$(uname)" == "Linux" ] then
+if [ "$(uname)" == "Linux" ] then
   echo -e "\n\t# Brewing the penguin's beer\n"
   brew tap homebrew/linuxfonts
   brew install \

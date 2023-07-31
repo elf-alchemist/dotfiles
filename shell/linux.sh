@@ -42,5 +42,5 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 [ -e "$HOMEBREW_BASH/dmesg" ] && source "$HOMEBREW_BASH/dmesg"
 
-source "$HOME/.dotfiles/sh/home.sh"
+source "$HOME/.dotfiles/shell/home.sh"
 
