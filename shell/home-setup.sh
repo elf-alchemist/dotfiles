@@ -2,9 +2,9 @@
 echo -e "\n\t# Tapping the Brew\n"
 brew tap "homebrew/bundle"
 brew tap "homebrew/services"
-brew tap "petere/postgres"
+brew tap "petere/postgresql"
 brew tap "mongodb/brew"
-brew tap "aws/brew"
+brew tap "aws/tap"
 
 # Brewing the formulae
 echo -e "\n\t# Brewing the system\n"
@@ -40,18 +40,19 @@ brew install \
   node \
   yarn \
   pnpm \
-  deno \
+  deno
 
-if [ "$(uname)" == "Linux" ] then
+if [ "$(uname)" == "Linux" ]; then
   echo -e "\n\t# Brewing the penguin's beer\n"
   brew tap homebrew/linuxfonts
   brew install \
     elfutils \
     docker \
     docker-compose
-fi;
 
-if [ "$(uname)" == "Darwin" ] then
+fi
+
+if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\t# Brewing the cask\n"
   brew tap homebrew/cask
   brew tap homebrew/cask-fonts
@@ -65,15 +66,16 @@ if [ "$(uname)" == "Darwin" ] then
     protonvpn \
     steam \
     epic-games \
-    gzdoom \
-fi;
+    gzdoom
+
+fi
 
 # Setting up bash from homebrew
 echo -e "\n\t# Configuring Bash binary\n"
 if ! fgrep -q "$HOMEBREW_PREFIX/bin/bash" /etc/shells; then
-	echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells;
-	chsh -s "$HOMEBREW_PREFIX/bin/bash";
-fi;
+  echo "$HOMEBREW_PREFIX/bin/bash" | sudo tee -a /etc/shells
+  chsh -s "$HOMEBREW_PREFIX/bin/bash"
+fi
 
 # Terminal programs
 echo -e "\n\t# Cleaning up terminal tools\n"
@@ -87,4 +89,3 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad    ~/.config/nvim --depth 1
 
 tmux source-file $HOME/.config/tmux/tmux.conf
-
