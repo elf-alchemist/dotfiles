@@ -23,8 +23,11 @@ export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 
 # Define location & path
 export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/man-db/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/gnu-which/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/binutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/inetutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
@@ -64,10 +67,12 @@ export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 
 [ -e "$HOMEBREW_BASH/tmux"  ] && source "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more"  ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/broot" ] && source "$HOMEBREW_BASH/broot"
+
+[ -e "$HOMEBREW_BASH/tldr"  ] && source "$HOMEBREW_BASH/tldr"
 [ -e "$HOMEBREW_BASH/exa"   ] && source "$HOMEBREW_BASH/exa"
 [ -e "$HOMEBREW_BASH/bat"   ] && source "$HOMEBREW_BASH/bat"
 [ -e "$HOMEBREW_BASH/dust"  ] && source "$HOMEBREW_BASH/dust"
-[ -e "$HOMEBREW_BASH/broot" ] && source "$HOMEBREW_BASH/broot"
 [ -e "$HOMEBREW_BASH/delta" ] && source "$HOMEBREW_BASH/delta"
 
 # Define shell prompt && git vars
@@ -113,9 +118,9 @@ GIT_COMPLETION_IGNORE_CASE=1
 
 export TIME_STYLE="long-iso"
 
-alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
-alias lst="tree --dirsfirst -a -L 2 -C -I .git"
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
+alias lst="tree --dirsfirst -aCLI 2 .git"
+alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
 

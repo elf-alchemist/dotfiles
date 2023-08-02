@@ -17,44 +17,46 @@ brew install \
   inetutils \
   gnu-tar \
   gnu-sed \
+  bash \
+  bash-completion@2 \
   gcc \
   make \
   curl \
   wget \
   openssh \
   gnupg \
-  bash \
-  bash-completion@2 \
   git \
   lazygit \
   tmux \
   neovim \
   htop \
   ranger \
-  list \
+  fzf \
+  tree \
   exa \
   bat \
-  fzf \
   openjdk \
   gradle \
   node \
   yarn \
-  pnpm \
-  deno
+  pnpm 
+
+
 
 if [ "$(uname)" == "Linux" ]; then
   echo -e "\n\t# Brewing the penguin's beer\n"
-  brew tap homebrew/linuxfonts
+  brew tap homebrew/linux-fonts
   brew install \
     elfutils \
     docker \
-    docker-compose
+    docker-compose \
+    homebrew/linux-fonts/font-fira-code \
+    homebrew/linux-fonts/font-fira-code-nerd-font
 
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\t# Brewing the cask\n"
-  brew tap homebrew/cask
   brew tap homebrew/cask-fonts
   brew install --cask \
     firefox \
@@ -66,7 +68,9 @@ if [ "$(uname)" == "Darwin" ]; then
     protonvpn \
     steam \
     epic-games \
-    gzdoom
+    gzdoom \
+    font-fira-code \
+    font-fira-code-nerd-font
 
 fi
 
