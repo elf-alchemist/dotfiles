@@ -62,9 +62,13 @@ export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$HOME/.config/htop/htoprc"
 export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 
-[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
-[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/exa"  ] && source "$HOMEBREW_BASH/exa"
+[ -e "$HOMEBREW_BASH/tmux"  ] && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more"  ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/exa"   ] && source "$HOMEBREW_BASH/exa"
+[ -e "$HOMEBREW_BASH/bat"   ] && source "$HOMEBREW_BASH/bat"
+[ -e "$HOMEBREW_BASH/dust"  ] && source "$HOMEBREW_BASH/dust"
+[ -e "$HOMEBREW_BASH/broot" ] && source "$HOMEBREW_BASH/broot"
+[ -e "$HOMEBREW_BASH/delta" ] && source "$HOMEBREW_BASH/delta"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
