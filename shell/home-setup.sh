@@ -45,9 +45,10 @@ brew install \
 
 if [ "$(uname)" == "Linux" ]; then
   echo -e "\n\t# Brewing the penguin's beer\n"
-  brew tap homebrew/linux-fonts
+  brew tap "homebrew/linux-fonts"
   brew install \
     elfutils \
+    atop \
     docker \
     docker-compose \
     homebrew/linux-fonts/font-fira-code \
@@ -57,7 +58,7 @@ fi
 
 if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\t# Brewing the cask\n"
-  brew tap homebrew/cask-fonts
+  brew tap "homebrew/cask-fonts"
   brew install --cask \
     firefox \
     iterm2 \
