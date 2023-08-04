@@ -19,7 +19,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW_BASH/brew" ] && source "$HOMEBREW_BASH/brew"
+[ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
+[ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
 export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
@@ -57,23 +58,26 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
 # Container env
 export DOCKER_CONFIG="$HOME/.config/docker"
-[ -e "$HOMEBREW_BASH/docker"    ] && source "$HOMEBREW_BASH/docker"
-[ -e "$HOMEBREW_BASH/whalebrew" ] && source "$HOMEBREW_BASH/whalebrew"
+[ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
+[ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
+[ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$HOME/.config/htop/htoprc"
 export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 
-[ -e "$HOMEBREW_BASH/tmux"  ] && source "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/more"  ] && source "$HOMEBREW_BASH/more"
-[ -e "$HOMEBREW_BASH/broot" ] && source "$HOMEBREW_BASH/broot"
+[ -e "$HOMEBREW_BASH/tmux"       ] && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more"       ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/br.bash"    ] && source "$HOMEBREW_BASH/br.bash"
+[ -e "$HOMEBREW_BASH/broot.bash" ] && source "$HOMEBREW_BASH/broot.bash"
 
-[ -e "$HOMEBREW_BASH/tldr"  ] && source "$HOMEBREW_BASH/tldr"
-[ -e "$HOMEBREW_BASH/exa"   ] && source "$HOMEBREW_BASH/exa"
-[ -e "$HOMEBREW_BASH/bat"   ] && source "$HOMEBREW_BASH/bat"
-[ -e "$HOMEBREW_BASH/dust"  ] && source "$HOMEBREW_BASH/dust"
-[ -e "$HOMEBREW_BASH/delta" ] && source "$HOMEBREW_BASH/delta"
+[ -e "$HOMEBREW_BASH/tldr"      ] && source "$HOMEBREW_BASH/tldr"
+[ -e "$HOMEBREW_BASH/exa"       ] && source "$HOMEBREW_BASH/exa"
+[ -e "$HOMEBREW_BASH/bat"       ] && source "$HOMEBREW_BASH/bat"
+[ -e "$HOMEBREW_BASH/dust.bash" ] && source "$HOMEBREW_BASH/dust.bash"
+[ -e "$HOMEBREW_BASH/httpie"    ] && source "$HOMEBREW_BASH/httpie"
+[ -e "$HOMEBREW_BASH/delta"     ] && source "$HOMEBREW_BASH/delta"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"

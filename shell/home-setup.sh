@@ -8,71 +8,75 @@ brew tap "aws/tap"
 
 # Brewing the formulae
 echo -e "\n\t# Brewing the system\n"
-brew install \
-  coreutils \
-  moreutils \
-  findutils \
-  diffutils \
-  binutils \
-  inetutils \
-  gnu-tar \
-  gnu-sed \
-  bash \
+brew install        \
+  coreutils         \
+  moreutils         \
+  findutils         \
+  diffutils         \
+  binutils          \
+  inetutils         \
+  gawk              \
+  gnu-tar           \
+  gnu-sed           \
+  gnu-which         \
+  bash              \
   bash-completion@2 \
-  gcc \
-  make \
-  curl \
-  wget \
-  openssh \
-  gnupg \
-  git \
-  lazygit \
-  tmux \
-  neovim \
-  htop \
-  ranger \
-  fzf \
-  tree \
-  exa \
-  bat \
-  openjdk \
-  gradle \
-  node \
-  yarn \
-  pnpm 
-
-
+  gcc               \
+  make              \
+  curl              \
+  wget              \
+  openssh           \
+  gnupg             \
+  git               \
+  git-delta         \
+  lazygit           \
+  tmux              \
+  neovim            \
+  emacs             \
+  htop              \
+  ctop              \
+  ranger            \
+  broot             \
+  fzf               \
+  tree              \
+  exa               \
+  bat               \
+  duf               \
+  dust              \
+  openjdk           \
+  gradle            \
+  node              \
+  yarn              \
+  pnpm
 
 if [ "$(uname)" == "Linux" ]; then
   echo -e "\n\t# Brewing the penguin's beer\n"
   brew tap "homebrew/linux-fonts"
-  brew install \
-    elfutils \
-    atop \
-    docker \
-    docker-compose \
+  brew install                          \
+    elfutils                            \
+    atop                                \
+    docker                              \
+    docker-compose                      \
     homebrew/linux-fonts/font-fira-code \
     homebrew/linux-fonts/font-fira-code-nerd-font
-
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
   echo -e "\n\t# Brewing the cask\n"
   brew tap "homebrew/cask-fonts"
   brew install --cask \
-    firefox \
-    iterm2 \
-    raycast \
-    docker \
+    firefox           \
+    iterm2            \
+    raycast           \
+    docker            \
     jetbrains-toolbox \
-    openvpn-connect \
-    protonvpn \
-    steam \
-    epic-games \
-    gzdoom \
-    font-fira-code \
+    openvpn-connect   \
+    protonvpn         \
+    steam             \
+    epic-games        \
+    gzdoom            \
+    font-fira-code    \
     font-fira-code-nerd-font
-
 fi
 
 # Setting up bash from homebrew
