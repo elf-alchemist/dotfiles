@@ -43,6 +43,7 @@ brew install        \
   bat               \
   duf               \
   dust              \
+  jq                \
   openjdk           \
   gradle            \
   node              \

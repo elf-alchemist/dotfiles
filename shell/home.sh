@@ -126,5 +126,7 @@ alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 
+alias ls_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
 
