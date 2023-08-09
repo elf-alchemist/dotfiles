@@ -18,23 +18,25 @@ export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
+export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
 [ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
-export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/man-db/bin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/gawk/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/gnu-which/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/binutils/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/inetutils/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/diffutils/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/moreutils/libexec/gnubin:$PATH"
-export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/openjdk/bin:$PATH"
+export PATH="$HOMEBREW_OPT/man-db/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/gnu-which/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/binutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/inetutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/findutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/diffutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/moreutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
@@ -126,7 +128,7 @@ alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 
-alias ls_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
 

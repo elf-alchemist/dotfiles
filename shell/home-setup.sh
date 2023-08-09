@@ -69,6 +69,7 @@ if [ "$(uname)" == "Darwin" ]; then
     firefox           \
     iterm2            \
     raycast           \
+    tomatobar         \
     docker            \
     jetbrains-toolbox \
     openvpn-connect   \
