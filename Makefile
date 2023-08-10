@@ -1,5 +1,5 @@
 
-BREW_PREFIX := brew --prefix
+BREW_PREFIX := $(brew --prefix)
 
 BREW_BASE  := coreutils moreutils findutils diffutils binutils inetutils
 BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
