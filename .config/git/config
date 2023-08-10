@@ -56,7 +56,10 @@
 	ce = commit --amend --no-edit
 	co = commit --message
 	cm = commit --message "changes"
-	dw = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+
+	# Composite Commands
+	qwik = !git add --all && git commit -m "changes" && git push
 
 	# Checkout, branching
 	cb      = checkout
