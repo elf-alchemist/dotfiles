@@ -104,23 +104,20 @@ GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 GIT_COMPLETION_SHOW_ALL=1
 GIT_COMPLETION_IGNORE_CASE=1
 
-# TODO: finish this later
-#PROMPT_COLOR="\[$(tput setf 0)\]"
-#PROMPT_COLOR="\[$(tput setf 1)\]"
-#PROMPT_COLOR="\[$(tput setf 2)\]"
-#PROMPT_COLOR="\[$(tput setf 3)\]"
-#PROMPT_COLOR="\[$(tput setf 4)\]"
-#PROMPT_COLOR="\[$(tput setf 5)\]"
-#PROMPT_COLOR="\[$(tput setf 6)\]"
-#PROMPT_COLOR="\[$(tput setf 7)\]"
-#PROMPT_COLOR="\[$(tput setb 0)\]"
-#PROMPT_COLOR="\[$(tput setb 1)\]"
-#PROMPT_COLOR="\[$(tput setb 2)\]"
-#PROMPT_COLOR="\[$(tput setb 3)\]"
-#PROMPT_COLOR="\[$(tput setb 4)\]"
-#PROMPT_COLOR="\[$(tput setb 5)\]"
-#PROMPT_COLOR="\[$(tput setb 6)\]"
-#PROMPT_COLOR="\[$(tput setb 7)\]"
+PROMPT_COLOR_RED="\[$(tput setaf 1)\]"
+PROMPT_COLOR_GREEN="\[$(tput setaf 2)\]"
+PROMPT_COLOR_YELLOW="\[$(tput setaf 3)\]"
+PROMPT_COLOR_BLUE="\[$(tput setaf 4)\]"
+PROMPT_COLOR_MAGENTA="\[$(tput setaf 5)\]"
+PROMPT_COLOR_CYAN="\[$(tput setaf 6)\]"
+PROMPT_COLOR_WHITE="\[$(tput setaf 7)\]"
+PROMPT_COLOR_BG_RED="\[$(tput setab 1)\]"
+PROMPT_COLOR_BG_GREEN="\[$(tput setab 2)\]"
+PROMPT_COLOR_BG_YELLOW="\[$(tput setab 3)\]"
+PROMPT_COLOR_BG_BLUE="\[$(tput setab 4)\]"
+PROMPT_COLOR_BG_MAGENTA="\[$(tput setab 5)\]"
+PROMPT_COLOR_BG_CYAN="\[$(tput setab 6)\]"
+PROMPT_COLOR_BG_WHITE="\[$(tput setab 7)\]"
 
 export TIME_STYLE="long-iso"
 
@@ -131,4 +128,3 @@ alias lse="exa --group-directories-first --no-user --octal-permissions --no-perm
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
-
