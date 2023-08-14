@@ -11,8 +11,8 @@ BREW_JAVA  := openjdk gradle
 
 BREW_FONTS  := font-fira-code font-fira-code-nerd-font
 BREW_LINUX  := elfutils docker docker-compose
-BREW_DARWIN := --cask firefox iterm2 raycast tomatobar docker
-BREW_DARWIN += jetbrains-toolbox openvpn-connect protonvpn
+BREW_DARWIN := --cask firefox iterm2 raycast
+BREW_DARWIN += tomatobar docker jetbrains-toolbox
 BREW_DARWIN += steam epic-games gzdoom
 
 
@@ -20,16 +20,16 @@ brew_tap_core:
 	brew tap "homebrew/bundle"
 	brew tap "homebrew/services"
 
+brew_tap_extras: brew_tap_core
+	brew tap "petere/postgresql"
+	brew tap "mongodb/brew"
+	brew tap "aws/tap"
+
 brew_tap_linux: brew_tap_extras
 	brew tap "homebrew/linux-fonts"
 
 brew_tap_darwin: brew_tap_extras
 	brew tap "homebrew/cask-fonts"
-
-brew_tap_extras: brew_tap_core
-	brew tap "petere/postgresql"
-	brew tap "mongodb/brew"
-	brew tap "aws/tap"
 
 brew_install_core: brew_tap_core
 	brew install $(BREW_BASE)
