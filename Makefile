@@ -20,10 +20,10 @@ brew_tap_core:
 	brew tap "homebrew/bundle"
 	brew tap "homebrew/services"
 
-brew_tap_linux: brew_tap_core
-	brew tap "hombrew/linux-fonts"
+brew_tap_linux: brew_tap_extras
+	brew tap "homebrew/linux-fonts"
 
-brew_tap_darwin: brew_tap_core
+brew_tap_darwin: brew_tap_extras
 	brew tap "homebrew/cask-fonts"
 
 brew_tap_extras: brew_tap_core
