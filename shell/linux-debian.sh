@@ -71,4 +71,4 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-source "$HOME/.dotfiles/shell/linux.sh"
+source "$HOME/dotfiles/shell/linux.sh"

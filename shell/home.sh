@@ -57,7 +57,6 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 # Deno's and Bun's highly integrated style of
 # feature implementation... or atleast, one can hope...
 [ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
-[ -e "$HOMEBREW_BASH/deno" ] && source "$HOMEBREW_BASH/deno"
 [ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
 [ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
 [ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
@@ -75,15 +74,12 @@ export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
 
 [ -e "$HOMEBREW_BASH/tmux"       ] && source "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more"       ] && source "$HOMEBREW_BASH/more"
-[ -e "$HOMEBREW_BASH/br.bash"    ] && source "$HOMEBREW_BASH/br.bash"
-[ -e "$HOMEBREW_BASH/broot.bash" ] && source "$HOMEBREW_BASH/broot.bash"
 
 [ -e "$HOMEBREW_BASH/tldr"      ] && source "$HOMEBREW_BASH/tldr"
 [ -e "$HOMEBREW_BASH/exa"       ] && source "$HOMEBREW_BASH/exa"
 [ -e "$HOMEBREW_BASH/bat"       ] && source "$HOMEBREW_BASH/bat"
 [ -e "$HOMEBREW_BASH/dust.bash" ] && source "$HOMEBREW_BASH/dust.bash"
 [ -e "$HOMEBREW_BASH/httpie"    ] && source "$HOMEBREW_BASH/httpie"
-[ -e "$HOMEBREW_BASH/delta"     ] && source "$HOMEBREW_BASH/delta"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"

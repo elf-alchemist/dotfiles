@@ -23,7 +23,7 @@ export PATH="$XDG_DATA_HOME/npm/bin:$PATH"
 export PATH="$XDG_DATA_HOME/yarn/global/node_modules/.bin:$PATH"
 export PATH="$XDG_DATA_HOME/pnpm:$PATH"
 
-source "$HOME/.dotfiles/shell/home.sh"
+source "$HOME/dotfiles/shell/home.sh"
 
 [ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"
 [ -e "$HOMEBREW_BASH/journalctl"  ] && source "$HOMEBREW_BASH/journalctl"
