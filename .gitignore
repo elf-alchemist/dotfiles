@@ -2,89 +2,89 @@
 *.swp
 debug.log
 
-.config/.ssh/known_hosts
-.config/.ssh/known_hosts.old
-.config/.ssh/id_ed25519
-.config/.ssh/id_ed25519.pub
+config/.ssh/known_hosts
+config/.ssh/known_hosts.old
+config/.ssh/id_ed25519
+config/.ssh/id_ed25519.pub
 
-.config/autostart
-.config/balena-etcher
-.config/Bitwarden
-.config/cef_user_data
-.config/chromium
-.config/dconf
-.config/doomseeker
-.config/Duelyst2
-.config/enchant
-.config/eog
-.config/evolution
-.config/gedit
-.config/gh
-.config/gh-dash
-.config/glab-cli
-.config/gnome-session
-.config/goa-1.0
-.config/gtk-3.0
-.config/gtk-4.0
-.config/ibus
-.config/iterm2
-.config/libreoffice
-.config/menus
-.config/nautilus
-.config/nvim
-.config/pipewire-media-session
-.config/procps
-.config/pulse
-.config/tea
-.config/totem
-.config/vscode-sqltools
+config/autostart
+config/balena-etcher
+config/Bitwarden
+config/cef_user_data
+config/chromium
+config/dconf
+config/doomseeker
+config/Duelyst2
+config/enchant
+config/eog
+config/evolution
+config/gedit
+config/gh
+config/gh-dash
+config/glab-cli
+config/gnome-session
+config/goa-1.0
+config/gtk-3.0
+config/gtk-4.0
+config/ibus
+config/iterm2
+config/libreoffice
+config/menus
+config/nautilus
+config/nvim
+config/pipewire-media-session
+config/procps
+config/pulse
+config/tea
+config/totem
+config/vscode-sqltools
 
-.config/.gsd-keyboard.settings-ported
-.config/gnome-initial-setup-done
-.config/monitors.xml
-.config/monitors.xml~
+config/.gsd-keyboard.settings-ported
+config/gnome-initial-setup-done
+config/monitors.xml
+config/monitors.xml~
 
-.config/tmux/plugins
+config/tmux/plugins
 
-.config/raycast/config.json
+config/raycast/config.json
 
-.config/raycast/extensions
+config/raycast/extensions
 
-.config/Code/Backups
-.config/Code/blob_storage
-.config/Code/Cache
-.config/Code/CachedConfigurations
-.config/Code/CachedData
-.config/Code/CachedExtensionVSIXs
-.config/Code/CachedProfilesData
-.config/Code/Code\ Cache
-.config/Code/Crashpad
-.config/Code/databases
-.config/Code/DawnCache
-.config/Code/Dictionaries
-.config/Code/GPUCache
-.config/Code/IndexedDB
-.config/Code/Local\ Storage
-.config/Code/logs
-.config/Code/Service\ Worker
-.config/Code/Session\ Storage
-.config/Code/WebStorage
+config/Code/Backups
+config/Code/blob_storage
+config/Code/Cache
+config/Code/CachedConfigurations
+config/Code/CachedData
+config/Code/CachedExtensionVSIXs
+config/Code/CachedProfilesData
+config/Code/Code\ Cache
+config/Code/Crashpad
+config/Code/databases
+config/Code/DawnCache
+config/Code/Dictionaries
+config/Code/GPUCache
+config/Code/IndexedDB
+config/Code/Local\ Storage
+config/Code/logs
+config/Code/Service\ Worker
+config/Code/Session\ Storage
+config/Code/WebStorage
 
-.config/Code/code.lock
-.config/Code/Cookies
-.config/Code/Cookies-journal
-.config/Code/languagepacks.json
-.config/Code/machineid
-.config/Code/Network\ Persistent\ State
-.config/Code/Preferences
-.config/Code/TransportSecurity
+config/Code/code.lock
+config/Code/Cookies
+config/Code/Cookies-journal
+config/Code/languagepacks.json
+config/Code/machineid
+config/Code/Network\ Persistent\ State
+config/Code/Preferences
+config/Code/TransportSecurity
 
-.config/Code/User/globalStorage
-.config/Code/User/History
-.config/Code/User/profiles
-.config/Code/User/snippets
-.config/Code/User/sync
-.config/Code/User/workspaceStorage
+config/Code/User/globalStorage
+config/Code/User/History
+config/Code/User/profiles
+config/Code/User/snippets
+config/Code/User/sync
+config/Code/User/workspaceStorage
 
-.config/zdoom/cache
-.config/gzdoom/doom.id.wadsmoosh
+config/zdoom/cache
+config/gzdoom/doom.id.wadsmoosh
