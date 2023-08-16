@@ -1,17 +1,17 @@
 # Homebrew is very nice
 case "$(uname -s -m)" in
-  Linux*)
-    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-    ;;
-  Darwin*arm*)
-    export HOMEBREW_PREFIX="/opt/homebrew"
-    ;;
-  Darwin*)
-    export HOMEBREW_PREFIX="/usr/local"
-    ;;
-  *)
-    export HOMEBREW_PREFIX="$(brew --prefix)"
-    ;;
+Linux*)
+	export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+	;;
+Darwin*arm*)
+	export HOMEBREW_PREFIX="/opt/homebrew"
+	;;
+Darwin*)
+	export HOMEBREW_PREFIX="/usr/local"
+	;;
+*)
+	export HOMEBREW_PREFIX="$(brew --prefix)"
+	;;
 esac
 
 export HOMEBREW_NO_ANALYTICS=true
@@ -19,13 +19,17 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
+
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
 [ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
+# TODO: somehow source util-linux bash completion
 export PATH="$HOMEBREW_OPT/openjdk/bin:$PATH"
-export PATH="$HOMEBREW_OPT/man-db/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/util-linux/sbin:$PATH"
+export PATH="$HOMEBREW_OPT/util-linux/bin:$PATH"
+export PATH="$HOMEBREW_OPT/man-db/libexec/bin:$PATH"
 export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
@@ -104,27 +108,28 @@ GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 GIT_COMPLETION_SHOW_ALL=1
 GIT_COMPLETION_IGNORE_CASE=1
 
-PROMPT_COLOR_RED="\[$(tput setaf 1)\]"
-PROMPT_COLOR_GREEN="\[$(tput setaf 2)\]"
-PROMPT_COLOR_YELLOW="\[$(tput setaf 3)\]"
-PROMPT_COLOR_BLUE="\[$(tput setaf 4)\]"
-PROMPT_COLOR_MAGENTA="\[$(tput setaf 5)\]"
-PROMPT_COLOR_CYAN="\[$(tput setaf 6)\]"
-PROMPT_COLOR_WHITE="\[$(tput setaf 7)\]"
-PROMPT_COLOR_BG_RED="\[$(tput setab 1)\]"
-PROMPT_COLOR_BG_GREEN="\[$(tput setab 2)\]"
-PROMPT_COLOR_BG_YELLOW="\[$(tput setab 3)\]"
-PROMPT_COLOR_BG_BLUE="\[$(tput setab 4)\]"
-PROMPT_COLOR_BG_MAGENTA="\[$(tput setab 5)\]"
-PROMPT_COLOR_BG_CYAN="\[$(tput setab 6)\]"
-PROMPT_COLOR_BG_WHITE="\[$(tput setab 7)\]"
+PS_CLEAR="\[$(tput sgr0)\]"
+PS_FG_RED="\[$(tput setaf 1)\]"
+PS_BG_RED="\[$(tput setab 1)\]"
+PS_FG_GREEN="\[$(tput setaf 2)\]"
+PS_BG_GREEN="\[$(tput setab 2)\]"
+PS_FG_YELLOW="\[$(tput setaf 3)\]"
+PS_BG_YELLOW="\[$(tput setab 3)\]"
+PS_FG_BLUE="\[$(tput setaf 4)\]"
+PS_BG_BLUE="\[$(tput setab 4)\]"
+PS_FG_MAGENTA="\[$(tput setaf 5)\]"
+PS_BG_MAGENTA="\[$(tput setab 5)\]"
+PS_FG_CYAN="\[$(tput setaf 6)\]"
+PS_BG_CYAN="\[$(tput setab 6)\]"
+PS_FG_WHITE="\[$(tput setaf 7)\]"
+PS_BG_WHITE="\[$(tput setab 7)\]"
 
 export TIME_STYLE="long-iso"
 
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
-
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 
+# PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'

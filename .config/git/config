@@ -36,11 +36,15 @@
 	ff            = true
 	tool          = nvimdiff
 	guitool       = nvimdiff
-	conflictstyle = merge
+	conflictstyle = diff3
 [help]
 	format      = man
 	browser     = man
 	autoCorrect = prompt
+[delta]
+	navigate     = true
+	light        = false
+	line-numbers = true
 [alias]
 	# List Config: General, Alias, Where, Enhanced
 	ls        = !git config --list --global             | sed '/^alias/d'
