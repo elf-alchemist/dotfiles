@@ -3,7 +3,7 @@ BREW_PREFIX := $(brew --prefix)
 
 BREW_BASE  := coreutils moreutils findutils diffutils binutils inetutils
 BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
-BREW_CMD   := gcc make curl wget openssh gnupg git
+BREW_CMD   := gcc make curl wget openssh gnupg openvpn git
 BREW_TERM  := tmux neovim lazygit htop ctop ranger fzf
 BREW_FILE  := tree exa bat duf dust jq
 BREW_ECMA  := node yarn pnpm deno
