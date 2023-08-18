@@ -56,21 +56,30 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 # is complete garbage and they need to copy
 # Deno's and Bun's highly integrated style of
 # feature implementation... or atleast, one can hope...
+export NODE_REPL_HISTORY="${XDG_DATA_HOME:-'$HOME/.local/share'}node_repl_history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-'$HOME/.config'}/npm/npmrc"
+export PNPM_HOME="${XDG_DATA_HOME:-'$HOME/.local/share'}/pnpm"
+
 [ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
 [ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
 [ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
 [ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
+[ -e "$HOMEBREW_BASH/deno" ] && source "$HOMEBREW_BASH/deno"
 
 # Container env
-export DOCKER_CONFIG="$HOME/.config/docker"
+export DOCKER_CONFIG="${XDG_CONFIG_HOME:-'$HOME/.config'}/docker"
+export MACHINE_STORAGE_PATH="${XDG_DATA_HOME:-'$HOME/.local/share'}/docker-machine"
+
 [ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
 [ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
 export RANGER_LOAD_DEAFULT_RC=true
-export HTOPRC="$HOME/.config/htop/htoprc"
-export FFMPEG_DATADIR="$HOME/.config/ffmpeg"
+export HTOPRC="${XDG_CONFIG_HOME:-'$HOME/.config'}/htop/htoprc"
+export FFMPEG_DATADIR="${XDG_CONFIG_HOME:-'$HOME/.config'}/ffmpeg"
+export TERMINFO="${XDG_DATA_HOME:-'$HOME/.local/share'}/terminfo"
+export TERMINFO_DIRS="${XDG_DATA_HOME:-'$HOME/.local/share'}/terminfo:/usr/share/terminfo"
 
 [ -e "$HOMEBREW_BASH/tmux"       ] && source "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more"       ] && source "$HOMEBREW_BASH/more"
