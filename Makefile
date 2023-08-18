@@ -22,6 +22,7 @@ brew_tap_core:
 
 brew_tap_extras: brew_tap_core
 	brew tap "petere/postgresql"
+	brew tap "tursodatabase/tap"
 	brew tap "mongodb/brew"
 	brew tap "aws/tap"
 

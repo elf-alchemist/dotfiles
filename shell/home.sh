@@ -126,6 +126,8 @@ alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
+alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
 
 # PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
