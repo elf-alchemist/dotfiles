@@ -3,14 +3,19 @@ BREW_PREFIX := $(brew --prefix)
 
 BREW_BASE  := coreutils moreutils findutils diffutils binutils inetutils
 BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
-BREW_CMD   := gcc make curl wget openssh gnupg openvpn git
-BREW_TERM  := tmux neovim lazygit htop fff fzf
-BREW_FILE  := tree exa bat jq irssi mutt
-BREW_ECMA  := node yarn pnpm deno
-BREW_JAVA  := openjdk gradle
 
-BREW_FONTS  := font-fira-code font-fira-code-nerd-font
-BREW_LINUX  := elfutils docker docker-compose
+BREW_CMD  := gcc make curl wget openssh gnupg openvpn git
+BREW_TERM := tmux neovim lazygit htop fff fzf irssi mutt
+BREW_FILE := tree exa bat jq
+
+BREW_LANG := node yarn pnpm deno
+BREW_LANG += openjdk gradle
+BREW_LANG += perl
+
+BREW_FONTS := font-fira-code font-fira-code-nerd-font
+
+BREW_LINUX := elfutils docker docker-compose
+
 BREW_DARWIN := --cask firefox iterm2 raycast
 BREW_DARWIN += tomatobar docker jetbrains-toolbox
 BREW_DARWIN += steam epic-games gzdoom
@@ -39,8 +44,7 @@ brew_install_core: brew_tap_core
 	brew install $(BREW_CMD)
 	brew install $(BREW_TERM)
 	brew install $(BREW_FILE)
-	brew install $(BREW_ECMA)
-	brew install $(BREW_JAVA)
+	brew install $(BREW_LANG)
 
 brew_install_linux: brew_tap_linux
 	brew install $(BREW_LINUX)
