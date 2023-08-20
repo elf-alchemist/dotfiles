@@ -20,6 +20,13 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:='$HOME/.config'}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:='$HOME/.cache'}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:='$HOME/.local/share'}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:='$HOME/.local/state'}"
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:='/usr/local/share:/usr/share'}"
+export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:='/etc/xdg'}"
+
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
 [ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
@@ -56,9 +63,9 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 # is complete garbage and they need to copy
 # Deno's and Bun's highly integrated style of
 # feature implementation... or atleast, one can hope...
-export NODE_REPL_HISTORY="${XDG_DATA_HOME:-'$HOME/.local/share'}node_repl_history"
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-'$HOME/.config'}/npm/npmrc"
-export PNPM_HOME="${XDG_DATA_HOME:-'$HOME/.local/share'}/pnpm"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 [ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
 [ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
@@ -67,8 +74,8 @@ export PNPM_HOME="${XDG_DATA_HOME:-'$HOME/.local/share'}/pnpm"
 [ -e "$HOMEBREW_BASH/deno" ] && source "$HOMEBREW_BASH/deno"
 
 # Container env
-export DOCKER_CONFIG="${XDG_CONFIG_HOME:-'$HOME/.config'}/docker"
-export MACHINE_STORAGE_PATH="${XDG_DATA_HOME:-'$HOME/.local/share'}/docker-machine"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 [ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
@@ -76,19 +83,18 @@ export MACHINE_STORAGE_PATH="${XDG_DATA_HOME:-'$HOME/.local/share'}/docker-machi
 
 # Misc
 export RANGER_LOAD_DEAFULT_RC=true
-export HTOPRC="${XDG_CONFIG_HOME:-'$HOME/.config'}/htop/htoprc"
-export FFMPEG_DATADIR="${XDG_CONFIG_HOME:-'$HOME/.config'}/ffmpeg"
-export TERMINFO="${XDG_DATA_HOME:-'$HOME/.local/share'}/terminfo"
-export TERMINFO_DIRS="${XDG_DATA_HOME:-'$HOME/.local/share'}/terminfo:/usr/share/terminfo"
+export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
-[ -e "$HOMEBREW_BASH/tmux"       ] && source "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/more"       ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
 
-[ -e "$HOMEBREW_BASH/tldr"      ] && source "$HOMEBREW_BASH/tldr"
-[ -e "$HOMEBREW_BASH/exa"       ] && source "$HOMEBREW_BASH/exa"
-[ -e "$HOMEBREW_BASH/bat"       ] && source "$HOMEBREW_BASH/bat"
-[ -e "$HOMEBREW_BASH/dust.bash" ] && source "$HOMEBREW_BASH/dust.bash"
-[ -e "$HOMEBREW_BASH/httpie"    ] && source "$HOMEBREW_BASH/httpie"
+[ -e "$HOMEBREW_BASH/tldr"   ] && source "$HOMEBREW_BASH/tldr"
+[ -e "$HOMEBREW_BASH/exa"    ] && source "$HOMEBREW_BASH/exa"
+[ -e "$HOMEBREW_BASH/bat"    ] && source "$HOMEBREW_BASH/bat"
+[ -e "$HOMEBREW_BASH/httpie" ] && source "$HOMEBREW_BASH/httpie"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
@@ -140,3 +146,4 @@ alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_to
 
 # PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
+

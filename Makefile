@@ -4,8 +4,8 @@ BREW_PREFIX := $(brew --prefix)
 BREW_BASE  := coreutils moreutils findutils diffutils binutils inetutils
 BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 BREW_CMD   := gcc make curl wget openssh gnupg openvpn git
-BREW_TERM  := tmux neovim lazygit htop ctop ranger fzf
-BREW_FILE  := tree exa bat duf dust jq
+BREW_TERM  := tmux neovim lazygit htop fff fzf
+BREW_FILE  := tree exa bat jq irssi mutt
 BREW_ECMA  := node yarn pnpm deno
 BREW_JAVA  := openjdk gradle
 
@@ -21,6 +21,7 @@ brew_tap_core:
 	brew tap "homebrew/services"
 
 brew_tap_extras: brew_tap_core
+	brew tap "d12frosted/emacs-plus"
 	brew tap "petere/postgresql"
 	brew tap "tursodatabase/tap"
 	brew tap "mongodb/brew"
