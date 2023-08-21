@@ -85,7 +85,7 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
-export HISTFILE="${XDG_STATE_HOME}/bash/history"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"

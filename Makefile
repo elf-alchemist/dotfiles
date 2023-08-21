@@ -1,12 +1,12 @@
 
 BREW_PREFIX := $(brew --prefix)
 
-BREW_BASE  := coreutils moreutils findutils diffutils binutils inetutils
-BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
+BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
+BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
-BREW_CMD  := gcc make curl wget openssh gnupg openvpn git
-BREW_TERM := tmux neovim lazygit htop fff fzf irssi mutt
-BREW_FILE := tree exa bat jq gzip p7zip
+BREW_SHELL := gcc make curl wget openssh gnupg openvpn git
+BREW_SHELL += tmux neovim lazygit htop fff fzf irssi mutt
+BREW_SHELL += tree exa bat jq gzip p7zip
 
 BREW_LANG := node yarn pnpm deno
 BREW_LANG += openjdk gradle
@@ -17,15 +17,12 @@ BREW_FONTS := font-fira-code font-fira-code-nerd-font
 BREW_LINUX := elfutils docker docker-compose
 
 BREW_DARWIN := --cask firefox iterm2 raycast
-BREW_DARWIN += tomatobar docker jetbrains-toolbox
+BREW_DARWIN += tomatobar jetbrains-toolbox
 BREW_DARWIN += steam epic-games gzdoom
 
-
-brew_tap_core:
+brew_tap_extras:
 	brew tap "homebrew/bundle"
 	brew tap "homebrew/services"
-
-brew_tap_extras: brew_tap_core
 	brew tap "d12frosted/emacs-plus"
 	brew tap "petere/postgresql"
 	brew tap "tursodatabase/tap"
@@ -38,12 +35,9 @@ brew_tap_linux: brew_tap_extras
 brew_tap_darwin: brew_tap_extras
 	brew tap "homebrew/cask-fonts"
 
-brew_install_core: brew_tap_core
+brew_install_core: brew_tap_extras
 	brew install $(BREW_BASE)
 	brew install $(BREW_SHELL)
-	brew install $(BREW_CMD)
-	brew install $(BREW_TERM)
-	brew install $(BREW_FILE)
 	brew install $(BREW_LANG)
 
 brew_install_linux: brew_tap_linux

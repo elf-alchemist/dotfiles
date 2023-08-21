@@ -29,10 +29,7 @@ tab_width = 2
 tab_width = 2
 
 # Cascading Stylesheets
-[*.{css,pcss}]
-tab_width = 2
-
-[*.{sass,scss,less,styl}]
+[*.{css,pcss,sass,scss,less,styl}]
 tab_width = 2
 
 # ECMAScript
@@ -48,6 +45,6 @@ tab_width = 2
 [*.{tsx,ctsx,mtsx}]
 tab_width = 2
 
-# Shell Scripting
-[*.{sh,bash,zsh}]
+# Misc
+[Makefile|*.{sh,bash,pl,pm}]
 tab_width = 2
