@@ -34,9 +34,6 @@ export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:='/etc/xdg'}"
 # Define location & path
 # TODO: somehow source util-linux bash completion
 export PATH="$HOMEBREW_OPT/openjdk/bin:$PATH"
-export PATH="$HOMEBREW_OPT/util-linux/sbin:$PATH"
-export PATH="$HOMEBREW_OPT/util-linux/bin:$PATH"
-export PATH="$HOMEBREW_OPT/man-db/libexec/bin:$PATH"
 export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
@@ -48,6 +45,9 @@ export PATH="$HOMEBREW_OPT/findutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/diffutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/moreutils/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_OPT/man-db/libexec/bin:$PATH"
+export PATH="$HOMEBREW_OPT/util-linux/bin:$PATH"
+export PATH="$HOMEBREW_OPT/util-linux/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
@@ -82,6 +82,8 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Misc
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
 export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
@@ -137,12 +139,15 @@ PS_BG_WHITE="\[$(tput setab 7)\]"
 
 export TIME_STYLE="long-iso"
 
+alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
+alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
+alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
-alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
-alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
-alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
+
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 # PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
