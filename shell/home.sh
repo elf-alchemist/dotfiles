@@ -67,6 +67,9 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
 [ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
 [ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
 [ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
