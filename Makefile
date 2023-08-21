@@ -6,7 +6,7 @@ BREW_SHELL := bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
 BREW_CMD  := gcc make curl wget openssh gnupg openvpn git
 BREW_TERM := tmux neovim lazygit htop fff fzf irssi mutt
-BREW_FILE := tree exa bat jq
+BREW_FILE := tree exa bat jq gzip p7zip
 
 BREW_LANG := node yarn pnpm deno
 BREW_LANG += openjdk gradle
