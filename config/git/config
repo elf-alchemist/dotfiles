@@ -94,7 +94,7 @@
 
 	# Cloning GitHub
 	hub      = "!_hub() { git clone git@github.com:$1; }; _hub"
-	hub-self = "!_hub() { git clone git@github.com:lambda-alchemist/$1; }; _hub"
+	hub-self = "!_hub() { git clone git@github.com:elf-alchemist/$1; }; _hub"
 
 	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"
