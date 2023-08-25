@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
-- $HOME/.dotfiles
-- /home/alchemist/.dotfiles
-- /Users/alchemist/.dotfiles
+- $HOME/dotfiles
+- /home/alchemist/dotfiles
+- /Users/alchemist/dotfiles
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

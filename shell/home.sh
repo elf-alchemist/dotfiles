@@ -1,31 +1,18 @@
 # Homebrew is very nice
-case "$(uname -s -m)" in
-Linux*)
-	export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-	;;
-Darwin*arm*)
-	export HOMEBREW_PREFIX="/opt/homebrew"
-	;;
-Darwin*)
-	export HOMEBREW_PREFIX="/usr/local"
-	;;
-*)
-	export HOMEBREW_PREFIX="$(brew --prefix)"
-	;;
-esac
+export HOMEBREW_PREFIX="$(brew --prefix)"
+export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
+export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"
+export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 
-export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
-export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
-
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:='$HOME/.config'}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:='$HOME/.cache'}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:='$HOME/.local/share'}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:='$HOME/.local/state'}"
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:='/usr/local/share:/usr/share'}"
-export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:='/etc/xdg'}"
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
+export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
+export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
+export XDG_DATA_DIRS=${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}
+export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:="/etc/xdg"}
 
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
@@ -83,6 +70,9 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
 [ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
+
+# Cloud stuff
+export GOOGLE_APPLICATION_CREDENTIALS="$XDG_CONFIG_HOME/gcloud/application_default_credentials.json"
 
 # Misc
 export HISTFILE="$XDG_STATE_HOME/bash/history"
@@ -154,4 +144,3 @@ alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 # PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
-
