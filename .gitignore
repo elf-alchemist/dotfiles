@@ -1,6 +1,7 @@
 .vscode
 *.swp
 debug.log
+.DS_Store
 
 config
 config/.ssh
