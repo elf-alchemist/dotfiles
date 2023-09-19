@@ -85,6 +85,7 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
 
 # Cloud stuff
+export SAM_CLI_TELEMETRY=0
 export GOOGLE_APPLICATION_CREDENTIALS="$XDG_CONFIG_HOME/gcloud/application_default_credentials.json"
 
 # Misc
