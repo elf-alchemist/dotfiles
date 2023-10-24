@@ -4,13 +4,11 @@ BREW_PREFIX := $(brew --prefix)
 BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
 BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
-BREW_SHELL := gcc make curl wget openssh gnupg openvpn git
-BREW_SHELL += tmux vim neovim emacs lazygit htop fff fzf irssi mutt
-BREW_SHELL += tree exa bat jq gzip p7zip
+BREW_SHELL := gcc make curl wget openssh gnupg git
+BREW_SHELL += tmux vim neovim lazygit htop fff fzf
+BREW_SHELL += tree bat jq gzip p7zip
 
-BREW_LANG := node yarn pnpm deno
-BREW_LANG += openjdk gradle
-BREW_LANG += perl
+BREW_LANG := node yarn pnpm
 
 BREW_FONTS := font-fira-code font-fira-code-nerd-font
 
