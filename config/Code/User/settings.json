@@ -82,8 +82,7 @@
 	"workbench.startupEditor": "none",
 	"workbench.settings.editor": "json",
 	"workbench.productIconTheme": "Default",
-	"workbench.iconTheme": "Monokai Pro Icons",
-	"workbench.colorTheme": "Monokai Pro",
+	"workbench.iconTheme": "vscode-icons",
 	"workbench.preferredDarkColorTheme": "Default Dark Modern",
 	"workbench.preferredLightColorTheme": "Default Light Modern",
 	"workbench.preferredHighContrastColorTheme": "Default High Contrast",
@@ -258,6 +257,8 @@
 	"javascript.preferences.renameMatchingJsxTags": true,
 	"javascript.preferences.useAliasesForRenames": false,
 	"javascript.preferences.autoImportFileExcludePatterns": [],
+	"javascript.format.semicolons": "insert",
+	"javascript.preferGoToSourceDefinition": true,
 	"typescript.validate.enable": true,
 	"typescript.locale": "en",
 	"typescript.tsc.autoDetect": "on",
@@ -300,24 +301,7 @@
 	"typescript.preferences.renameMatchingJsxTags": true,
 	"typescript.preferences.useAliasesForRenames": false,
 	"typescript.preferences.autoImportFileExcludePatterns": [],
-	"eslint.enable": true,
-	"eslint.format.enable": false,
-	"eslint.lintTask.enable": false,
-	"eslint.debug": false,
-	"eslint.run": "onSave",
-	"eslint.onIgnoredFiles": "off",
-	"eslint.ignoreUntitled": false,
-	"eslint.problems.shortenToSingleLine": false,
-	"eslint.codeActionsOnSave.rules": null,
-	"eslint.codeActionsOnSave.mode": "problems",
-	"eslint.codeAction.showDocumentation": {
-		"enable": true
-	},
-	"eslint.codeAction.disableRuleComment": {
-		"enable": true,
-		"location": "separateLine",
-		"commentStyle": "line"
-	},
+	"typescript.format.semicolons": "insert",
 	"vsintellicode.modelDownloadPath": null,
 	"vsintellicode.modify.editor.suggestSelection": "enabled",
 	"vsintellicode.features.python.deepLearning": "disabled",
@@ -335,5 +319,8 @@
 	"intellicodeCompletions.language.python": false,
 	"[json]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
-	}
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
 }
