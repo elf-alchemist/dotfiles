@@ -63,7 +63,7 @@
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
 	# Composite Commands
-	qwik = !git add --all && git commit -m "changes" && git push
+	qwik = !git add --all && git st
 
 	# Checkout, branching
 	cb      = checkout
