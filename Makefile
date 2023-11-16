@@ -20,8 +20,6 @@ BREW_DARWIN += steam epic-games gzdoom
 brew_tap_extras:
 	@brew tap "homebrew/bundle"
 	@brew tap "homebrew/services"
-	@brew tap "mongodb/brew"
-	@brew tap "aws/tap"
 
 brew_tap_linux: brew_tap_extras
 	@brew tap "homebrew/linux-fonts"
