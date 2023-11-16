@@ -12,6 +12,9 @@ Darwin*)
         ;;
 esac
 
+alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
+alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
+alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"
@@ -33,7 +36,6 @@ export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:="/etc/xdg"}
 
 # Define location & path
 # TODO: somehow source util-linux bash completion
-export PATH="$HOMEBREW_OPT/openjdk/bin:$PATH"
 export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
@@ -69,14 +71,9 @@ export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 export PATH="$XDG_DATA_HOME/pnpm:$PATH"
 
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
-export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
-
 [ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
 [ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
-[ -e "$HOMEBREW_BASH/yarn" ] && source "$HOMEBREW_BASH/yarn"
 [ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
-[ -e "$HOMEBREW_BASH/deno" ] && source "$HOMEBREW_BASH/deno"
 
 # Container env
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
@@ -91,6 +88,11 @@ export SAM_CLI_TELEMETRY=0
 export GOOGLE_APPLICATION_CREDENTIALS="$XDG_CONFIG_HOME/gcloud/application_default_credentials.json"
 
 # Misc
+alias lsl="ls -blahs --time-style=long-iso --color=auto"
+alias lst="tree --dirsfirst -aCLI 2 .git"
+
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
@@ -101,18 +103,12 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
 
-[ -e "$HOMEBREW_BASH/tldr"   ] && source "$HOMEBREW_BASH/tldr"
-[ -e "$HOMEBREW_BASH/exa"    ] && source "$HOMEBREW_BASH/exa"
 [ -e "$HOMEBREW_BASH/bat"    ] && source "$HOMEBREW_BASH/bat"
 [ -e "$HOMEBREW_BASH/httpie" ] && source "$HOMEBREW_BASH/httpie"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
 [ -e "$HOMEBREW_BASH/git-completion.bash" ] && source "$HOMEBREW_BASH/git-completion.bash"
-
-[ -e "$HOMEBREW_BASH/gh"   ] && source "$HOMEBREW_BASH/gh"
-[ -e "$HOMEBREW_BASH/glab" ] && source "$HOMEBREW_BASH/glab"
-[ -e "$HOMEBREW_BASH/tea"  ] && source "$HOMEBREW_BASH/tea"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
@@ -146,16 +142,6 @@ PS_FG_WHITE="\[$(tput setaf 7)\]"
 PS_BG_WHITE="\[$(tput setab 7)\]"
 
 export TIME_STYLE="long-iso"
-
-alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
-alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
-alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
-
-alias lsl="ls -blahs --time-style=long-iso --color=auto"
-alias lst="tree --dirsfirst -aCLI 2 .git"
-alias lse="exa --group-directories-first --no-user --octal-permissions --no-permissions --git -@laI .git"
-
-alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 # PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
