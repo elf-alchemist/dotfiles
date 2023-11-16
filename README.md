@@ -31,3 +31,21 @@ and then, since they are cached, symlinks everything that is already downloaded,
 poor developer, gigabytes of space, which, otherwise, would go overpopulated with duplicate
 packages. Even if your total repository count in your own machine may be small, there is no known
 downside to just using `PNPM` over `NPM`.
+
+## Docker
+A fine tool for many, and for me too, Docker is very simple, containers, that's it.
+Sharing the same environemnt across develoeprs is great, mostly making it possible to
+scream in anger when hearing the phrase: "It works on my machine", though it does
+require a whole Virtual Machine on Mac via `Docker Desktop`, it's still worth the expense.
+Not much else to say here.
+
+## Cloud
+Ah yes, `The Cloud ™` the biggest buzzword in tech since OOP first became a thing, a tiresome
+platform where the Amazon, Google and Microsoft are the only real winners, a platform so misunderstood,
+that millions of dollars are lost on it, for no reason other than customers being told: "It's cheaper" and
+"It's easier". Not that they can't be more economical, whne compared to on-premises infrastructure or
+that `serverless` can't cheaper that `serverful` in some comparisons, it all depends on the context, and
+correct math, but who has time for mathematics, right? Well after all that, and then some,
+I only really have `google-cloud-sdk`, and `aws-sam-cli` to work with, since my day job really doesn't ask
+for anything else, this is just about enough for me, but if my job didn't ask for it,
+I would only really use `Cloudflare Wrangler`.
