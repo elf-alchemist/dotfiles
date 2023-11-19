@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Debian default
 case $- in
 	*i*) ;;

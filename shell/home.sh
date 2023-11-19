@@ -1,20 +1,7 @@
+#!/usr/bin/env sh
+
 # Homebrew is very nice
-
-case "$(uname -s -m)" in
-Linux*)
-        export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-        ;;
-Darwin*arm*)
-        export HOMEBREW_PREFIX="/opt/homebrew"
-        ;;
-Darwin*)
-        export HOMEBREW_PREFIX="/usr/local"
-        ;;
-esac
-
-alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
-alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
-alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+HOMEBREW_PREFIX="$(brew --prefix)"
 
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"
@@ -23,19 +10,23 @@ export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
-export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
-export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
-export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
-export XDG_DATA_DIRS=${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}
-export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:="/etc/xdg"}
+alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
+alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
+alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 
-[ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
-[ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}"
+export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:="/etc/xdg"}"
+
+[ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+[ -e "$HOMEBREW_BASH/brew"          ] && . "$HOMEBREW_BASH/brew"
+[ -e "$HOMEBREW_BASH/brew-services" ] && . "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
-# TODO: somehow source util-linux bash completion
+# TODO: somehow . util-linux bash completion
 export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
@@ -67,21 +58,21 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 # feature implementation... or atleast, one can hope...
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && . "$HOMEBREW_OPT/nvm/nvm.sh"
+[ -s "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm"
+
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-
-export PATH="$XDG_DATA_HOME/pnpm:$PATH"
-
-[ -e "$HOMEBREW_BASH/node" ] && source "$HOMEBREW_BASH/node"
-[ -e "$HOMEBREW_BASH/npm"  ] && source "$HOMEBREW_BASH/npm"
-[ -e "$HOMEBREW_BASH/pnpm" ] && source "$HOMEBREW_BASH/pnpm"
+export PATH="$PNPM_HOME/pnpm:$PATH"
+[ -e "$HOMEBREW_BASH/pnpm" ] && . "$HOMEBREW_BASH/pnpm"
 
 # Container env
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
-[ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
-[ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
-[ -e "$HOMEBREW_BASH/whalebrew"      ] && source "$HOMEBREW_BASH/whalebrew"
+[ -e "$HOMEBREW_BASH/docker"         ] && . "$HOMEBREW_BASH/docker"
+[ -e "$HOMEBREW_BASH/docker-compose" ] && . "$HOMEBREW_BASH/docker-compose"
 
 # Cloud stuff
 export SAM_CLI_TELEMETRY=0
@@ -91,7 +82,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="$XDG_CONFIG_HOME/gcloud/application_defau
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 
-alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+alias wget="wget --hsts-file='\$XDG_DATA_HOME/wget-hsts'"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export RANGER_LOAD_DEAFULT_RC=true
@@ -100,30 +91,30 @@ export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
-[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/tmux" ] && . "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more" ] && . "$HOMEBREW_BASH/more"
 
-[ -e "$HOMEBREW_BASH/bat"    ] && source "$HOMEBREW_BASH/bat"
-[ -e "$HOMEBREW_BASH/httpie" ] && source "$HOMEBREW_BASH/httpie"
+[ -e "$HOMEBREW_BASH/bat"    ] && . "$HOMEBREW_BASH/bat"
+[ -e "$HOMEBREW_BASH/httpie" ] && . "$HOMEBREW_BASH/httpie"
 
 # Define shell prompt && git vars
-[ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
-[ -e "$HOMEBREW_BASH/git-completion.bash" ] && source "$HOMEBREW_BASH/git-completion.bash"
+[ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && . "$HOMEBREW_BASH/git-prompt.sh"
+[ -e "$HOMEBREW_BASH/git-completion.bash" ] && . "$HOMEBREW_BASH/git-completion.bash"
 
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_STATESEPARATOR=" "
-GIT_PS1_COMPRESSSPARSESTATE=true
-GIT_PS1_SHOWCONFLICTSTATE="yes"
-GIT_PS1_DESCRIBE_STYLE="default"
-GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_STATESEPARATOR=" "
+export GIT_PS1_COMPRESSSPARSESTATE=true
+export GIT_PS1_SHOWCONFLICTSTATE="yes"
+export GIT_PS1_DESCRIBE_STYLE="default"
+export GIT_PS1_SHOWCOLORHINTS=true
 
-GIT_COMPLETION_CHECKOUT_NO_GUESS=1
-GIT_COMPLETION_SHOW_ALL_COMMANDS=1
-GIT_COMPLETION_SHOW_ALL=1
-GIT_COMPLETION_IGNORE_CASE=1
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
+export GIT_COMPLETION_SHOW_ALL=1
+export GIT_COMPLETION_IGNORE_CASE=1
 
 PS_CLEAR="\[$(tput sgr0)\]"
 PS_FG_RED="\[$(tput setaf 1)\]"
