@@ -1,7 +1,17 @@
 #!/usr/bin/env sh
 
 # Homebrew is very nice
-HOMEBREW_PREFIX="$(brew --prefix)"
+case "$(uname -s -m)" in
+  Linux*)
+    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+    ;;
+  Darwin*arm*)
+    export HOMEBREW_PREFIX="/opt/homebrew"
+    ;;
+  Darwin*)
+    export HOMEBREW_PREFIX="/usr/local"
+    ;;
+esac
 
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"

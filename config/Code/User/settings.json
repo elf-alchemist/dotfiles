@@ -298,4 +298,5 @@
 	"intellicodeCompletions.language.javascript": true,
 	"intellicodeCompletions.language.typescript": true,
 	"intellicodeCompletions.language.python": false,
+	"liveServer.settings.donotShowInfoMsg": true,
 }
