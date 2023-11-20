@@ -72,11 +72,6 @@ tags
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,vim
 
 config
-config/.ssh
-config/emacs
-config/nvim
-config/tmux
-config/Code
 
 !config/mimeapps.list
 !config/user-dirs.dirs
