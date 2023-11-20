@@ -79,7 +79,7 @@ config
 !config/wgetrc
 !config/xdg-terminals.list
 
-!config/.ssh/config
+!config/ssh/config
 !config/git/config
 !config/gzdoom.ini
 !config/htop/htoprc

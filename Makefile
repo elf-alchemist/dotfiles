@@ -4,15 +4,14 @@ BREW_PREFIX := $(brew --prefix)
 BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
 BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
-BREW_SHELL := gcc make curl wget openssh gnupg git lazygit vim
+BREW_SHELL := gcc make curl openssh gnupg git lazygit vim
 BREW_SHELL += tmux htop fff fzf tree bat jq
 
 BREW_LANG := nvm pnpm
 
 BREW_LINUX := elfutils docker docker-compose
 
-BREW_DARWIN := --cask firefox iterm2 raycast
-BREW_DARWIN += steam epic-games gzdoom
+BREW_DARWIN := --cask firefox iterm2 steam gzdoom
 
 BREW_FONTS := font-fira-code font-fira-code-nerd-font
 
