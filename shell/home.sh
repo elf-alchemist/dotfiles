@@ -69,7 +69,7 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
 [ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && . "$HOMEBREW_OPT/nvm/nvm.sh"
 [ -s "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm"
 
