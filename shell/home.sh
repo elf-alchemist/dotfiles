@@ -23,6 +23,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 alias __list_brew_formulae="brew tap-info --json --installed | jq -r '.[]|(.formula_names[])'"
 alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_tokens[])'"
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
+alias __list_brew_manually_installed="brew info --json=v2 --installed | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'"
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"

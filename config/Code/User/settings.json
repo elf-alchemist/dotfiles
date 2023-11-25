@@ -282,5 +282,7 @@
 	"typescript.preferences.useAliasesForRenames": false,
 	"typescript.preferences.autoImportFileExcludePatterns": [],
 	"typescript.format.enable": true,
-	"typescript.format.semicolons": "insert"
+	"typescript.format.semicolons": "insert",
+	"git.confirmSync": false,
+	"git.autofetch": true
 }
