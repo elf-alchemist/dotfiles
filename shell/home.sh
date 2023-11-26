@@ -85,28 +85,17 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/docker"         ] && . "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && . "$HOMEBREW_BASH/docker-compose"
 
-# Cloud stuff
-export SAM_CLI_TELEMETRY=0
-export GOOGLE_APPLICATION_CREDENTIALS="$XDG_CONFIG_HOME/gcloud/application_default_credentials.json"
-
 # Misc
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 
-alias wget="wget --hsts-file='\$XDG_DATA_HOME/wget-hsts'"
-
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export RANGER_LOAD_DEAFULT_RC=true
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
-export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 [ -e "$HOMEBREW_BASH/tmux" ] && . "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more" ] && . "$HOMEBREW_BASH/more"
-
-[ -e "$HOMEBREW_BASH/bat"    ] && . "$HOMEBREW_BASH/bat"
-[ -e "$HOMEBREW_BASH/httpie" ] && . "$HOMEBREW_BASH/httpie"
 
 # Define shell prompt && git vars
 [ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && . "$HOMEBREW_BASH/git-prompt.sh"
@@ -127,23 +116,6 @@ export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
 
-PS_CLEAR="\[$(tput sgr0)\]"
-PS_FG_RED="\[$(tput setaf 1)\]"
-PS_BG_RED="\[$(tput setab 1)\]"
-PS_FG_GREEN="\[$(tput setaf 2)\]"
-PS_BG_GREEN="\[$(tput setab 2)\]"
-PS_FG_YELLOW="\[$(tput setaf 3)\]"
-PS_BG_YELLOW="\[$(tput setab 3)\]"
-PS_FG_BLUE="\[$(tput setaf 4)\]"
-PS_BG_BLUE="\[$(tput setab 4)\]"
-PS_FG_MAGENTA="\[$(tput setaf 5)\]"
-PS_BG_MAGENTA="\[$(tput setab 5)\]"
-PS_FG_CYAN="\[$(tput setaf 6)\]"
-PS_BG_CYAN="\[$(tput setab 6)\]"
-PS_FG_WHITE="\[$(tput setaf 7)\]"
-PS_BG_WHITE="\[$(tput setab 7)\]"
-
 export TIME_STYLE="long-iso"
 
-# PS1="$PS_FG_BLUE\W$PS_CLEAR $(__git_ps1 "(%s) ")"
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'

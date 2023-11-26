@@ -5,7 +5,7 @@ BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
 BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
 BREW_SHELL := gcc make curl openssh gnupg git lazygit vim
-BREW_SHELL += tmux htop fff fzf tree bat jq
+BREW_SHELL += tmux htop fff fzf tree jq
 
 BREW_LANG := nvm pnpm
 

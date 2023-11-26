@@ -23,8 +23,8 @@
 	decorate       = short
 	showSignatures = true
 [diff]
-	tool    = nvimdiff
-	guitool = nvimdiff
+	tool    = vimdiff
+	guitool = vimdiff
 [push]
 	default         = current
 	autoSetupRemote = true
@@ -34,25 +34,16 @@
 [merge]
 	log           = false
 	ff            = true
-	tool          = nvimdiff
-	guitool       = nvimdiff
+	tool          = vimdiff
+	guitool       = vimdiff
 	conflictstyle = diff3
 [help]
 	format      = man
 	browser     = man
 	autoCorrect = prompt
-[delta]
-	navigate     = true
-	light        = false
-	line-numbers = true
 [alias]
-	# List Config: General, Alias, Where, Enhanced
-	ls        = !git config --list --global             | sed '/^alias/d'
-	ls-where  = !git config --list --show-origin        | sed '/^alias/d'
-	ls-alias  = !git config --global --get-regexp alias | sed 's/alias\\.//g'
-	ls-better = !git ls-alias | awk '{printf \"| %-12s | %s\\n\", $1, $0}' | sed '1,4d'
+	ls = !git config --list --global             | sed '/^alias/d'
 
-	# Basic Commands
 	st = status --short --branch --ahead-behind --untracked-files=all
 	as = add    .
 	aa = add    --all
@@ -62,10 +53,8 @@
 	cm = commit --message "changes"
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
-	# Composite Commands
 	qwik = !git add --all && git st
 
-	# Checkout, branching
 	cb      = checkout
 	cb-main = checkout main
 	cb-prev = checkout -
@@ -74,27 +63,19 @@
 	cb-url  = branch --list --remotes
 	cb-del  = branch --delete
 
-	# Remotes management
 	url     = remote
 	url-all = remote --verbose
 	url-get = remote get-url --all origin
 	url-set = remote set-url origin
 	url-add = remote set-url --add
 
-	# Undo
 	un       = reset HEAD~1
 	un-soft  = reset HEAD~1 --soft
 	un-hard  = reset HEAD~1 --hard
 	un-stage = restore --staged
 
-	# Logging
 	log-all  = log --oneline --graph
 	log-stat = log --oneline --graph --stat
 	log-prev = log --stat --decorate=full --full-diff --max-count=1 HEAD~1
 
-	# Cloning GitHub
-	hub      = "!_hub() { git clone git@github.com:$1; }; _hub"
-	hub-self = "!_hub() { git clone git@github.com:elf-alchemist/$1; }; _hub"
-
-	# Generate .gitignore
 	toptal = "!_toptal() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; _toptal"

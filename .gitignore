@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,vim
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,vim
+# Created by https://www.toptal.com/developers/gitignore/api/linux,vim
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,vim
 
 ### Linux ###
 *~
@@ -16,43 +16,10 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### macOS ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### macOS Patch ###
-# iCloud generated files
-*.icloud
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+#!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -69,25 +36,18 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,vim
+# End of https://www.toptal.com/developers/gitignore/api/linux,vim
 
 config
 
-!config/mimeapps.list
 !config/user-dirs.dirs
 !config/user-dirs.locale
-!config/wgetrc
-!config/xdg-terminals.list
 
-!config/ssh/config
 !config/git/config
 !config/gzdoom.ini
 !config/htop/htoprc
-!config/lazygit/config.yml
-!config/lazygit/state.yml
 !config/npm/npmrc
-!config/ranger/rc.cong
+!config/ssh/config
 !config/tmux/tmux.conf
+!config/vim/vimrc
 !config/Code/User/settings.json
-!config/Code/User/extensions.json
-!config/Code/User/keybindings.json
