@@ -25,13 +25,6 @@ alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_to
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 alias __list_brew_manually_installed="brew info --json=v2 --installed | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'"
 
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}"
-export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:="/etc/xdg"}"
-
 [ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 [ -e "$HOMEBREW_BASH/brew"          ] && . "$HOMEBREW_BASH/brew"
 [ -e "$HOMEBREW_BASH/brew-services" ] && . "$HOMEBREW_BASH/brew-services"
@@ -55,30 +48,30 @@ export PATH="$HOMEBREW_OPT/util-linux/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
-# ECMAScript is pain, We should only need NPM... should;
-# But it is a very bad, no good, package manager;
-# Yarn improved things, PNPM is even better;
-# A person may be smart, but people are stupid;
-# A new tool is created to solve a problem that an
-# established tool has, but not everyone uses the new one,
-# And so cycle moves on... an ever rotating cycle
-# of badness and hatred that can only only be fixed
-# when Node/NPM devs realise that their software
-# is complete garbage and they need to copy
-# Deno's and Bun's highly integrated style of
-# feature implementation... or atleast, one can hope...
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}"
+export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:="/etc/xdg"}"
 
+# Vim
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
+
+# ECMAScript is pain, it is stupid, it is dumb and I can't stop using it
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 [ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && . "$HOMEBREW_OPT/nvm/nvm.sh"
 [ -s "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm"
+
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME/pnpm:$PATH"
 [ -e "$HOMEBREW_BASH/pnpm" ] && . "$HOMEBREW_BASH/pnpm"
 
-# Container env
+# Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
@@ -89,7 +82,6 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"

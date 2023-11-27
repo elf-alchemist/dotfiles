@@ -4,10 +4,10 @@ BREW_PREFIX := $(brew --prefix)
 BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
 BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
-BREW_SHELL := gcc make curl openssh gnupg git lazygit vim
+BREW_SHELL := gcc make curl openssh git lazygit vim
 BREW_SHELL += tmux htop fff fzf tree jq
 
-BREW_LANG := nvm pnpm
+BREW_LANG := nvm shellcheck
 
 BREW_LINUX := elfutils docker docker-compose
 
@@ -31,6 +31,19 @@ brew_install_darwin: brew_install
 	@brew tap "homebrew/cask-fonts"
 	@brew install $(BREW_DARWIN)
 	@brew install $(BREW_FONTS)
+
+brew_reinstall:
+	@brew reinstall $(BREW_BASE)
+	@brew reinstall $(BREW_SHELL)
+	@brew reinstall $(BREW_LANG)
+
+brew_reinstall_linux: brew_reinstall
+	@brew reinstall $(BREW_LINUX)
+	@brew reinstall $(BREW_FONTS)
+
+brew_reinstall_darwin: brew_reinstall
+	@brew reinstall $(BREW_DARWIN)
+	@brew reinstall $(BREW_FONTS)
 
 setup_shell:
 	@echo "\n\t# Configuring Bash binary\n"
