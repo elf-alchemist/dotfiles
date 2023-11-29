@@ -50,5 +50,4 @@ config
 !config/npm/npmrc
 !config/ssh/config
 !config/tmux/tmux.conf
-!config/vim/vimrc
 !config/Code/User/settings.json

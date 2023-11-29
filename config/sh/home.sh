@@ -55,10 +55,6 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
 export XDG_DATA_DIRS="${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}"
 export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:="/etc/xdg"}"
 
-# Vim
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
-
 # ECMAScript is pain, it is stupid, it is dumb and I can't stop using it
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 [ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && . "$HOMEBREW_OPT/nvm/nvm.sh"
@@ -107,7 +103,5 @@ export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
-
-export TIME_STYLE="long-iso"
 
 PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
