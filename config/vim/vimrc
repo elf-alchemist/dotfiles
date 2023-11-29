@@ -70,3 +70,75 @@ nnoremap <silent> <leader>l :set list! list?<CR>
 set noerrorbells
 set visualbell t_vb=
 set mousehide
+
+if has("statusline")
+
+  function! StatusLineUTF8()
+    try
+      let p = getpos('.')
+      redir => utf8seq
+      sil normal! g8
+      redir End
+      call setpos('.', p)
+      return substitute(matchstr(utf8seq, '\x\+ .*\x'), '\<\x\x', '0x\U&', 'g')
+    catch
+      return '?'
+    endtry
+  endfunction
+
+  function! StatusLineFileEncoding()
+    return has("multi_byte") && strlen(&fenc) ? &fenc : ''
+  endfunction
+
+  function! StatusLineUTF8Bomb()
+    return has("multi_byte") && &fenc == 'utf-8' && &bomb?'+bomb' : ''
+  endfunction
+
+  function! StatusLineCWD()
+    let l:pwd = exists('$PWD') ? $PWD : getcwd()
+    return substitute(fnamemodify(l:pwd, ':~'), '\(\~\?/[^/]*/\).*\(/.\{20\}\)', '\1...\2', '')
+  endfunction
+
+  set laststatus=2  " always show a status line
+  " set exact status line format
+  set statusline=
+  set statusline+=%#Number#
+  set statusline+=❐\ %02n
+  set statusline+=\ \|\
+  set statusline+=%*
+  set statusline+=%#Identifier#
+  set statusline+=%f
+  set statusline+=%*
+  set statusline+=%#Special#
+  set statusline+=%m
+  set statusline+=%#Statement#
+  set statusline+=%r
+  set statusline+=%h
+  set statusline+=%w
+  set statusline+=%#Type#
+  set statusline+=[%{&ff}]
+  set statusline+=[
+  set statusline+=%{StatusLineFileEncoding()}
+  set statusline+=%#Error#
+  set statusline+=%{StatusLineUTF8Bomb()}
+  set statusline+=%#Type#
+  set statusline+=]
+  set statusline+=%y
+  set statusline+=\ \|\
+  set statusline+=%*
+  set statusline+=%#Directory#
+  set statusline+=%{StatusLineCWD()}
+  set statusline+=\
+  set statusline+=%*
+  set statusline+=%=
+  set statusline+=%#Comment#
+  set statusline+=%{v:register}
+  set statusline+=\
+  set statusline+=%#Statement#
+  set statusline+=[U+\%04B]
+  set statusline+=\ \|\
+  set statusline+=%#Comment#
+  set statusline+=line\ %5l/%L\
+  set statusline+=●\ %02p%%,\
+  set statusline+=col\ %3v
+endif
