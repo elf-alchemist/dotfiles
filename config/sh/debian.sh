@@ -73,7 +73,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-source "$HOME/dotfiles/shell/home.sh"
+source "$HOME/dotfiles/config/sh/home.sh"
 
 [ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"
 [ -e "$HOMEBREW_BASH/journalctl"  ] && source "$HOMEBREW_BASH/journalctl"
