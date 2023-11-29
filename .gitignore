@@ -48,6 +48,7 @@ config
 !config/gzdoom.ini
 !config/htop/htoprc
 !config/npm/npmrc
+!config/nvim/*
 !config/ssh/config
 !config/tmux/tmux.conf
 !config/Code/User/settings.json
