@@ -1,6 +1,9 @@
-[submodule "leet-code"]
-	path = leet-code
-	url = git@github.com:elf-alchemist/leet-code.git
 [submodule "elf-alchemist"]
 	path = elf-alchemist
 	url = git@github.com:elf-alchemist/elf-alchemist.git
+[submodule "leet-code"]
+	path = leet-code
+	url = git@github.com:elf-alchemist/leet-code.git
+[submodule "punk-lab"]
+	path = punk-lab
+	url = git@github.com:elf-alchemist/punk-lab.git
