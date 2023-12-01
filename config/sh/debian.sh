@@ -69,10 +69,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
 source "$HOME/dotfiles/config/sh/home.sh"
 
 [ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"

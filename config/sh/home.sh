@@ -65,7 +65,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-[ -e "$HOMEBREW_BASH/pnpm" ] && . "$HOMEBREW_BASH/pnpm"
+export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash/__tabtab.bash"
+[ -e "$PNPM_COMPLETION" ] && . "$PNPM_COMPLETION"
 
 # Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
