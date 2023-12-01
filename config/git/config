@@ -23,8 +23,8 @@
 	decorate       = short
 	showSignatures = true
 [diff]
-	tool    = vimdiff
-	guitool = vimdiff
+	tool    = nvimdiff
+	guitool = nvimdiff
 [push]
 	default         = current
 	autoSetupRemote = true
@@ -34,15 +34,15 @@
 [merge]
 	log           = false
 	ff            = true
-	tool          = vimdiff
-	guitool       = vimdiff
+	tool          = nvimdiff
+	guitool       = nvimdiff
 	conflictstyle = diff3
 [help]
 	format      = man
 	browser     = man
 	autoCorrect = prompt
 [alias]
-	ls = !git config --list --global             | sed '/^alias/d'
+	ls = !git config --list --global
 
 	st = status --short --branch --ahead-behind --untracked-files=all
 	as = add    .
