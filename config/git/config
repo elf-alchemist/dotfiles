@@ -42,21 +42,15 @@
 	browser     = man
 	autoCorrect = prompt
 [alias]
-	ls = !git config --list --global
+	ls-config = !git config --list --global
 
 	st = status --short --branch --ahead-behind --untracked-files=all
-	as = add    .
 	aa = add    --all
 	ca = commit --amend
-	ce = commit --amend --no-edit
-	co = commit --message
-	cm = commit --message "changes"
+	cm = commit --message
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
-	qwik = !git add --all && git st
-
 	cb      = checkout
-	cb-main = checkout main
 	cb-prev = checkout -
 	cb-new  = checkout -b
 	cb-all  = branch --list --all
@@ -68,11 +62,6 @@
 	url-get = remote get-url --all origin
 	url-set = remote set-url origin
 	url-add = remote set-url --add
-
-	un       = reset HEAD~1
-	un-soft  = reset HEAD~1 --soft
-	un-hard  = reset HEAD~1 --hard
-	un-stage = restore --staged
 
 	log-all  = log --oneline --graph
 	log-stat = log --oneline --graph --stat

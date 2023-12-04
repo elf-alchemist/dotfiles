@@ -1,8 +1,58 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,vim
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,vim
+# Created by https://www.toptal.com/developers/gitignore/api/linux,vim,emacs
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,vim,emacs
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
 
 ### Linux ###
-*~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -19,7 +69,6 @@
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-#!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -36,19 +85,22 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,vim
+# End of https://www.toptal.com/developers/gitignore/api/linux,vim,emacs
 
 config
 
 !config/user-dirs.dirs
 !config/user-dirs.locale
 
-!config/sh/*
+!config/sh/home.sh
+!config/sh/debian.sh
+!config/sh/darwin.sh
 !config/git/config
 !config/gzdoom.ini
 !config/htop/htoprc
 !config/npm/npmrc
-!config/nvim/*
+!config/emacs/init.el
+!config/nvim/init.lua
 !config/ssh/config
 !config/tmux/tmux.conf
 !config/Code/User/settings.json
