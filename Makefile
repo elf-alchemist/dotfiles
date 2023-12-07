@@ -1,18 +1,20 @@
 
 BREW_PREFIX := $(brew --prefix)
 
+# Base commands, primarily to keep the binaries up-to-date.
 BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
 BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
 
-BREW_SHELL := gcc make curl openssh git lazygit neovim
+# Main programs that I intend to use directly.
+BREW_SHELL := gcc make curl openssh git lazygit neovim emacs
 BREW_SHELL += tmux htop fff fzf tree jq
 
+# Programming language setup.
 BREW_LANG := nvm shellcheck
 
+# Platform specific stuff, where fonts resolve to their respective Taps.
 BREW_LINUX := elfutils docker docker-compose
-
-BREW_DARWIN := --cask firefox iterm2 steam gzdoom
-
+BREW_DARWIN := --cask firefox iterm2 steam
 BREW_FONTS := font-fira-code font-fira-code-nerd-font
 
 brew_install:
@@ -56,6 +58,6 @@ setup_tmux:
 	@echo "\n\t# Cleaning up old Tmux config\n"
 	@rm -rf $(HOME)/.config/tmux/plugins/tpm
 
-	@echo "\n\t# Cloning new TMux config\n"
+	@echo "\n\t# Cloning new tmux config\n"
 	@git clone https://github.com/tmux-plugins/tpm $(HOME)/.config/tmux/plugins/tpm
 	@tmux source-file $(HOME)/.config/tmux/tmux.conf

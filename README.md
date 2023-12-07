@@ -9,13 +9,11 @@ $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/
 ```
 
 ### Homebrew
-When running on Linux:
+To install all Homebrew packages, run:
 ```sh
+# If on Linux
 $ make brew_install_linux
-```
-
-Similarly on MacOS:
-```sh
+# If on MacOS
 $ make brew_install_darwin
 ```
 
@@ -23,13 +21,9 @@ Now, you will always have up-to-date binaries for the base system.
 This includes manycli tools, such as: coreutils, bash, awk, git,
 neovim, emacs, docker, et cetera, et cetera.
 
-### Bash
-After installing the base Homebrew packages, setup the bash binary:
+### Bash and Tmux
+After installing the base Homebrew packages, setup the `bash` binary and `tmux`:
 ```sh
 $ make setup_shell
-```
-
-Now, setup Tmux to increase productivity:
-```sh
 $ make setup_tmux
 ```
