@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor   = nvim
+	editor   = emacs -nw
 	pager    = less
 	eol      = lf
 	autocrlf = input
@@ -45,17 +45,14 @@
 	ls-config = !git config --list --global
 
 	st = status --short --branch --ahead-behind --untracked-files=all
-	aa = add    --all
-	ca = commit --amend
-	cm = commit --message
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
-	cb      = checkout
-	cb-prev = checkout -
-	cb-new  = checkout -b
-	cb-all  = branch --list --all
-	cb-url  = branch --list --remotes
-	cb-del  = branch --delete
+	co      = checkout
+
+	br      = branch
+	br-all  = branch --list --all
+	br-url  = branch --list --remotes
+	br-del  = branch --delete
 
 	url     = remote
 	url-all = remote --verbose
