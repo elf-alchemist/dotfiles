@@ -30,7 +30,11 @@ alias __list_brew_manually_installed="brew info --json=v2 --installed | jq -r '.
 [ -e "$HOMEBREW_BASH/brew-services" ] && . "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
-# TODO: somehow . util-linux bash completion
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
+
 export PATH="$HOMEBREW_OPT/make/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gawk/libexec/gnubin:$PATH"
 export PATH="$HOMEBREW_OPT/gnu-tar/libexec/gnubin:$PATH"
@@ -47,13 +51,6 @@ export PATH="$HOMEBREW_OPT/util-linux/bin:$PATH"
 export PATH="$HOMEBREW_OPT/util-linux/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
-
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:="/usr/local/share:/usr/share"}"
-export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:="/etc/xdg"}"
 
 # ECMAScript is pain, it is stupid, it is dumb and I can't stop using it
 export NVM_DIR="$XDG_DATA_HOME/nvm"
@@ -75,11 +72,34 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/docker"         ] && . "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && . "$HOMEBREW_BASH/docker-compose"
 
+# Doom
+export DOOMWADDIR="$HOME/dotfiles/doom-wads"
+export DOOMWADPATH="$HOME/.doom:$HOME/dotfiles/doom-wads"
+
+function crispy() {
+    local engine="$1"
+    shift
+
+    case "$engine" in
+	doom | heretic | hexen | strife)
+	    local bin="crispy-$engine"
+	    ;;
+	*)
+	    echo "Error: unsupported engine '$engine'" >&2
+	    return 1
+	    ;;
+    esac
+
+    echo $bin
+    return 0
+}
+
 # Misc
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 alias lst="tree --dirsfirst -aCLI 2 .git"
 
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
