@@ -1,3 +1,4 @@
+(set-default-coding-systems 'utf-8)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq use-dialog-box nil)
@@ -19,18 +20,25 @@
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 
+(setq display-time-world-time-format "%Y-%m-%d %A %H:%M:%S")
+(setq display-time-world-list
+      '(("Etc/UTC" "UTC")
+	("America/Fortaleza" "Fortaleza")
+	("Japan" "Nippon")))
+
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(setq package-archives
+      '(("elpa" . "https://elpa.gnu.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
+
 (package-initialize)
 
-(load-theme 'atom-one-dark t)
+(use-package atom-one-dark-theme
+  :config (load-theme 'atom-one-dark t))
 
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-c l")
-  :commands (lsp lsp-deferred)
-)
+  :commands (lsp lsp-deferred))
 
 (use-package lsp-ui
-  :commands lsp-ui-mode
-)
+  :commands lsp-ui-mode)
