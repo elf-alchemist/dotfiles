@@ -1,12 +1,10 @@
+
 [submodule "elf-alchemist"]
 	path = elf-alchemist
 	url = git@github.com:elf-alchemist/elf-alchemist.git
 [submodule "leet-code"]
 	path = leet-code
 	url = git@github.com:elf-alchemist/leet-code.git
-[submodule "punk-labs"]
-	path = punk-labs
-	url = git@github.com:elf-alchemist/punk-labs.git
 [submodule "doom-wads"]
 	path = doom-wads
 	url = git@github.com:elf-alchemist/doom-wads.git

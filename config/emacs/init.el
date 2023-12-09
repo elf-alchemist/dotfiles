@@ -26,6 +26,12 @@
 	("America/Fortaleza" "Fortaleza")
 	("Japan" "Nippon")))
 
+(setq-default mode-line-format
+	      '("%b"
+		(vc-mode vc-mode)))
+
+(global-set-key (kbd "M-/") 'dabbrev-expand)
+
 (require 'package)
 (setq package-archives
       '(("elpa" . "https://elpa.gnu.org/packages/")
