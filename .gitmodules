@@ -5,3 +5,6 @@
 [submodule "leet-code"]
 	path = leet-code
 	url = git@github.com:elf-alchemist/leet-code.git
+[submodule "doom-wads"]
+	path = doom-wads
+	url = git@github.com:elf-alchemist/doom-wads.git
