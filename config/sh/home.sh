@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Homebrew is very nice
 case "$(uname -s -m)" in
@@ -25,9 +25,9 @@ alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_to
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 alias __list_brew_manually_installed="brew info --json=v2 --installed | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'"
 
-[ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW_BASH/brew"          ] && . "$HOMEBREW_BASH/brew"
-[ -e "$HOMEBREW_BASH/brew-services" ] && . "$HOMEBREW_BASH/brew-services"
+[ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+[ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
+[ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
 
 # Define location & path
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
@@ -54,44 +54,48 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
 # ECMAScript is pain, it is stupid, it is dumb and I can't stop using it
 export NVM_DIR="$XDG_DATA_HOME/nvm"
-[ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && . "$HOMEBREW_OPT/nvm/nvm.sh"
-[ -s "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm"
+[ -s "$HOMEBREW_OPT/nvm/nvm.sh" ] && source "$HOMEBREW_OPT/nvm/nvm.sh"
+[ -s "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm" ] && source "$HOMEBREW_OPT/nvm/etc/bash_completion.d/nvm"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash/__tabtab.bash"
-[ -e "$PNPM_COMPLETION" ] && . "$PNPM_COMPLETION"
+
+export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
+[ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/__tabtab.bash"
 
 # Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
-[ -e "$HOMEBREW_BASH/docker"         ] && . "$HOMEBREW_BASH/docker"
-[ -e "$HOMEBREW_BASH/docker-compose" ] && . "$HOMEBREW_BASH/docker-compose"
+[ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
+[ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
 
 # Doom
-export DOOMWADDIR="$HOME/dotfiles/doom-wads"
-export DOOMWADPATH="$HOME/.doom:$HOME/dotfiles/doom-wads"
 
 function crispy() {
-    local engine="$1"
-    shift
+  local dir_doom="$HOME/dotfiles/doom-wads"
+  local dir_iwad="$dir_doom/iwad"
+  local dir_pwad="$dir_doom/pwad"
+  local dir_soundfont="$dir_doom/soundfont"
 
-    case "$engine" in
-	doom | heretic | hexen | strife)
+  local engine="$1"
+  shift
+
+  case "$engine" in
+	  doom | heretic | hexen | strife)
 	    local bin="crispy-$engine"
 	    ;;
-	*)
-	    echo "Error: unsupported engine '$engine'" >&2
+	  *)
+	    echo "Error: unsupported game '$engine', try one of 'doom', 'heretic', 'hexen' or 'strife'." >&2
 	    return 1
 	    ;;
-    esac
+  esac
 
-    echo $bin
-    return 0
+  echo "$bin"
+  return 0
 }
 
 # Misc
@@ -103,12 +107,23 @@ export HISTFILE="$XDG_STATE_HOME/bash/history"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
-[ -e "$HOMEBREW_BASH/tmux" ] && . "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/more" ] && . "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
+
+# Linux Only Stuff
+[ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"
+[ -e "$HOMEBREW_BASH/journalctl"  ] && source "$HOMEBREW_BASH/journalctl"
+[ -e "$HOMEBREW_BASH/hostnamectl" ] && source "$HOMEBREW_BASH/hostnamectl"
+
+[ -e "$HOMEBREW_BASH/lscpu" ] && source "$HOMEBREW_BASH/lscpu"
+[ -e "$HOMEBREW_BASH/lsmem" ] && source "$HOMEBREW_BASH/lsmem"
+[ -e "$HOMEBREW_BASH/lsblk" ] && source "$HOMEBREW_BASH/lsblk"
+
+[ -e "$HOMEBREW_BASH/dmesg" ] && source "$HOMEBREW_BASH/dmesg"
 
 # Define shell prompt && git vars
-[ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && . "$HOMEBREW_BASH/git-prompt.sh"
-[ -e "$HOMEBREW_BASH/git-completion.bash" ] && . "$HOMEBREW_BASH/git-completion.bash"
+[ -e "$HOMEBREW_BASH/git-prompt.sh"       ] && source "$HOMEBREW_BASH/git-prompt.sh"
+[ -e "$HOMEBREW_BASH/git-completion.bash" ] && source "$HOMEBREW_BASH/git-completion.bash"
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
