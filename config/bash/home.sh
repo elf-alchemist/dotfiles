@@ -74,25 +74,49 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
 
 # Doom
-
 function crispy() {
   local dir_doom="$HOME/dotfiles/doom-wads"
   local dir_iwad="$dir_doom/iwad"
   local dir_pwad="$dir_doom/pwad"
   local dir_soundfont="$dir_doom/soundfont"
 
+  local iwad_doom=""
+  local iwad_heretic=""
+  local iwad_hexen=""
+  local iwad_strife=""
+
   local engine="$1"
   shift
 
   case "$engine" in
-	  doom | heretic | hexen | strife)
-	    local bin="crispy-$engine"
-	    ;;
-	  *)
-	    echo "Error: unsupported game '$engine', try one of 'doom', 'heretic', 'hexen' or 'strife'." >&2
-	    return 1
-	    ;;
+    doom | heretic | hexen | strife)
+      local bin="crispy-$engine"
+      ;;
+    "")
+      echo "Error: Missing sub command, please specify one of 'doom', 'heretic', 'hexen' or 'strife'."
+      return 1
+      ;;
+    *)
+      echo "Error: unsupported game '$engine', try one of 'doom', 'heretic', 'hexen' or 'strife'." >&2
+      return 1
+      ;;
   esac
+
+  case "$engine" in
+    doom)
+      echo "$engine"
+      ;;
+    heretic)
+      echo "$engine"
+      ;;
+    hexen)
+      echo "$engine"
+      ;;
+    strife)
+      echo "$engine"
+      ;;
+  esac
+
 
   echo "$bin"
   return 0
