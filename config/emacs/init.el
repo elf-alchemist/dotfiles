@@ -2,6 +2,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq use-dialog-box nil)
+(setq auto-save-default nil)
+(setq make-backup-files nil)
 
 (setq history-length 50)
 (savehist-mode t)
@@ -38,9 +40,12 @@
 (package-initialize)
 
 (require 'eglot)
+(require 'company)
 (require 'atom-one-dark-theme)
 
 (add-to-list 'eglot-server-programs '((js-mode) "typescript-language-server" "--stdio"))
 (add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server" "--stdio"))
+
+(global-company-mode)
 
 (load-theme 'atom-one-dark t)
