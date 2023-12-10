@@ -30,8 +30,6 @@
 	      '("%b"
 		(vc-mode vc-mode)))
 
-(global-set-key (kbd "M-/") 'dabbrev-expand)
-
 (require 'package)
 (setq package-archives
       '(("elpa" . "https://elpa.gnu.org/packages/")
@@ -39,12 +37,10 @@
 
 (package-initialize)
 
-(use-package atom-one-dark-theme
-  :config (load-theme 'atom-one-dark t))
+(require 'eglot)
+(require 'atom-one-dark-theme)
 
-(use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-c l")
-  :commands (lsp lsp-deferred))
+(add-to-list 'eglot-server-programs '((js-mode) "typescript-language-server" "--stdio"))
+(add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server" "--stdio"))
 
-(use-package lsp-ui
-  :commands lsp-ui-mode)
+(load-theme 'atom-one-dark t)
