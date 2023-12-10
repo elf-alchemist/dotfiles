@@ -80,13 +80,16 @@ function crispy() {
   local dir_pwad="$dir_doom/pwad"
   local dir_soundfont="$dir_doom/soundfont"
 
-  local iwad_doom=""
-  local iwad_heretic=""
-  local iwad_hexen=""
-  local iwad_strife=""
+  local iwad_doom_ultimate="$dir_iwad/doom1-ultimate.wad"
+  local iwad_doom="$dir_iwad/doom2.wad"
+  local iwad_heretic="$dir_iwad/heretic.wad"
+  local iwad_hexen="$dir_iwad/hexen.wad"
+  local iwad_strife="$dir_iwad/strife.wad"
 
   local engine="$1"
-  shift
+  local iwad="$2"
+  local pwad="$3"
+  local deh="$4"
 
   case "$engine" in
     doom | heretic | hexen | strife)
@@ -104,21 +107,15 @@ function crispy() {
 
   case "$engine" in
     doom)
-      echo "$engine"
       ;;
     heretic)
-      echo "$engine"
       ;;
     hexen)
-      echo "$engine"
       ;;
     strife)
-      echo "$engine"
       ;;
   esac
 
-
-  echo "$bin"
   return 0
 }
 
