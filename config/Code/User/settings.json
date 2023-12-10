@@ -46,7 +46,7 @@
 	"editor.suggest.showWords": false,
 	"editor.wrappingIndent": "same",
 	"editor.wordWrap": "off",
-	"editor.wordWrapColumn": 120,
+	"editor.wordWrapColumn": 150,
 	"editor.wrappingStrategy": "simple",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.defaultProfile.linux": "bash",
