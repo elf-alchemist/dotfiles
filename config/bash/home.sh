@@ -64,7 +64,7 @@ export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
-[ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/__tabtab.bash"
+[ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/pnpm.bash"
 
 # Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
