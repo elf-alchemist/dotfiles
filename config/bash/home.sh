@@ -66,58 +66,16 @@ export PATH="$PNPM_HOME:$PATH"
 export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
 [ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/pnpm.bash"
 
+# OCaml my Caml
+export OPAMROOT="$XDG_DATA_HOME/opam"
+[ -e "$HOMEBREW_BASH/opam" ] && source "$HOMEBREW_BASH/opam"
+
 # Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 [ -e "$HOMEBREW_BASH/docker"         ] && source "$HOMEBREW_BASH/docker"
 [ -e "$HOMEBREW_BASH/docker-compose" ] && source "$HOMEBREW_BASH/docker-compose"
-
-# Doom
-function crispy() {
-  local dir_doom="$HOME/dotfiles/doom-wads"
-  local dir_iwad="$dir_doom/iwad"
-  local dir_pwad="$dir_doom/pwad"
-  local dir_soundfont="$dir_doom/soundfont"
-
-  local iwad_doom_ultimate="$dir_iwad/doom1-ultimate.wad"
-  local iwad_doom="$dir_iwad/doom2.wad"
-  local iwad_heretic="$dir_iwad/heretic.wad"
-  local iwad_hexen="$dir_iwad/hexen.wad"
-  local iwad_strife="$dir_iwad/strife.wad"
-
-  local engine="$1"
-  local iwad="$2"
-  local pwad="$3"
-  local deh="$4"
-
-  case "$engine" in
-    doom | heretic | hexen | strife)
-      local bin="crispy-$engine"
-      ;;
-    "")
-      echo "Error: Missing sub command, please specify one of 'doom', 'heretic', 'hexen' or 'strife'."
-      return 1
-      ;;
-    *)
-      echo "Error: unsupported game '$engine', try one of 'doom', 'heretic', 'hexen' or 'strife'." >&2
-      return 1
-      ;;
-  esac
-
-  case "$engine" in
-    doom)
-      ;;
-    heretic)
-      ;;
-    hexen)
-      ;;
-    strife)
-      ;;
-  esac
-
-  return 0
-}
 
 # Misc
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
