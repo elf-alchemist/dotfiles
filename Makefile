@@ -61,5 +61,5 @@ setup_shell:
 setup_tmux:
 	@rm -rf $(HOME)/.config/tmux/plugins/tpm
 
-	@git clone https://github.com/tmux-plugins/tpm $(HOME)/.config/tmux/plugins/tpm
+	@git clone https://github.com/tmux-plugins/tpm $(HOME)/.config/tmux/plugins/tpm --quiet
 	@tmux source-file $(HOME)/.config/tmux/tmux.conf

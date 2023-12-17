@@ -1,0 +1,59 @@
+include "/home/linuxbrew/.linuxbrew/share/nano/nanorc.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/git.nanorc"
+
+include "/home/linuxbrew/.linuxbrew/share/nanorc/json.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/yaml.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/toml.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/xml.nanorc"
+
+include "/home/linuxbrew/.linuxbrew/share/nanorc/html.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/css.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/js.nanorc"
+include "/home/linuxbrew/.linuxbrew/share/nanorc/ts.nanorc"
+
+include "/home/linuxbrew/.linuxbrew/share/nanorc/sh.nanorc"
+
+set backup
+set locking
+set historylog
+set positionlog
+
+set minibar
+set autoindent
+set linenumbers
+set nohelp
+
+bind ^X cut main
+bind ^C copy main
+bind ^V paste all
+bind ^Q exit all
+bind ^S savefile main
+bind ^W writeout main
+bind ^O insert main
+set multibuffer
+
+bind ^H help all
+bind ^H exit help
+bind ^F whereis all
+bind ^G findnext all
+bind ^B wherewas all
+bind ^D findprevious all
+bind ^R replace main
+
+unbind ^U all
+unbind ^N main
+unbind ^Y all
+unbind M-J main
+unbind M-T main
+
+bind ^A mark main
+bind ^P location main
+bind ^T gotoline main
+bind ^T gotodir browser
+bind ^T cutrestoffile execute
+bind ^L linter execute
+bind ^E execute main
+bind ^K "{mark}{end}{zap}" main
+bind ^U "{mark}{home}{zap}" main
+bind ^Z undo main
+bind ^Y redo main

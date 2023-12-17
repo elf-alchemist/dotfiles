@@ -25,7 +25,7 @@
 (setq display-time-world-time-format "%Y-%m-%d %A %H:%M:%S")
 (setq display-time-world-list
       '(("Etc/UTC" "UTC")
-	("America/Fortaleza" "Fortaleza")
+	("America/Fortaleza" "Brasil")
 	("Japan" "Nippon")))
 
 (setq-default mode-line-format

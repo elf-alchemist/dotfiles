@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor   = emacs -nw
+	editor   = nvim
 	pager    = less
 	eol      = lf
 	autocrlf = input
