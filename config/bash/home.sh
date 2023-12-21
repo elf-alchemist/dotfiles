@@ -119,4 +119,5 @@ export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
 
-PS1='\[\033[01;34m\]\W\[\033[00m\] $(__git_ps1 "(%s) ")'
+PS1='\[\e[1;34m\]\W\[\e[1;0m\] '
+PS1+='$(__git_ps1 "(%s) ")'
