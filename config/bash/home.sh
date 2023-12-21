@@ -119,5 +119,13 @@ export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
 
+function git-ignore {
+  curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
+}
+
+function git-license {
+  curl -fsSL https://api.github.com/licenses/MIT | jq -r '.body' > LICENSE
+}
+
 PS1='\[\e[1;34m\]\W\[\e[1;0m\] '
 PS1+='$(__git_ps1 "(%s) ")'
