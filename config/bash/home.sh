@@ -124,7 +124,7 @@ function git-ignore {
 }
 
 function git-license {
-  curl -fsSL https://api.github.com/licenses/MIT | jq -r '.body' > LICENSE
+  curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
 }
 
 PS1='\[\e[1;34m\]\W\[\e[1;0m\] '
