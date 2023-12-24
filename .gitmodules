@@ -7,6 +7,3 @@
 [submodule "doom-utils"]
 	path = doom-utils
 	url = git@github.com:elf-alchemist/doom-utils.git
-[submodule "doom-wads"]
-	path = doom-wads
-	url = git@github.com:elf-alchemist/doom-wads.git
