@@ -42,7 +42,7 @@
 	browser     = man
 	autoCorrect = prompt
 [alias]
-	ls-config = !git config --list --global
+	ls-config = config --list --global
 
 	st = status --short --branch --ahead-behind --untracked-files=all
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
@@ -50,16 +50,14 @@
 	co      = checkout
 
 	br      = branch
-	br-all  = branch --list --all
-	br-url  = branch --list --remotes
+	br-all  = branch --list --remotes --all --verbose --verbose
 	br-del  = branch --delete
 
-	url     = remote
-	url-all = remote --verbose
-	url-get = remote get-url --all origin
-	url-set = remote set-url origin
+	url     = remote --verbose --verbose
+	url-get = remote get-url --all
+	url-set = remote set-url
 	url-add = remote set-url --add
 
-	log-all  = log --oneline --graph
-	log-stat = log --oneline --graph --stat
+	log-all  = log --oneline --graph --decorate=full
+	log-stat = log --oneline --graph --stat --decorate=full
 	log-prev = log --stat --decorate=full --full-diff --max-count=1 HEAD~1

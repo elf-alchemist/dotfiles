@@ -40,6 +40,24 @@
   </configuration>
   <configuration>
     <logicalmonitor>
+      <x>1280</x>
+      <y>0</y>
+      <scale>1</scale>
+      <monitor>
+        <monitorspec>
+          <connector>VGA-1</connector>
+          <vendor>unknown</vendor>
+          <product>unknown</product>
+          <serial>unknown</serial>
+        </monitorspec>
+        <mode>
+          <width>1024</width>
+          <height>768</height>
+          <rate>60.004</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+    <logicalmonitor>
       <x>0</x>
       <y>0</y>
       <scale>1</scale>
@@ -58,13 +76,5 @@
         </mode>
       </monitor>
     </logicalmonitor>
-    <disabled>
-      <monitorspec>
-        <connector>VGA-1</connector>
-        <vendor>unknown</vendor>
-        <product>unknown</product>
-        <serial>unknown</serial>
-      </monitorspec>
-    </disabled>
   </configuration>
 </monitors>
