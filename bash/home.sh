@@ -89,7 +89,9 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 [ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
 [ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
+
 [ -e "$HOMEBREW_BASH/pandoc" ] && source "$HOMEBREW_BASH/pandoc"
+[ -e "$HOMEBREW_BASH/cog" ] && source "$HOMEBREW_BASH/cog"
 
 # Linux Only Stuff
 [ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"

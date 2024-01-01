@@ -17,49 +17,66 @@ BREW_LINUX  := elfutils docker docker-compose
 BREW_DARWIN := --cask firefox iterm2 steam
 BREW_FONTS  := font-fira-code font-fira-code-nerd-font
 
-# Symlink paths
+# Various dirs
 XDG_CONFIG_HOME := $(HOME)/.config
+XDG_CACHE_HOME  := $(HOME)/.cache
+XDG_DATA_HOME   := $(HOME)/.local/share
+XDG_STATE_HOME  := $(HOME)/.local/state
 SSH_HOME        := $(HOME)/.ssh
-BASH_RC         := $(HOME)/.bashrc
 
-brew_install_base:
+# Various files
+BASH_RC         := $(HOME)/.bashrc
+BASH_PROFILE    := $(HOME)/.bash_profile
+
+.DEFAULT: default
+.PHONY: install_base install_linux install_darwin reinstall_base reinstall_linux
+
+default:
+	@echo """\
+	Welcome to the dotfiles downtown.
+
+	Screw you, install me.
+
+	"""
+
+install_base:
 	@brew tap "homebrew/bundle"
 	@brew tap "homebrew/services"
 	@brew install $(BREW_BASE)
 	@brew install $(BREW_SHELL)
 	@brew install $(BREW_LANG)
 
-brew_install_linux: brew_install_base
+install_linux: install_base
 	@brew tap "homebrew/linux-fonts"
 	@brew install $(BREW_LINUX)
 	@brew install $(BREW_FONTS)
 
-brew_install_darwin: brew_install_base
+install_darwin: install_base
 	@brew tap "homebrew/cask-fonts"
 	@brew install $(BREW_DARWIN)
 	@brew install $(BREW_FONTS)
 
-brew_reinstall_base:
+reinstall_base:
 	@brew reinstall $(BREW_BASE)
 	@brew reinstall $(BREW_SHELL)
 	@brew reinstall $(BREW_LANG)
 
-brew_reinstall_linux: brew_reinstall_base
+reinstall_linux: reinstall_base
 	@brew reinstall $(BREW_LINUX)
 	@brew reinstall $(BREW_FONTS)
 
-brew_reinstall_darwin: brew_reinstall_base
+reinstall_darwin: reinstall_base
 	@brew reinstall $(BREW_DARWIN)
 	@brew reinstall $(BREW_FONTS)
 
 setup_shell:
 	@if ! fgrep -q "$(BREW_PREFIX)/bin/bash" /etc/shells; then \
-	  echo "$(BREW_PREFIX)/bin/bash" | sudo tee -a /etc/shells; \
-	  chsh -s "$(BREW_PREFIX)/bin/bash"; \
+	  echo "$(BREW_PREFIX)/bin/bash" | sudo tee -a /etc/shells \
+	  chsh -s "$(BREW_PREFIX)/bin/bash" \
 	fi
 
 setup_tmux:
 	@rm -rf $(HOME)/.config/tmux/plugins/tpm
-
 	@git clone https://github.com/tmux-plugins/tpm $(HOME)/.config/tmux/plugins/tpm --quiet
 	@tmux source-file $(HOME)/.config/tmux/tmux.conf
+
