@@ -13,19 +13,16 @@ endif
 
 SHELL := $(or $(wildcard $(BREW_PREFIX)/bin/bash), /bin/bash)
 
-BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
-BREW_BASE += bash bash-completion@2 grep gawk gnu-sed gnu-tar gnu-which
+BREW_FORMULAE := coreutils moreutils findutils diffutils binutils inetutils
+BREW_FORMULAE += bash bash-completion@2 grep gawk gnu-sed gnu-tar gnu-which
+BREW_FORMULAE += gcc make curl openssh
+BREW_FORMULAE += git nano nanorc neovim emacs
+BREW_FORMULAE += tmux htop fff fzf jq
+BREW_FORMULAE += nvm shfmt shellcheck
+BREW_FORMULAE += ffmpeg pandoc
 
-BREW_SHELL := gcc make curl openssh
-BREW_SHELL := git nano nanorc neovim emacs
-BREW_SHELL += tmux htop fff fzf jq
-
-BREW_TOOL := ffmpeg pandoc
-
-BREW_LANG := nvm shc shfmt shellcheck
-
-BREW_LINUX  := elfutils docker docker-compose
-BREW_DARWIN := --cask firefox iterm2 steam
+BREW_LINUX  := elfutils
+BREW_DARWIN := --cask iterm2
 BREW_FONTS  := font-fira-code font-fira-code-nerd-font
 
 XDG_CONFIG_HOME := $(HOME)/.config
@@ -38,54 +35,50 @@ BASH_RC         := $(HOME)/.bashrc
 BASH_PROFILE    := $(HOME)/.bash_profile
 
 .DEFAULT: default
-.PHONY: install_base install_linux install_darwin reinstall_base reinstall_linux
+.PHONY: default home linux darwin re_home re_linux re_darwin shell tmux
 
 default:
-	@echo -e "Welcome to the dotfiles downtown!"
-	@echo -e ""
-	@echo -e "Screw you! Install me!"
-	@echo -e ""
-	@echo -e "Run 'make install_linux' or 'make install_darwin'!"
-	@echo -e ""
-	@echo -e "If you are not an idiot you WILL run 'make setup_shell' and 'make setup_tmux'!"
+	@echo "Welcome to the dotfiles Makefile!"
+	@echo ""
+	@echo "Screw you! Install me!"
+	@echo ""
+	@echo "Run 'make linux' or 'make darwin'!"
+	@echo ""
+	@echo "If you ain't an idiot, you WILL run 'make shell' and 'make tmux'!"
 
-install_base:
+home:
 	@brew tap "homebrew/bundle"
 	@brew tap "homebrew/services"
-	@brew install $(BREW_BASE)
-	@brew install $(BREW_SHELL)
-	@brew install $(BREW_LANG)
+	@brew install $(BREW_FORMULAE)
 
-install_linux: install_base
+linux: home
 	@brew tap "homebrew/linux-fonts"
 	@brew install $(BREW_LINUX)
 	@brew install $(BREW_FONTS)
 
-install_darwin: install_base
+darwin: home
 	@brew tap "homebrew/cask-fonts"
 	@brew install $(BREW_DARWIN)
 	@brew install $(BREW_FONTS)
 
-reinstall_base:
-	@brew reinstall $(BREW_BASE)
-	@brew reinstall $(BREW_SHELL)
-	@brew reinstall $(BREW_LANG)
+re_home:
+	@brew reinstall $(BREW_FORMULAE)
 
-reinstall_linux: reinstall_base
+re_linux: re_home
 	@brew reinstall $(BREW_LINUX)
 	@brew reinstall $(BREW_FONTS)
 
-reinstall_darwin: reinstall_base
+re_darwin: re_home
 	@brew reinstall $(BREW_DARWIN)
 	@brew reinstall $(BREW_FONTS)
 
-setup_shell:
+shell:
 	@if ! fgrep -q "$(BREW_PREFIX)/bin/bash" /etc/shells; then \
 	  echo "$(BREW_PREFIX)/bin/bash" | sudo tee -a /etc/shells \
 	  chsh -s "$(BREW_PREFIX)/bin/bash" \
 	fi
 
-setup_tmux:
+tmux:
 	@rm -rf $(HOME)/.config/tmux/plugins/tpm
 	@git clone https://github.com/tmux-plugins/tpm $(HOME)/.config/tmux/plugins/tpm --quiet
 	@tmux source-file $(HOME)/.config/tmux/tmux.conf
