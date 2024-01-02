@@ -80,9 +80,11 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 # Misc
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
-alias lst="tree --dirsfirst -aCLI 2 .git"
 
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
