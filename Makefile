@@ -1,30 +1,39 @@
 
-BREW_PREFIX := $(brew --prefix)
+UNAME := $(shell uname -s -m)
 
-# Base commands, primarily to keep the binaries up-to-date.
+ifeq ($(filter Linux%, $(UNAME)), Linux)
+  BREW_PREFIX := /home/linuxbrew/.linuxbrew
+else ifeq ($(filter Darwin%arm, $(UNAME)), Darwin arm)
+  BREW_PREFIX := /opt/homebrew
+else ifeq ($(filter Darwin%, $(UNAME)), Darwin)
+  BREW_PREFIX := /usr/local
+else
+  BREW_PREFIX :=
+endif
+
+SHELL := $(or $(wildcard $(BREW_PREFIX)/bin/bash), /bin/bash)
+
 BREW_BASE := coreutils moreutils findutils diffutils binutils inetutils
-BREW_BASE += bash bash-completion@2 gawk gnu-tar gnu-sed gnu-which
+BREW_BASE += bash bash-completion@2 grep gawk gnu-sed gnu-tar gnu-which
 
-# Main programs that I intend to use directly.
-BREW_SHELL := gcc make curl openssh git neovim emacs
-BREW_SHELL += tmux htop fff fzf tree jq
+BREW_SHELL := gcc make curl openssh
+BREW_SHELL := git nano nanorc neovim emacs
+BREW_SHELL += tmux htop fff fzf jq
 
-# Programming language setup.
-BREW_LANG := nvm shellcheck
+BREW_TOOL := ffmpeg pandoc
 
-# Platform specific stuff, where fonts resolve to their respective Taps.
+BREW_LANG := nvm shc shfmt shellcheck
+
 BREW_LINUX  := elfutils docker docker-compose
 BREW_DARWIN := --cask firefox iterm2 steam
 BREW_FONTS  := font-fira-code font-fira-code-nerd-font
 
-# Various dirs
 XDG_CONFIG_HOME := $(HOME)/.config
 XDG_CACHE_HOME  := $(HOME)/.cache
 XDG_DATA_HOME   := $(HOME)/.local/share
 XDG_STATE_HOME  := $(HOME)/.local/state
 SSH_HOME        := $(HOME)/.ssh
 
-# Various files
 BASH_RC         := $(HOME)/.bashrc
 BASH_PROFILE    := $(HOME)/.bash_profile
 
@@ -32,12 +41,13 @@ BASH_PROFILE    := $(HOME)/.bash_profile
 .PHONY: install_base install_linux install_darwin reinstall_base reinstall_linux
 
 default:
-	@echo """\
-	Welcome to the dotfiles downtown.
-
-	Screw you, install me.
-
-	"""
+	@echo -e "Welcome to the dotfiles downtown!"
+	@echo -e ""
+	@echo -e "Screw you! Install me!"
+	@echo -e ""
+	@echo -e "Run 'make install_linux' or 'make install_darwin'!"
+	@echo -e ""
+	@echo -e "If you are not an idiot you WILL run 'make setup_shell' and 'make setup_tmux'!"
 
 install_base:
 	@brew tap "homebrew/bundle"
