@@ -10,8 +10,8 @@ insert_final_newline     = true
 trim_trailing_whitespace = true
 
 [*.bash]
-indent_style       = tab
-indent_size        = tab
+indent_style       = space
+indent_size        = 4
 tab_width          = 4
 shell_variant      = bash
 binary_next_line   = true

@@ -2,15 +2,15 @@
 
 # Homebrew is very nice
 case "$(uname -s -m)" in
-  Linux*)
-    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-    ;;
-  Darwin*arm*)
-    export HOMEBREW_PREFIX="/opt/homebrew"
-    ;;
-  Darwin*)
-    export HOMEBREW_PREFIX="/usr/local"
-    ;;
+    Linux*)
+        export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+        ;;
+    Darwin*arm*)
+        export HOMEBREW_PREFIX="/opt/homebrew"
+        ;;
+    Darwin*)
+        export HOMEBREW_PREFIX="/usr/local"
+        ;;
 esac
 
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
@@ -126,11 +126,11 @@ export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
 
 function git-ignore {
-  curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
+    curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
 }
 
 function git-license {
-  curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
+    curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
 }
 
 PS1='\[\e[1;34m\]\W\[\e[1;0m\] '
