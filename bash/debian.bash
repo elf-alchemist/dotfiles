@@ -69,4 +69,4 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-source "$HOME/dotfiles/config/bash/home.sh"
+source "$HOME/dotfiles/bash/home.bash"

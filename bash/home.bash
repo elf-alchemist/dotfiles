@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Homebrew is very nice
-case "$(uname --kernel-name --machine)" in
+case "$(uname -s -m)" in
   Linux*)
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
     ;;

@@ -312,5 +312,6 @@ settings = {
     real_name = "Guilherme M. Miranda";
     user_name = "elf-alchemist";
     nick = "elf-alchemist";
+    hostname = "Pluton";
   };
 };
