@@ -1,7 +1,7 @@
 <monitors version="2">
   <configuration>
     <logicalmonitor>
-      <x>0</x>
+      <x>1280</x>
       <y>224</y>
       <scale>1</scale>
       <primary>yes</primary>
@@ -20,7 +20,7 @@
       </monitor>
     </logicalmonitor>
     <logicalmonitor>
-      <x>1280</x>
+      <x>0</x>
       <y>0</y>
       <scale>1</scale>
       <monitor>

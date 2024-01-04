@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,osx,linux,visualstudiocode,vim,emacs
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,osx,linux,visualstudiocode,vim,emacs
+# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode,vim,emacs
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,visualstudiocode,vim,emacs
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -66,7 +66,7 @@ flycheck_*.el
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### OSX ###
+### macOS ###
 # General
 .DS_Store
 .AppleDouble
@@ -93,6 +93,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
 
 ### Vim ###
 # Swap
@@ -159,7 +163,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,osx,linux,visualstudiocode,vim,emacs
+# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode,vim,emacs
 
 config
 
