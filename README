@@ -1,7 +1,3 @@
-#
-# The Alchemist's Lab
-#
-
 Base project containing all my settings for both Linux and MacOS systems.
 On a freshly installed sytem, clone this repo to $HOME, and install Homebrew:
 

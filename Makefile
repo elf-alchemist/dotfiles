@@ -29,22 +29,35 @@ XDG_CONFIG_HOME := $(HOME)/.config
 XDG_CACHE_HOME  := $(HOME)/.cache
 XDG_DATA_HOME   := $(HOME)/.local/share
 XDG_STATE_HOME  := $(HOME)/.local/state
-SSH_HOME        := $(HOME)/.ssh
 
+SSH_HOME        := $(HOME)/.ssh
 BASH_RC         := $(HOME)/.bashrc
 BASH_PROFILE    := $(HOME)/.bash_profile
 
+VSCODE      := $(XDG_CONFIG_HOME)/Code
+VSCODE_USER := $(XDG_CONFIG_HOME)/Code/User
+
 .DEFAULT: default
-.PHONY: default home linux darwin re_home re_linux re_darwin shell tmux
+.PHONY: default clean home linux darwin re_home re_linux re_darwin shell tmux
 
 default:
-	@echo "Welcome to the dotfiles Makefile!"
-	@echo ""
-	@echo "Screw you! Install me!"
-	@echo ""
-	@echo "Run 'make linux' or 'make darwin'!"
-	@echo ""
-	@echo "If you ain't an idiot, you WILL run 'make shell' and 'make tmux'!"
+	@echo -e "Welcome to the dotfiles Makefile!\n\n"\
+	"Screw you! Install me!\n\n"\
+	"Run 'make linux' or 'make darwin'!\n\n"\
+	"If you ain't an idiot, you WILL run 'make shell' and 'make tmux'!"
+
+clean:
+	@rm -rdf $(VSCODE)/Cache
+	@rm -rdf $(VSCODE)/CachedData
+	@rm -rdf $(VSCODE)/CachedExtensionVSIXs
+	@rm -rdf $(VSCODE)/CachedProfilesData
+	@rm -rdf $(VSCODE)/Code\ Cache
+	@rm -rdf $(VSCODE)/DawnCache
+	@rm -rdf $(VSCODE)/GPUCache
+	@rm -rdf $(VSCODE)/logs
+	@rm -rdf $(VSCODE_USER)/History
+	@rm -rdf $(VSCODE_USER)/workspaceStorage
+	@rm -f   $(VSCODE)/.org.chromium.Chromium.*
 
 home:
 	@brew tap "homebrew/bundle"
