@@ -63,7 +63,6 @@
 	"workbench.startupEditor": "none",
 	"workbench.settings.editor": "json",
 	"workbench.productIconTheme": "Default",
-	"workbench.iconTheme": "vscode-icons",
 	"workbench.preferredDarkColorTheme": "Default Dark Modern",
 	"explorer.enableDragAndDrop": true,
 	"explorer.enableUndo": true,
