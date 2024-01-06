@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-case "$(uname -a)" in
-  Linux*Debian*) source "$HOME/dotfiles/bash/debian.bash" ;;
-  Darwin*) source "$HOME/dotfiles/bash/darwin.bash" ;;
-  *) source "$HOME/dotfiles/bash/home.bash" ;;
-esac
+name="$(uname -a)"
+
+if [[ $name == Linux*Debian* ]]; then
+	source "$HOME/dotfiles/bash/debian.bash"
+fi
+
+if [[ $name == Darwin* ]]; then
+	source "$HOME/dotfiles/bash/darwin.bash"
+fi
+
+source "$HOME/dotfiles/bash/home.bash"
 
