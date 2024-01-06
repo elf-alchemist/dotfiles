@@ -10,5 +10,5 @@ if [[ $name == Darwin* ]]; then
 	source "$HOME/dotfiles/bash/darwin.bash"
 fi
 
-source "$HOME/dotfiles/bash/home.bash"
+source "$HOME/dotfiles/bash/brew.bash"
 
