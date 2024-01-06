@@ -13,6 +13,7 @@ case "$(uname -s -m)" in
 		;;
 esac
 
+export HOMEBREW_BIN="$HOMEBREW_PREFIX/bin"
 export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
 export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"
 export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
@@ -72,8 +73,8 @@ export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
 [ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/pnpm.bash"
 
 # Lua
-if command -v luarocks > /dev/null; then
-	eval "$(luarocks path --bin)"
+if command -v "$HOMEBREW_BIN/luarocks" > /dev/null; then
+	eval "$("$HOMEBREW_BIN/luarocks" path --bin)"
 fi
 
 [ -e "$HOMEBREW_BASH/luarocks" ] && source "$HOMEBREW_BASH/luarocks"
