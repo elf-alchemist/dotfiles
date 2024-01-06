@@ -71,6 +71,13 @@ export PATH="$PNPM_HOME:$PATH"
 export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
 [ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/pnpm.bash"
 
+# Lua
+if command -v luarocks > /dev/null; then
+  eval "$(luarocks path)"
+fi
+
+[ -e "$HOMEBREW_BASH/luarocks" ] && source "$HOMEBREW_BASH/luarocks"
+
 # Container
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
@@ -81,6 +88,11 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 # Misc
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 
+alias ..="cd .."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
@@ -89,11 +101,10 @@ export HISTFILE="$XDG_STATE_HOME/bash/history"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
-[ -e "$HOMEBREW_BASH/tmux" ] && source "$HOMEBREW_BASH/tmux"
-[ -e "$HOMEBREW_BASH/more" ] && source "$HOMEBREW_BASH/more"
+[ -e "$HOMEBREW_BASH/tmux" ]     && source "$HOMEBREW_BASH/tmux"
+[ -e "$HOMEBREW_BASH/more" ]     && source "$HOMEBREW_BASH/more"
 
-[ -e "$HOMEBREW_BASH/pandoc" ] && source "$HOMEBREW_BASH/pandoc"
-[ -e "$HOMEBREW_BASH/cog" ] && source "$HOMEBREW_BASH/cog"
+[ -e "$HOMEBREW_BASH/pandoc" ]   && source "$HOMEBREW_BASH/pandoc"
 
 # Linux Only Stuff
 [ -e "$HOMEBREW_BASH/systemctl"   ] && source "$HOMEBREW_BASH/systemctl"
