@@ -2,13 +2,9 @@
 
 name="$(uname -a)"
 
-if [[ $name == Linux*Debian* ]]; then
-	source "$HOME/dotfiles/bash/debian.bash"
-fi
+source "$HOME/dotfiles/bash/home.bash"
 
 if [[ $name == Darwin* ]]; then
 	source "$HOME/dotfiles/bash/darwin.bash"
 fi
-
-source "$HOME/dotfiles/bash/brew.bash"
 
