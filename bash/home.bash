@@ -102,5 +102,5 @@ function git-license
 	curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
 }
 
-PS1='\[\e[1;34m\]\W\[\e[1;0m\] '
-PS1+='$(__git_ps1 "(%s) ")'
+PROMPT_COMMAND='__git_ps1 "\[\e[1;34m\]\W\[\e[1;0m\]" " "'
+
