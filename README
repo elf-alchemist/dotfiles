@@ -1,14 +1,17 @@
 Base project containing all my settings for both Linux and MacOS systems.
-On a freshly installed sytem, clone this repo to $HOME, and install Homebrew:
+On a freshly installed sytem, clone this repo to $HOME:
 
 $ git clone git@github.com:elf-alchemist/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-To get started, run:
+To get started, run the following, and Make will guide you on the rest:
 
 $ make
 
-Now, Make will guide you on the rest, allowing you to install up-to-date
-packages with Homebrew and other configuration setup.
+And if you are on MacOS you shall install Homebrew as the following:
+
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ make brew
+
+Allowing you to install up-to-date packages.
 
