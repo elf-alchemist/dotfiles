@@ -8,8 +8,8 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export PATH="$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$PATH"
 
 # Improved Bash
 export HISTFILE="$XDG_STATE_HOME/bash/history"
@@ -37,6 +37,8 @@ if [ -x /usr/bin/dircolors ]; then
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
+
+	alias diff='diff --color=auto'
 fi
 
 # Le misc vars
