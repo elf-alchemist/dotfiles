@@ -39,13 +39,8 @@
 
 (package-initialize)
 
-(require 'eglot)
 (require 'company)
 (require 'atom-one-dark-theme)
 
-(add-to-list 'eglot-server-programs '((js-mode) "typescript-language-server" "--stdio"))
-(add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server" "--stdio"))
-
 (global-company-mode)
-
 (load-theme 'atom-one-dark t)

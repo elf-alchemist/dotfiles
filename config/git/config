@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor   = nvim
+	editor   = vim
 	pager    = less
 	eol      = lf
 	autocrlf = input
@@ -48,7 +48,6 @@
 	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
 	co      = checkout
-
 	br      = branch
 	br-all  = branch --list --remotes --all --verbose --verbose
 	br-del  = branch --delete
