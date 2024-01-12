@@ -20,16 +20,16 @@ export HISTFILESIZE="2000"
 shopt -s histappend
 shopt -s checkwinsize
 
-# Le Bash autocomplete
-if [ -f "/usr/share/bash-completion/bash_completion" ]; then
-        source "/usr/share/bash-completion/bash_completion"
-elif [ -f "/etc/bash_completion" ]; then
-        source "/etc/bash_completion"
+if [[ -f "/usr/share/bash-completion/bash_completion" ]]; then
+	source "/usr/share/bash-completion/bash_completion"
+elif [[ -f "/etc/bash_completion" ]]; then
+	source "/etc/bash_completion"
 fi
 
-# Le auto colored output
-if [ -x /usr/bin/dircolors ]; then
+# Auto colored output
+if command -v dircolors > /dev/null; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
 	alias ls='ls --color=auto'
 	alias dir='dir --color=auto'
 	alias vdir='vdir --color=auto'
@@ -41,7 +41,7 @@ if [ -x /usr/bin/dircolors ]; then
 	alias diff='diff --color=auto'
 fi
 
-# Le misc vars
+# Misc
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
@@ -49,7 +49,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
-# Misc alias
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 
 alias ..="cd .."
@@ -57,8 +56,15 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
+# Doom
+export DOOMWADDIR="$XDG_DATA_HOME/games/doom";
+export DOOMWADPATH="$DOOMWADDIR:/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom";
+
+alias doom1="woof -iwad doom1.wad -file midi1.wad sprite1.wad -deh sprite1.deh"
+alias doom2="woof -iwad doom2.wad -file midi2.wad sprite2.wad -deh sprite2.deh"
+
 # ECMAScript is pain
-export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
@@ -67,7 +73,7 @@ export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
-[ -e "$PNPM_COMPLETION" ] && source "$PNPM_COMPLETION/pnpm.bash"
+[[ -e "$PNPM_COMPLETION" ]] && source "$PNPM_COMPLETION/pnpm.bash"
 
 # Lua is very good
 if command -v luarocks > /dev/null; then
