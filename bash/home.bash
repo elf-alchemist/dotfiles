@@ -60,8 +60,8 @@ alias .4="cd ../../../.."
 export DOOMWADDIR="$XDG_DATA_HOME/games/doom";
 export DOOMWADPATH="$DOOMWADDIR:/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom";
 
-alias doom1="woof -iwad doom1.wad -file midi1.wad sprite1.wad -deh sprite1.deh"
-alias doom2="woof -iwad doom2.wad -file midi2.wad sprite2.wad -deh sprite2.deh"
+alias doom1="woof -iwad doom1.wad -file midi1.wad sprite1.wad -deh sprite1.deh -fast"
+alias doom2="woof -iwad doom2.wad -file midi2.wad sprite2.wad -deh sprite2.deh -fast"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
