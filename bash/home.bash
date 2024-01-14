@@ -41,10 +41,16 @@ if command -v dircolors > /dev/null; then
 	alias diff='diff --color=auto'
 fi
 
+# the crypt
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GPG_TTY="$(tty)"
+if pidof "gpp-agent"; then
+	pkill -f gpg-agent
+	gpg-agent --daemon --quiet
+fi
+
 # Misc
 export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
-
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
