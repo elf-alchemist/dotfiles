@@ -14,8 +14,8 @@ export PATH="$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$PATH"
 # Improved Bash
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 export HISTCONTROL="ignoreboth"
-export HISTSIZE="1000"
-export HISTFILESIZE="2000"
+export HISTSIZE="10000"
+export HISTFILESIZE="10000"
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -44,7 +44,8 @@ fi
 # the crypt
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPG_TTY="$(tty)"
-if pidof "gpp-agent"; then
+
+if command -v gpp-agent > /dev/null; then
 	pkill -f gpg-agent
 	gpg-agent --daemon --quiet
 fi
@@ -68,6 +69,9 @@ export DOOMWADPATH="$DOOMWADDIR:/usr/local/share/games/doom:/usr/local/share/doo
 
 alias doom1="woof -iwad doom1.wad -file midi1.wad sprite1.wad -deh sprite1.deh -fast"
 alias doom2="woof -iwad doom2.wad -file midi2.wad sprite2.wad -deh sprite2.deh -fast"
+
+alias doom0="woof -iwad doom2.wad -file sprite2.wad doom0.wad -deh sprite2.deh"
+alias doomttp="woof -iwad doom2.wad -file sprite2.wad ttp.wad -deh sprite2.deh ttp.deh"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"

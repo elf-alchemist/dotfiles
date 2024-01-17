@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export BASH_SILIENCE_DEPRECATION_WARNING=1
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Homebrew is very nice
 case "$(uname -s -m)" in
