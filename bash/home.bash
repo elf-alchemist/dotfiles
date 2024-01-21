@@ -70,7 +70,9 @@ export DOOMWADPATH="$DOOMWADDIR:/usr/local/share/games/doom:/usr/local/share/doo
 alias doom1="woof -iwad doom1 -file doom1-midi.wad doom1-sprite.wad -fast"
 alias doom2="woof -iwad doom2 -file doom2-midi.wad doom2-sprite.wad -fast"
 
-alias doom0="woof -iwad doom2 -file doom2-sprite.wad doom0.wad"
+alias doomsigil1="woof -iwad doom1 -file doom1-sprite.wad sigil1.wad"
+alias doomsigil2="woof -iwad doom1 -file doom1-sprite.wad sigil1.wad sigil2.wad"
+alias doom0="woof -iwad doom2 -file doom2-sprite.wad doom-zero.wad"
 alias doomttp="woof -iwad doom2 -file doom2-sprite.wad ttp.wad"
 alias doomnrftl="woof -iwad doom2 -file doom2-sprite.wad nrftl.wad"
 
