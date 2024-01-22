@@ -78,6 +78,8 @@ alias doomnrftl="woof -iwad doom2 -file doom2-sprite.wad nrftl.wad"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
