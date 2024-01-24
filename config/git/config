@@ -25,6 +25,9 @@
 [diff]
 	tool    = nvimdiff
 	guitool = nvimdiff
+[diff "hex"]
+	textconv = hexdump -v -C
+	binary = true
 [push]
 	default         = current
 	autoSetupRemote = true
