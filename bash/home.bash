@@ -74,7 +74,7 @@ alias doomsigil1="woof -iwad doom1 -file doom1-plus.wad doom1-sigil1.wad -coop_s
 alias doomsigil2="woof -iwad doom1 -file doom1-plus.wad doom1-sigil1.wad doom1-sigil2.wad -coop_spawns"
 
 alias doomnrftl="woof -file doom2-plus.wad doom2-nrftl.wad -coop_spawns"
-alias doommaster="woof -file doom2.plus.wad doom2-masters.wad -coop_spawns"
+alias doommaster="woof -file doom2-plus.wad doom2-master.wad -coop_spawns"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
