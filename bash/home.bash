@@ -70,14 +70,11 @@ export DOOMWADPATH="$DOOMWADDIR:/usr/local/share/games/doom:/usr/local/share/doo
 alias doom1="woof -iwad doom1 -file doom1-plus.wad -complevel mbf21 -coop_spawns -fast"
 alias doom2="woof -iwad doom2 -file doom2-plus.wad -complevel mbf21 -coop_spawns -fast"
 
-alias doomsigil1="woof -iwad doom1 -file doom1-plus.wad sigil1.wad -coop_spawns"
-alias doomsigil2="woof -iwad doom1 -file doom1-plus.wad sigil1.wad sigil2.wad -coop_spawns"
+alias doomsigil1="woof -iwad doom1 -file doom1-plus.wad doom1-sigil1.wad -coop_spawns"
+alias doomsigil2="woof -iwad doom1 -file doom1-plus.wad doom1-sigil1.wad doom1-sigil2.wad -coop_spawns"
 
-alias doomnrftl="woof -file doom2-plus.wad nrftl.wad -coop_spawns"
-alias doommaster="woof -file doom2.plus.wad masters.wad -coop_spawns"
-
-alias doomzero="woof -file doom2-plus.wad doom-zero.wad"
-alias doomttp="woof -file doom2-plus.wad ttp.wad"
+alias doomnrftl="woof -file doom2-plus.wad doom2-nrftl.wad -coop_spawns"
+alias doommaster="woof -file doom2.plus.wad doom2-masters.wad -coop_spawns"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
