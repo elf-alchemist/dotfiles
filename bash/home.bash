@@ -72,11 +72,16 @@ alias doom2="woof -iwad doom2 -file doom2-plus.wad smooth.wad -complevel mbf21 -
 alias doomsigil1="woof -iwad doom1 -file doom1-plus.wad smooth.wad doom1-sigil1.wad -coop_spawns"
 alias doomsigil2="woof -iwad doom1 -file doom1-plus.wad smooth.wad doom1-sigil1.wad doom1-sigil2.wad -coop_spawns"
 
+alias doomjupiter="woof -iwad doom1 -file doom1-plus.wad smooth.wad jupiter.wad -coop_spawns"
+
 alias doomnrftl="woof -file doom2-plus.wad smooth.wad doom2-nrftl.wad -coop_spawns"
 alias doommaster="woof -file doom2-plus.wad smooth.wad doom2-master.wad -coop_spawns"
 
 alias doomtnt="woof -file doom2-plus.wad final-tnt.wad smooth.wad -coop_spawns"
 alias doomplutonia="woof -file doom2-plus.wad final-plutonia.wad smooth.wad -coop_spawns"
+
+alias doomperdgate="woof -file doom2-plus.wad smooth.wad perdgate.wad -coop_spawns"
+alias doomhell2gate="woof -file doom2-plus.wad smooth.wad hell2pay.wad -coop_spawns"
 
 alias doomzero="woof -file doom2-plus.wad doom-zero.wad -coop_spawns"
 
