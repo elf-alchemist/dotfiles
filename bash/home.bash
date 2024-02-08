@@ -67,13 +67,11 @@ alias .4="cd ../../../.."
 export DOOMWADDIR="$XDG_DATA_HOME/games/doom";
 
 alias doom1="woof -iwad doom1 -file doom1-plus.wad smooth.wad"
-alias doom1alt="woof -iwad doom1 -file doom1-plus.wad smooth.wad doom1-alt.wad"
 
 alias doomromero="woof -iwad doom1 -file doom1-plus.wad smooth.wad doom1-romero.wad"
 alias doomjupiter="woof -iwad doom1 -file doom1-plus.wad smooth.wad sybex-jupiter.wad"
 
 alias doom2="woof -file doom2-plus.wad smooth.wad"
-alias doom2alt="woof -file doom2-plus.wad smooth.wad doom2-alt.wad"
 
 alias doomnrftl="woof -file doom2-plus.wad smooth.wad doom2-nrftl.wad"
 alias doommaster="woof -file doom2-plus.wad smooth.wad doom2-master.wad"
