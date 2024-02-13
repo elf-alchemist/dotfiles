@@ -48,7 +48,6 @@
 	ls-config = config --list --global
 
 	st = status --short --branch --ahead-behind --untracked-files=all
-	dw = diff   --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
 
 	co      = checkout
 	br      = branch
