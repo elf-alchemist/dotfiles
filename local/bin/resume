@@ -2,7 +2,7 @@
 
 # Build and display resume
 
-if ! [[ command -v groff &> /dev/null ]]; then
+if ! command -v groff &> /dev/null; then
 	echo >&2 "Error: groff not found, please install groff."
 	echo >&2 "Make sure you have the ms macros installed aswell."
 	exit 1
