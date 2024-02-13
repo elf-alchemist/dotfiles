@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# Build and display resume
+
+RESUME_DIR="${HOME}/code/elf-alchemist"
+RESUME_PDF="${RESUME_DIR}/resume.pdf"
+RESUME_MS="${RESUME_DIR}/resume.ms"
+
+groff -ms -T pdf "${RESUME_MS}" > "${RESUME_PDF}"
+
