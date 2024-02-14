@@ -45,7 +45,7 @@ fi
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPG_TTY="$(tty)"
 
-if command -v gpp-agent > /dev/null; then
+if command -v gpg-agent > /dev/null; then
 	pkill -f gpg-agent
 	gpg-agent --daemon --quiet
 fi
@@ -115,6 +115,9 @@ export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
 export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
 export GIT_COMPLETION_SHOW_ALL=1
 export GIT_COMPLETION_IGNORE_CASE=1
+
+export GIT_PATH="${XDG_DATA_HOME}/git"
+export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
 
 function git-ignore
 {
