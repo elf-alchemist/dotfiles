@@ -2,9 +2,9 @@
 
 name="$(uname -a)"
 
-source "$HOME/dotfiles/bash/home.bash"
+source "$HOME/dotfiles/local/bin/init_bash"
 
 if [[ $name == Darwin* ]]; then
-	source "$HOME/dotfiles/bash/darwin.bash"
+	source "$HOME/dotfiles/local/bin/init_darwin"
 fi
 
