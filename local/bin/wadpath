@@ -1,108 +1,21 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Return doom wad directory path enviroment variable
+#
+# Author:
+#     elf-alchemist
+#
 
-# Bash strict mode
+# Bash strict mode - Exit early, instead of failing later
 set -o errtrace
 set -o errexit
 set -o nounset
 set -o pipefail
 
-IFS=$'\n\t'
-LANG=C
+XDG_DATA_HOME=${XDG_DATA_HOME:-"${HOME}/.local/share"}
+DOOM_DIR="${DOOMWADDIR:-"${XDG_DATA_HOME}/games/doom"}"
 
-NAME="$(basename "$0")"
-VERSION="alpha"
+echo "export DOOMWADDIR=\"${DOOM_DIR}\""
 
-DATA_DIR=${XDG_DATA_HOME:-"${HOME}/.local/share"}
-DOOM_DIR="${DOOMWADDIR:-"${DATA_DIR}/games/doom"}"
-PATHS=(
-	"${DOOM_DIR}"
-	/usr/local/share/games/doom
-	/usr/local/share/doom
-	/usr/share/games/doom
-	/usr/share/doom
-)
-DOOM_PATH="$(echo "${PATHS[@]}" | tr ' ' ':')"
-
-function __path()
-{
-	echo "export DOOMWADDIR=\"${DOOM_DIR}\""
-	echo "export DOOMWADPATH=\"${DOOM_PATH}\""
-	exit 0
-}
-
-function __man()
-{
-	if command -v man > /dev/null; then
-		echo "Opening man page for ${NAME}..."
-		man wadpath.1
-		exit $?
-	else
-		echo "Man not found! What?" >&2
-		exit 1
-	fi
-}
-
-function __help()
-{
-	echo "Usage: wadpath [OPTIONS]"
-	echo "Options:"
-	echo "    -m  Open manual pages"
-	echo "    -h  Print this help message"
-	echo "    -v  Print version information"
-	echo ""
-	exit 0
-
-}
-
-function __version()
-{
-	echo "${NAME} - DoomUtils ${VERSION}"
-	exit 0
-}
-
-function __invalid()
-{
-	echo "Option -${OPTARG} is invalid" >&2
-	exit 1
-}
-
-function __required_args()
-{
-	echo "Option -${OPTARG} requires an argument" >&2
-	exit 1
-}
-
-function __unreachable
-{
-	echo "How did you get here?" >&2
-	exit 1
-}
-
-function main()
-{
-	while getopts ":mhv" option; do
-		case "${option}" in
-			m)
-				__man
-				;;
-			h)
-				__help
-				;;
-			v)
-				__version
-				;;
-			\?)
-				__invalid
-				;;
-			:)
-				__required_args
-				;;
-			*)
-				__unreachable
-				;;
-		esac
-	done
-	__path
-}
-
-main "$@"
