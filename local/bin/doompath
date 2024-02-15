@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Return doom wad path enviroment variable
+#
+# Author:
+#     elf-alchemist
+#
+
+# Bash strict mode - Exit early, instead of failing later
+set -o errtrace
+set -o errexit
+set -o nounset
+set -o pipefail
+
+XDG_DATA_HOME=${XDG_DATA_HOME:-"${HOME}/.local/share"}
+DOOMWADDIR="${DOOMWADDIR:-"${XDG_DATA_HOME}/games/doom"}"
+PATHS=(
+       "${DOOMWADDIR}"
+       /usr/local/share/games/doom
+       /usr/local/share/doom
+       /usr/share/games/doom
+       /usr/share/doom
+)
+
+DOOMWADPATH="$(echo "${PATHS[@]}" | tr ' ' ':')"
+
+echo "export DOOMWADPATH=\"${DOOMWADPATH}\""
+
