@@ -1,26 +1,29 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Validate Doom engine (idtech 1) game data files (WADs).
+#
+# Author:
+#     elf-alchemist
+#
 
-# Bash strict mode
+# Bash strict mode - Early exit, instead of failing later
 set -o errtrace
 set -o errexit
 set -o nounset
 set -o pipefail
 
-IFS=$'\n\t'
-LANG=C
-
-NAME="$(basename "$0")"
-VERSION="alpha"
-
 DATA_DIR="${XDG_DATA_HOME:-"${HOME}/.local/share"}"
 STEAMROOT="${STEAMROOT:-"${DATA_DIR}/Steam"}"
+STEAMCOMMON="${STEAMROOT}/steamapps/common"
 
-DOOM1_ROOT="${STEAMROOT}/steamapps/common/Ultimate Doom"
-DOOM2_ROOT="${STEAMROOT}/steamapps/common/Doom 2"
-HERETIC_ROOT="${STEAMROOT}/steamapps/common/Heretic Shadow of the Serpent Riders"
-HEXEN_ROOT="${STEAMROOT}/steamapps/common/Hexen"
-HEXDD_ROOT="${STEAMROOT}/steamapps/common/Hexen Deathkings of the Dark Citadel"
-STRIFE_ROOT="${STEAMROOT}/steamapps/common/Strife"
+DOOM1_ROOT="${STEAMCOMMON}/Ultimate Doom"
+DOOM2_ROOT="${STEAMCOMMON}/Doom 2"
+HERETIC_ROOT="${STEAMCOMMON}/Heretic Shadow of the Serpent Riders"
+HEXEN_ROOT="${STEAMCOMMON}/Hexen"
+HEXDD_ROOT="${STEAMCOMMON}/Hexen Deathkings of the Dark Citadel"
+STRIFE_ROOT="${STEAMCOMMON}/Strife"
 
 declare -A path=(
 	["doom_1"]="${DOOM1_ROOT}/base/DOOM.WAD"
@@ -48,101 +51,21 @@ declare -A sha1=(
 	["voices"]="ec6883100d807b894a98f426d024d22c77b63e7f"
 )
 
-function __check()
-{
-	if ! [[ -d "${STEAMROOT}" ]]; then
-		echo "Steam directory does not exit." >&2
-		echo "If Steam is not installed in your \$XDG_DATA_HOME" >&2
-		echo "Please specify your custom path with \$STEAMROOT" >&2
-		exit 1
-	fi
+if ! [[ -d "${STEAMROOT}" ]]; then
+	echo "Steam directory does not exit." >&2
+	echo "If Steam is not installed in your \$XDG_DATA_HOME" >&2
+	echo "Please specify your custom path with \$STEAMROOT" >&2
+	exit 1
+fi
 
-	echo "Steam directory found."
+echo "Steam directory found."
 
-	for wad in "${!path[@]}"; do
-		if [[ -e "${path[${wad}]}" ]]; then
-			echo "Found ${wad} installation."
-		else
-			echo "Didn't find ${wad}"
-		fi
-	done
-
-	exit 0
-}
-
-function __man()
-{
-	if command -v man > /dev/null; then
-		echo "Opening man page for ${NAME}..."
-		man wadpath.1
-		exit $?
+for wad in "${!path[@]}"; do
+	if [[ -e "${path[${wad}]}" ]]; then
+		echo "Found ${wad} installation."
 	else
-		echo "Man not found! What?" >&2
-		exit 1
+		echo "Didn't find ${wad}"
 	fi
-}
+done
 
-function __help()
-{
-	echo "Usage: ${NAME} [OPTIONS]"
-	echo "Options:"
-	echo "    -m  Open manual pages"
-	echo "    -h  Print this help message"
-	echo "    -v  Print version information"
-	echo ""
-	exit 0
 
-}
-
-function __version()
-{
-	echo "${NAME} - DoomUtils ${VERSION}"
-	exit 0
-}
-
-function __invalid()
-{
-	echo "Option -${OPTARG} is invalid" >&2
-	exit 1
-}
-
-function __require_args()
-{
-	echo "Option -${OPTARG} requires an argument" >&2
-	exit 1
-}
-
-function __unreachable()
-{
-	echo "How did you get here?" >&2
-	exit 1
-}
-
-function main()
-{
-	while getopts ":mhv" option; do
-		case "${option}" in
-			m)
-				__man
-				;;
-			h)
-				__help
-				;;
-			v)
-				__version
-				;;
-			\?)
-				__invalid
-				;;
-			:)
-				__require_args
-				;;
-			*)
-				__unreachable
-				;;
-		esac
-	done
-	__check
-}
-
-main "$@"
