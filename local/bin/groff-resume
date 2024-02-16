@@ -24,15 +24,15 @@ XDG_DATA_HOME="${XDG_DATA_HOME:-"${HOME}/.local/share"}"
 GIT_PATH="${GIT_PATH:-"${XDG_DATA_HOME}/git"}"
 RESUME_DIR="${GIT_PATH}/elf-alchemist"
 
-RESUME_MS_PDF="${RESUME_DIR}/resume_ms.pdf"
-RESUME_MS_ROFF="${RESUME_DIR}/resume_ms.roff"
+RESUME_PDF="${RESUME_DIR}/ms-resume.pdf"
+RESUME_ROFF="${RESUME_DIR}/ms-resume.roff"
 
-groff -m ms -T pdf -K utf8 -t "${RESUME_MS_ROFF}" > "${RESUME_MS_PDF}"
+groff -m ms -T pdf -K utf8 -t "${RESUME_ROFF}" > "${RESUME_PDF}"
 
 if ! command -v zathura &> /dev/null; then
 	echo >&2 "Error: zathura not found cannot open automatically."
 	exit 0
 fi
 
-zathura "${RESUME_MS_PDF}"
+zathura "${RESUME_PDF}"
 
