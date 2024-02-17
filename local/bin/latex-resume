@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Build and display resume, LaTeX version
+#
+# Author:
+#     elf-alchemist
+#
+
+# Bash strict mode - Exit early, instead of failing later
+set -o errexit
+set -o nounset
+set -o pipefail
+
+if ! command -v latex &> /dev/null; then
+	echo >&2 "Error: latex not found, please install latex."
+	exit 1
+fi
+
+# Modify this acording to your own organization style
+XDG_DATA_HOME="${XDG_DATA_HOME:-"${HOME}/.local/share"}"
+GIT_PATH="${GIT_PATH:-"${XDG_DATA_HOME}/git"}"
+RESUME_DIR="${GIT_PATH}/elf-alchemist"
+
+RESUME_PDF="${RESUME_DIR}/latex-resume.pdf"
+RESUME_TEX="${RESUME_DIR}/latex-resume.tex"
+
+latex "${RESUME_TEX}"
+
+if ! command -v zathura &> /dev/null; then
+	echo >&2 "Error: zathura not found cannot open automatically."
+	exit 0
+fi
+
+zathura "${RESUME_PDF}"
+
