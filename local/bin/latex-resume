@@ -13,8 +13,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-if ! command -v latex &> /dev/null; then
-	echo >&2 "Error: latex not found, please install latex."
+if ! command -v pdflatex &> /dev/null; then
+	echo >&2 "Error: pdflatex not found, please install pdflatex."
 	exit 1
 fi
 
@@ -26,7 +26,7 @@ RESUME_DIR="${GIT_PATH}/elf-alchemist"
 RESUME_PDF="${RESUME_DIR}/latex-resume.pdf"
 RESUME_TEX="${RESUME_DIR}/latex-resume.tex"
 
-latex "${RESUME_TEX}"
+pdflatex "${RESUME_TEX}"
 
 if ! command -v zathura &> /dev/null; then
 	echo >&2 "Error: zathura not found cannot open automatically."
