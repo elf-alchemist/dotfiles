@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Clean Visual Studio Code cache
+#
+# Author:
+#     elf-alchemist
+#
+
+# Bash strict mode - Exit early, instead of failing later
+set -o errtrace
+set -o errexit
+set -o nounset
+set -o pipefail
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"${HOME}/.config"}
+
+VSCODE="${XDG_CONFIG_HOME}/Code"
+VSUSER="${XDG_CONFIG_HOME}/Code/User"
+
+declare -a DELETE_LIST=(
+	"${VSCODE}/Cache"
+	"${VSCODE}/CachedData"
+	"${VSCODE}/CachedExtensionVSIXs"
+	"${VSCODE}/CachedProfileData"
+	"${VSCODE}/Code\ Cache"
+	"${VSCODE}/DawnCache"
+	"${VSCODE}/GPUCache"
+	"${VSCODE}/logs"
+	"${VSUSER}/History"
+	"${VSUSER}/workspaceStorage"
+)
+
+for item in "${DELETE_LIST[@]}"
+do
+	if [[ -e "$item" ]]; then
+		echo "$item"
+	fi
+done
+
