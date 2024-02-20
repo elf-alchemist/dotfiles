@@ -1,1 +1,21 @@
-fluidsynth -a alsa -m alsa_seq -i ~/.local/share/soundfonts/RolandGM.sf2
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Simple Midi playback
+#
+# Author:
+#     elf-alchemist
+#
+
+# Bash strict mode - Early exit, instead of failing later
+set -o errtrace
+set -o errexit
+set -o nounset
+set -o pipefail
+
+XDG_DATA_HOME="${XDG_DATA_HOME:-"${HOME}/.local/share"}"
+SOUNDFONT="${XDG_DATA_HOME}/soundfonts/RolandGM.sf2"
+
+fluidsynth -a alsa -m alsa_seq -i "${SOUNDFONT}" "$@"
+

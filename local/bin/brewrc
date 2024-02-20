@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+#
+# Description:
+#     Bash '.bashrc' script for Mac/MacOS/OSX
+#
+# Author:
+#     elf-alchemist
+#
+
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Homebrew is very nice
