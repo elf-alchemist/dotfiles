@@ -1,0 +1,1 @@
+fluidsynth -a alsa -m alsa_seq -i ~/.local/share/soundfonts/RolandGM.sf2
