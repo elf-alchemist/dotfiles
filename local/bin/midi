@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Unlicense
+# SPDX-FileCopyrightText: Copyright 2024 Guilherme M. Miranda <alchemist.software@proton.me>
 #
 # Description:
 #     Simple Midi playback
 #
-# Author:
-#     elf-alchemist
-#
+
 
 # Bash strict mode - Early exit, instead of failing later
 set -o errtrace
