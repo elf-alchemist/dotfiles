@@ -4,14 +4,18 @@ On a freshly installed sytem, clone this repo to $HOME:
 $ git clone git@github.com:elf-alchemist/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 
-To get started, run the following, and Make will guide you on the rest:
 
-$ make
+Symlink the respective directories, as per the following:
 
-And if you are on MacOS you shall install Homebrew as the following:
+$ ln -sfn ~/dotfiles/config ~/.config
+$ ln -sfn ~/dotfiles/local  ~/.local
 
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$ make brew
 
-Allowing you to install up-to-date packages.
+Now, let's the stubborn ones that do not conform to the XDG standard.
+
+$ ln -sfn ~/.ssh            ~/dotfiles/config/ssh
+$ ln -sfn ~/.irssi          ~/dotfiles/config/irssi
+$ ln -sfn ~/.pki            ~/dotfiles/local/share/pki
+$ ln -sfn ~/.bashrc         ~/dotfiles/bashrc
+$ ln -sfn ~/.bash_profile   ~/dotfiles/bashrc
 
