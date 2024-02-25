@@ -70,7 +70,7 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
 # Doom
-export DOOMWADDIR="$XDG_DATA_HOME/games/doom";
+export DOOMWADDIR="$XDG_DATA_HOME/doom";
 
 alias doom1="woof -iwad doom1 -file doom1-plus.wad smooth.wad"
 alias doom2="woof -file doom2-plus.wad smooth.wad"
