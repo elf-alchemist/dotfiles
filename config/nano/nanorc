@@ -1,17 +1,14 @@
-include "/home/linuxbrew/.linuxbrew/share/nano/nanorc.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/git.nanorc"
+include "/usr/share/nano/nanorc.nanorc"
 
-include "/home/linuxbrew/.linuxbrew/share/nanorc/json.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/yaml.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/toml.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/xml.nanorc"
+include "/usr/share/nano/json.nanorc"
+include "/usr/share/nano/yaml.nanorc"
+include "/usr/share/nano/xml.nanorc"
 
-include "/home/linuxbrew/.linuxbrew/share/nanorc/html.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/css.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/js.nanorc"
-include "/home/linuxbrew/.linuxbrew/share/nanorc/ts.nanorc"
+include "/usr/share/nano/html.nanorc"
+include "/usr/share/nano/css.nanorc"
+include "/usr/share/nano/javascript.nanorc"
 
-include "/home/linuxbrew/.linuxbrew/share/nanorc/sh.nanorc"
+include "/usr/share/nano/sh.nanorc"
 
 set backup
 set locking
