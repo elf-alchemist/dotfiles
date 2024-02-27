@@ -72,13 +72,13 @@ alias .4="cd ../../../.."
 # Doom
 export DOOMWADDIR="$XDG_DATA_HOME/doom";
 
-alias doom1="woof -verbose -iwad doom1 -file doom1-plus.wad smooth.wad"
+alias doom1="woof -verbose -file doom1-plus.wad smooth.wad -iwad doom1"
 alias doom2="woof -verbose -file doom2-plus.wad smooth.wad"
 
-alias doomnrftl="woof -verbose -file doom2-plus.wad smooth.wad doom2-nrftl.wad"
-alias doommaster="woof -verbose -file doom2-plus.wad smooth.wad doom2-master.wad"
-alias doomtnt="woof -verbose -file doom2-plus.wad smooth.wad final-tnt.wad"
-alias doomplut="woof -verbose -file doom2-plus.wad smooth.wad final-plutonia.wad"
+alias doomnrftl="woof -verbose -file smooth.wad doom2-nrftl.wad"
+alias doommaster="woof -verbose -file smooth.wad doom2-master.wad"
+alias doomtnt="woof -verbose -file smooth.wad final-tnt.wad"
+alias doomplut="woof -verbose -file smooth.wad final-plutonia.wad"
 
 # ECMAScript is pain
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
