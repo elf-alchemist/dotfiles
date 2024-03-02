@@ -18,10 +18,10 @@ case "$(uname -s -m)" in
 		;;
 esac
 
-export HOMEBREW_BIN="$HOMEBREW_PREFIX/bin"
-export HOMEBREW_OPT="$HOMEBREW_PREFIX/opt"
-export HOMEBREW_ETC="$HOMEBREW_PREFIX/etc"
-export HOMEBREW_BASH="$HOMEBREW_PREFIX/etc/bash_completion.d"
+export HOMEBREW_BIN="${HOMEBREW_PREFIX}/bin"
+export HOMEBREW_OPT="${HOMEBREW_PREFIX}/opt"
+export HOMEBREW_ETC="${HOMEBREW_PREFIX}/etc"
+export HOMEBREW_BASH="${HOMEBREW_PREFIX}/etc/bash_completion.d"
 
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
@@ -31,9 +31,9 @@ alias __list_brew_casks="brew tap-info --json --installed | jq -r '.[]|(.cask_to
 alias __list_brew_caveats="brew info --json --installed | jq 'map(select(.caveats) | [.name, .caveats])'"
 alias __list_brew_manually_installed="brew info --json=v2 --installed | jq -r '.formulae[]|select(any(.installed[]; .installed_on_request)).full_name'"
 
-[ -e "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ] && source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-[ -e "$HOMEBREW_BASH/brew"          ] && source "$HOMEBREW_BASH/brew"
-[ -e "$HOMEBREW_BASH/brew-services" ] && source "$HOMEBREW_BASH/brew-services"
+[ -e "${HOMEBREW_ETC}/profile.d/bash_completion.sh" ] && source "${HOMEBREW_ETC}/profile.d/bash_completion.sh"
+[ -e "${HOMEBREW_BASH}/brew"          ] && source "${HOMEBREW_BASH}/brew"
+[ -e "${HOMEBREW_BASH}/brew-services" ] && source "${HOMEBREW_BASH}/brew-services"
 
-export PATH="$HOMEBREW_PREFIX/sbin:$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/sbin:${HOMEBREW_PREFIX}/bin:${PATH}"
 

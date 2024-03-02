@@ -7,18 +7,18 @@
 #
 
 # Define location & path
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="$HOME/.config"}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:="$HOME/.cache"}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:="$HOME/.local/share"}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:="$HOME/.local/state"}"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="${HOME}/.config"}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:="${HOME}/.cache"}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:="${HOME}/.local/share"}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:="${HOME}/.local/state"}"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 
 export PATH="/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-export PATH="$HOME/.local/games:$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="${HOME}/.local/games:${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
 # Improved Bash
-export HISTFILE="$XDG_STATE_HOME/bash/history"
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
 export HISTCONTROL="ignoreboth"
 export HISTSIZE="10000"
 export HISTFILESIZE="10000"
@@ -48,7 +48,7 @@ if command -v dircolors > /dev/null; then
 fi
 
 # the crypt
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
 export GPG_TTY="$(tty)"
 
 if command -v gpg-agent > /dev/null; then
@@ -57,10 +57,12 @@ if command -v gpg-agent > /dev/null; then
 fi
 
 # Misc
-export HTOPRC="$XDG_CONFIG_HOME/htop/htoprc"
+export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
-export TERMINFO="$XDG_DATA_HOME/terminfo"
-export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+export HTOPRC="${XDG_CONFIG_HOME}/htop/htoprc"
+
+export TERMINFO="${XDG_DATA_HOME}/terminfo"
+export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
 
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 
@@ -70,7 +72,7 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
 # Doom
-export DOOMWADDIR="$XDG_DATA_HOME/doom";
+export DOOMWADDIR="${XDG_DATA_HOME}/doom";
 
 alias doom1="woof -verbose -file doom1-plus.wad smooth.wad -iwad doom1"
 alias doom2="woof -verbose -file doom2-plus.wad smooth.wad"
@@ -81,27 +83,22 @@ alias doomtnt="woof -verbose -file smooth.wad final-tnt.wad"
 alias doomplut="woof -verbose -file smooth.wad final-plutonia.wad"
 
 # ECMAScript is pain
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+[ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
+[ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
 
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
+export PATH="${PNPM_HOME}:${PATH}"
 
-export PNPM_COMPLETION="$XDG_CONFIG_HOME/tabtab/bash"
-[[ -e "$PNPM_COMPLETION" ]] && source "$PNPM_COMPLETION/pnpm.bash"
-
-# Lua is very good
-if command -v luarocks > /dev/null; then
-	eval "$(luarocks path --bin)"
-fi
+export PNPM_COMPLETION="${XDG_CONFIG_HOME}/tabtab/bash"
+[[ -e "${PNPM_COMPLETION}" ]] && source "${PNPM_COMPLETION}/pnpm.bash"
 
 # Whale
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 
 # I don't need starship or zsh or nothing for my git prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
