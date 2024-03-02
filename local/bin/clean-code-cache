@@ -32,8 +32,8 @@ declare -a DELETE_LIST=(
 
 for item in "${DELETE_LIST[@]}"
 do
-	if [[ -e "$item" ]]; then
-		echo "$item"
+	if [[ -e "${item}" ]]; then
+		echo "${item}"
 	fi
 done
 
