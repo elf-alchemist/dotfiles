@@ -47,15 +47,6 @@ if command -v dircolors > /dev/null; then
 	alias diff='diff --color=auto'
 fi
 
-# the crypt
-export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
-export GPG_TTY="$(tty)"
-
-if command -v gpg-agent > /dev/null; then
-	pkill -f gpg-agent
-	gpg-agent --daemon --quiet
-fi
-
 # Misc
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
@@ -79,8 +70,8 @@ alias doom2="woof -verbose -file doom2-plus.wad smooth.wad"
 
 alias doomnrftl="woof -verbose -file smooth.wad doom2-nrftl.wad"
 alias doommaster="woof -verbose -file smooth.wad doom2-master.wad"
-alias doomtnt="woof -verbose -file smooth.wad final-tnt.wad"
-alias doomplut="woof -verbose -file smooth.wad final-plutonia.wad"
+alias doomtnt="woof -verbose -file smooth.wad tnt-evilution.wad"
+alias doomplut="woof -verbose -file smooth.wad plutonia.wad"
 
 # ECMAScript is pain
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
