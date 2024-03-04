@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Unlicense
+# SPDX-FileCopyrightText: Copyright 2024 Guilherme M. Miranda <alchemist.software@proton.me>
+#
+# Description:
+#     Auto setup Tmux and TPM
+#
+
+# Bash strict mode - Exit early, instead of failing later
+set -o errtrace
+set -o errexit
+set -o nounset
+set -o pipefail
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"${HOME}/.config"}
+TMUX_DIR="${XDG_CONFIG_HOME}/tmux"
+TPM_DIR="${TMUX_DIR}/plugins/tpm"
+TMUX_CONF="${TMUX_DIR}/tmux.conf"
+
+if [[ -d "${TPM_DIR}" ]]; then
+	rm -rdf "${TPM_DIR}"
+	exit $?
+fi
+
+if command -v git &> /dev/null; then
+	git clone git@github.com:tmux-plugins/tpm.git "${TPM_DIR}" --quiet
+	exit $?
+fi
+
+if command -v tmux &> /dev/null; then
+	tmux source-file "${TMUX_CONF}"
+	exit $?
+fi
+
+echo "Tmux setup successful."
+
