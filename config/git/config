@@ -15,6 +15,11 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [color]
 	ui = auto
 [status]
@@ -69,3 +74,4 @@
 	log-all  = log --oneline --graph --decorate=full
 	log-stat = log --oneline --graph --stat --decorate=full
 	log-prev = log --stat --decorate=full --full-diff --max-count=1 HEAD~1
+
