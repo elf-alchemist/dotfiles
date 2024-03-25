@@ -66,14 +66,20 @@ alias .4="cd ../../../.."
 export DOOMWADDIR="${XDG_DATA_HOME}/doom";
 export SHOTDIR="${HOME}/Pictures/Woof"
 
-alias doom1="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/twid-d1.wad 01-vanilla/smooth.wad -iwad doom1"
-alias doom2="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/twid.wad 01-vanilla/smooth.wad"
+alias doom1="woof -verbose -shotdir ${SHOTDIR} -file 11-dehextra/blackops.wad -iwad doom1"
+alias doom2="woof -verbose -shotdir ${SHOTDIR} -file 11-dehextra/blackops.wad"
 
-alias doomnrftl="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/nrftl.wad 01-vanilla/smooth.wad"
-alias doommaster="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/master.wad 01-vanilla/smooth.wad"
+alias twid1="woof -verbose -shotdir ${SHOTDIR} -file 03-ultimate/the-way-id-did.wad 11-dehextra/blackops.wad -iwad doom1"
+alias twid2="woof -verbose -shotdir ${SHOTDIR} -file 02-hell-on-earth/the-way-id-did.wad 11-dehextra/blackops.wad"
 
-alias doomtnt="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/tnt-evilution.wad 01-vanilla/smooth.wad -gameversion final"
-alias doomplut="woof -verbose -shotdir ${SHOTDIR} -file 01-vanilla/plutonia.wad 01-vanilla/smooth.wad -gameversion final"
+alias doomsigil1="woof -verbose -shotdir ${SHOTDIR} -file 03-ultimate/sigil1.wad 11-dehextra/blackops.wad -iwad doom1"
+alias doomsigil2="woof -verbose -shotdir ${SHOTDIR} -file 03-ultimate/sigil2.wad 11-dehextra/blackops.wad -iwad doom1"
+
+alias doomnrftl="woof -verbose -shotdir ${SHOTDIR} -file 02-hell-on-earth/nrftl.wad 11-dehextra/blackops.wad"
+alias doommaster="woof -verbose -shotdir ${SHOTDIR} -file 02-hell-on-earth/master.wad 11-dehextra/blackops.wad"
+
+alias doomtnt="woof -verbose -shotdir ${SHOTDIR} -file 04-final/tnt-evilution.wad 11-dehextra/blackops.wad -gameversion final"
+alias doomplut="woof -verbose -shotdir ${SHOTDIR} -file 04-final/plutonia.wad 11-dehextra/blackops.wad -gameversion final"
 
 # ECMAScript is pain
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
