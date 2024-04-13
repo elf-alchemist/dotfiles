@@ -70,8 +70,12 @@ alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
 alias woof1="woof -iwad doom1"
 alias woof2="woof -iwad doom2"
-alias wooftnt="woof2 -file 04-final/tnt-evilution.wad -gameversion final"
-alias woofplut="woof2 -file 04-final/plutonia.wad -gameversion final"
+
+alias wooftnt="woof -iwad tnt.wad"
+alias woofplut="woof -iwad plutonia.wad"
+
+alias woofchex="woof -iwad chex3v.wad"
+alias woofhacx="woof -iwad hacx.wad"
 
 alias doom1="woof1 -file 11-dehextra/blackops.wad"
 alias doom2="woof2 -file 11-dehextra/blackops.wad"
