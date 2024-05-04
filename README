@@ -13,9 +13,8 @@ $ ln -sfn ~/dotfiles/local  ~/.local
 
 Now, let's the stubborn ones that do not conform to the XDG standard.
 
-$ ln -sfn ~/dotfiles/config/ssh      ~/.ssh            
+$ ln -sfn ~/dotfiles/config/ssh      ~/.ssh
 $ ln -sfn ~/dotfiles/config/irssi    ~/.irssi
 $ ln -sfn ~/dotfiles/local/share/pki ~/.pki
 $ ln -sfn ~/dotfiles/bashrc          ~/.bashrc
 $ ln -sfn ~/dotfiles/bashrc          ~/.bash_profile
-
