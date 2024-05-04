@@ -64,6 +64,7 @@
 	"workbench.settings.editor": "json",
 	"workbench.productIconTheme": "Default",
 	"workbench.preferredDarkColorTheme": "Default Dark Modern",
+	"explorer.confirmDragAndDrop": false,
 	"explorer.enableDragAndDrop": true,
 	"explorer.enableUndo": true,
 	"explorer.confirmDelete": false,
@@ -252,4 +253,8 @@
 	"js/ts.implicitProjectConfig.strictNullChecks": true,
 	"js/ts.implicitProjectConfig.strictFunctionTypes": true,
 	"js/ts.implicitProjectConfig.experimentalDecorators": true,
+	"python.analysis.addImport.exactMatchOnly": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.analysis.typeCheckingMode": "strict"
 }
