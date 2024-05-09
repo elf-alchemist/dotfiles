@@ -40,6 +40,8 @@
 	binary = true
 [commit]
 	gpgsign = true
+[tag]
+	gpgsign = true
 [push]
 	default         = current
 	autoSetupRemote = true
