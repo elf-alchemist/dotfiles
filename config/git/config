@@ -38,6 +38,8 @@
 [diff "hex"]
 	textconv = hexdump -v -C
 	binary = true
+[format]
+	signoff = true
 [commit]
 	gpgsign = true
 [tag]

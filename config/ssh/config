@@ -1,4 +1,10 @@
+Host tilde
+  Hostname tilde.town
+  User elf-alchemist
+  IdentityFile ~/.ssh/tilde.town
+
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
   LogLevel ERROR
+

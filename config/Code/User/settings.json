@@ -74,7 +74,7 @@
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": true,
 	"explorer.fileNesting.patterns": {
-		"//": "Last update at 5/14/2024, 9:23:00 PM",
+		"//": "Last update at 5/24/2024, 10:17:04 AM",
 		".clang-tidy": ".clang-format, .clangd, compile_commands.json",
 		".env": "*.env, .env.*, .envrc, env.d.ts",
 		".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
@@ -255,6 +255,7 @@
 	"js/ts.implicitProjectConfig.strictNullChecks": true,
 	"js/ts.implicitProjectConfig.strictFunctionTypes": true,
 	"js/ts.implicitProjectConfig.experimentalDecorators": true,
+	"python.venvPath": "${workspaceFolder}/venv",
 	"python.analysis.typeCheckingMode": "basic",
 	"python.analysis.addImport.exactMatchOnly": true,
 	"python.analysis.autoImportCompletions": true,
