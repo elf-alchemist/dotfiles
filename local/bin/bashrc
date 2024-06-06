@@ -68,8 +68,8 @@ export SHOTDIR="${HOME}/Pictures/Woof"
 
 alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
-alias woof1="woof -iwad doom"
-alias woof2="woof -iwad doom2"
+alias woof1="woof -iwad doom -gameversion 1.9"
+alias woofu="woof -iwad doom -gameversion ultimate"
 
 alias wooftnt="woof -iwad tnt.wad"
 alias woofplut="woof -iwad plutonia.wad"
