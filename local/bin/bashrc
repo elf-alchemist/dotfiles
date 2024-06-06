@@ -68,7 +68,7 @@ export SHOTDIR="${HOME}/Pictures/Woof"
 
 alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
-alias woof1="woof -iwad doom1"
+alias woof1="woof -iwad doom"
 alias woof2="woof -iwad doom2"
 
 alias wooftnt="woof -iwad tnt.wad"
@@ -76,21 +76,6 @@ alias woofplut="woof -iwad plutonia.wad"
 
 alias woofchex="woof -iwad chex3v.wad"
 alias woofhacx="woof -iwad hacx.wad"
-
-alias doom1="woof1 -file 11-dehextra/blackops.wad"
-alias doom2="woof2 -file 11-dehextra/blackops.wad"
-
-alias twid1="woof1 -file 03-ultimate/the-way-id-did.wad 11-dehextra/blackops.wad"
-alias twid2="woof2 -file 02-hell-on-earth/the-way-id-did.wad 11-dehextra/blackops.wad"
-
-alias doomsigil1="woof1 -file 03-ultimate/sigil1.wad 11-dehextra/blackops.wad"
-alias doomsigil2="woof1 -file 03-ultimate/sigil2.wad 11-dehextra/blackops.wad"
-
-alias doomnrftl="woof2 -file 02-hell-on-earth/nrftl.wad 11-dehextra/blackops.wad"
-alias doommaster="woof2 -file 02-hell-on-earth/masterpack.wad 11-dehextra/blackops.wad"
-
-alias doomtnt="wooftnt -file 00-resource/midi-tnt.wad 11-dehextra/blackops.wad"
-alias doomplut="woofplut -file 00-resource/midi-plutonia.wad 11-dehextra/blackops.wad"
 
 # ECMAScript is pain
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
