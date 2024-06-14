@@ -25,3 +25,4 @@ ln -sfn "${imagicks}/picture"   "${XDG_PICTURES_HOME}/Misc"
 ln -sfn "${imagicks}/wallpaper" "${XDG_PICTURES_HOME}/Wallpaper"
 ln -sfn "${imagicks}/memery"    "${XDG_PICTURES_HOME}/Memes"
 ln -sfn "${imagicks}/luma"      "${XDG_PICTURES_HOME}/Luma"
+

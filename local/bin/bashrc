@@ -77,6 +77,13 @@ alias woofplut="woof -iwad plutonia.wad"
 alias woofchex="woof -iwad chex3v.wad"
 alias woofhacx="woof -iwad hacx.wad"
 
+alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
+
+alias master="woof -file 98-remaster/masterpack.wad"
+alias master-vanilla="woof -file 99-master/masterpack-vanilla.wad"
+alias master-freedoom="woof -file 99-master/masterpack-freedoom.wad"
+alias master-psx="woof -file 99-master/masterpack-psx.wad"
+
 # ECMAScript is pain
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
