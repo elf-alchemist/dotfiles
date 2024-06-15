@@ -70,12 +70,16 @@ alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
 alias woof1="woof -iwad doom -gameversion 1.9"
 alias woofu="woof -iwad doom -gameversion ultimate"
+alias wooftnt="woof -iwad tnt.wad -gameversion final"
+alias woofplut="woof -iwad plutonia.wad -gameversion final"
 
-alias wooftnt="woof -iwad tnt.wad"
-alias woofplut="woof -iwad plutonia.wad"
+alias woofchex="woof -iwad chex3v.wad -gameversion ultimate"
+alias woofhacx="woof -iwad hacx.wad -gameversion 1.9"
 
-alias woofchex="woof -iwad chex3v.wad"
-alias woofhacx="woof -iwad hacx.wad"
+alias fd1="woof -iwad freedoom1 -gameversion 1.9"
+alias fdu="woof -iwad freedoom1 -gameversion ultimate"
+alias fd2="woof -iwad freedoom2 -gameversion 1.9"
+alias fdfinal="woof -iwad freedoom2 -gameversion final"
 
 alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
 
