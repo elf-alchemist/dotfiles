@@ -70,11 +70,11 @@ alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
 alias woof1="woof -iwad doom -gameversion 1.9"
 alias woofu="woof -iwad doom -gameversion ultimate"
-alias wooftnt="woof -iwad tnt.wad -gameversion final"
-alias woofplut="woof -iwad plutonia.wad -gameversion final"
+alias wooftnt="woof -iwad tnt -gameversion final"
+alias woofplut="woof -iwad plutonia -gameversion final"
 
-alias woofchex="woof -iwad chex3v.wad -gameversion ultimate"
-alias woofhacx="woof -iwad hacx.wad -gameversion 1.9"
+alias woofchex="woof -iwad chex3v -gameversion ultimate"
+alias woofhacx="woof -iwad hacx -gameversion 1.9"
 
 alias fd1="woof -iwad freedoom1 -gameversion 1.9"
 alias fdu="woof -iwad freedoom1 -gameversion ultimate"

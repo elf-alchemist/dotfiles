@@ -18,7 +18,7 @@ XDG_PICTURES_HOME="${XDG_PICTURES_HOME:-"${HOME}/Pictures"}"
 
 GIT_PATH="${GIT_PATH:-"${XDG_DATA_HOME}/git"}"
 
-imagicks="${GIT_PATH}/imagicks"
+imagicks="${GIT_PATH}/alchemist-imagicks"
 
 ln -sfn "${imagicks}/profile"   "${XDG_PICTURES_HOME}/Profile"
 ln -sfn "${imagicks}/picture"   "${XDG_PICTURES_HOME}/Misc"
