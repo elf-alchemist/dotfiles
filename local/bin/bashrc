@@ -47,6 +47,9 @@ if command -v dircolors > /dev/null; then
 	alias diff='diff --color=auto'
 fi
 
+# Wayland
+export QT_QPA_PLATFORM="wayland"
+
 # Misc
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
