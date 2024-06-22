@@ -86,7 +86,7 @@ alias fdoomfinal="woof -iwad freedoom2 -gameversion final"
 
 alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
 
-alias master="woof -file 98-remaster/masterpack.wad"
+alias master="woof -file 99-master/masterpack.wad"
 alias master-vanilla="woof -file 99-master/masterpack-vanilla.wad"
 alias master-freedoom="woof -file 99-master/masterpack-freedoom.wad"
 alias master-psx="woof -file 99-master/masterpack-psx.wad"
