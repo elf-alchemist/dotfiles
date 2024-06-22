@@ -71,18 +71,18 @@ export SHOTDIR="${HOME}/Pictures/Woof"
 
 alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
-alias woof1="woof -iwad doom -gameversion 1.9"
-alias woofu="woof -iwad doom -gameversion ultimate"
-alias wooftnt="woof -iwad tnt -gameversion final"
-alias woofplut="woof -iwad plutonia -gameversion final"
+alias doom1="woof -iwad doom -gameversion 1.9"
+alias doomu="woof -iwad doom -gameversion ultimate"
+alias doomtnt="woof -iwad tnt -gameversion final"
+alias doomplut="woof -iwad plutonia -gameversion final"
 
-alias woofchex="woof -iwad chex3v -gameversion ultimate"
-alias woofhacx="woof -iwad hacx -gameversion 1.9"
+alias chex="woof -iwad chex3v -gameversion ultimate"
+alias hacx="woof -iwad hacx -gameversion final"
 
-alias fd1="woof -iwad freedoom1 -gameversion 1.9"
-alias fdu="woof -iwad freedoom1 -gameversion ultimate"
-alias fd2="woof -iwad freedoom2 -gameversion 1.9"
-alias fdfinal="woof -iwad freedoom2 -gameversion final"
+alias fdoom1="woof -iwad freedoom1 -gameversion 1.9"
+alias fdoomu="woof -iwad freedoom1 -gameversion ultimate"
+alias fdoom2="woof -iwad freedoom2 -gameversion 1.9"
+alias fdoomfinal="woof -iwad freedoom2 -gameversion final"
 
 alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
 
@@ -92,7 +92,7 @@ alias master-freedoom="woof -file 99-master/masterpack-freedoom.wad"
 alias master-psx="woof -file 99-master/masterpack-psx.wad"
 
 # ECMAScript is pain
-export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+export NVM_DIR="${XDG_DATA_HOME}/nvm"
 [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
 [ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
 
