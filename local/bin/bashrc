@@ -66,13 +66,16 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
 # Doom
-export DOOMWADDIR="${XDG_DATA_HOME}/doom";
+export DOOMWADDIR="${XDG_DATA_HOME}/doom"
+export DOOMWADPATH="${DOOMWADDIR}/04-final:${DOOMWADDIR}/03-ultimate:${DOOMWADDIR}/02-hell-on-earth:${DOOMWADDIR}/01-evil-unleashed"
+export DOOMWADPATH="${DOOMWADDIR}/99-master:${DOOMWADDIR}/12-zdoom:${DOOMWADDIR}/11-dehacked:${DOOMWADDIR}/10-vanilla:${DOOMWADPATH}"
 export SHOTDIR="${HOME}/Pictures/Woof"
 
 alias woof="woof -verbose -shotdir ${SHOTDIR}"
 
 alias doom1="woof -iwad doom -gameversion 1.9"
 alias doomu="woof -iwad doom -gameversion ultimate"
+alias doom2="woof -iwad doom2 -gameversion 1.9"
 alias doomtnt="woof -iwad tnt -gameversion final"
 alias doomplut="woof -iwad plutonia -gameversion final"
 
