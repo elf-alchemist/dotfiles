@@ -65,35 +65,6 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
-# Doom
-export DOOMWADDIR="${XDG_DATA_HOME}/doom"
-export DOOMWADPATH="${DOOMWADDIR}/04-final:${DOOMWADDIR}/03-ultimate:${DOOMWADDIR}/02-hell-on-earth:${DOOMWADDIR}/01-evil-unleashed"
-export DOOMWADPATH="${DOOMWADDIR}/99-master:${DOOMWADDIR}/12-zdoom:${DOOMWADDIR}/11-dehacked:${DOOMWADDIR}/10-vanilla:${DOOMWADPATH}"
-export SHOTDIR="${HOME}/Pictures/Woof"
-
-alias woof="woof -verbose -shotdir ${SHOTDIR}"
-
-alias doom1="woof -iwad doom -gameversion 1.9"
-alias doomu="woof -iwad doom -gameversion ultimate"
-alias doom2="woof -iwad doom2 -gameversion 1.9"
-alias doomtnt="woof -iwad tnt -gameversion final"
-alias doomplut="woof -iwad plutonia -gameversion final"
-
-alias chex="woof -iwad chex3v -gameversion ultimate"
-alias hacx="woof -iwad hacx -gameversion final"
-
-alias fdoom1="woof -iwad freedoom1 -gameversion 1.9"
-alias fdoomu="woof -iwad freedoom1 -gameversion ultimate"
-alias fdoom2="woof -iwad freedoom2 -gameversion 1.9"
-alias fdoomfinal="woof -iwad freedoom2 -gameversion final"
-
-alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
-
-alias master="woof -file 99-master/masterpack.wad"
-alias master-vanilla="woof -file 99-master/masterpack-vanilla.wad"
-alias master-freedoom="woof -file 99-master/masterpack-freedoom.wad"
-alias master-psx="woof -file 99-master/masterpack-psx.wad"
-
 # ECMAScript is pain
 export NVM_DIR="${XDG_DATA_HOME}/nvm"
 [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"
