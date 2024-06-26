@@ -65,12 +65,13 @@ export TMUX_CONF="${TMUX_DIR}/tmux.conf"
 export TPM_DIR="${TMUX_DIR}/plugins/tpm"
 
 function tmux-setup() {
-	if [[ -d "${TPM_DIR}" ]]; then rm -rdf "${TPM_DIR}"; return $?; fi
-	if ! command -v git &> /dev/null; then echo "error: git not found" ; return 1 fi
-	if ! command -v tmux &> /dev/null; then echo "error: tmux not found" ; return 1 fi
+	if [[ -d "${TPM_DIR}" ]]; then rm -rdf "${TPM_DIR}"; return 1; fi
+	if ! command -v git &> /dev/null; then echo "error: git not found" ; return 1; fi
+	if ! command -v tmux &> /dev/null; then echo "error: tmux not found" ; return 1; fi
 
 	git clone git@github.com:tmux-plugins/tpm.git "${TPM_DIR}" --quiet
 	tmux source-file "${TMUX_CONF}"
+
 	echo "Tmux setup successful."
 }
 
