@@ -6,7 +6,7 @@
 #     Bash '.bashrc' script for Linux
 #
 
-# Define location & path
+# path
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:="${HOME}/.config"}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:="${HOME}/.cache"}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:="${HOME}/.local/share"}"
@@ -17,7 +17,7 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export PATH="/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export PATH="${HOME}/.local/games:${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
-# Improved Bash
+# bash
 export HISTFILE="${XDG_STATE_HOME}/bash/history"
 export HISTCONTROL="ignoreboth"
 export HISTSIZE="10000"
@@ -32,7 +32,7 @@ elif [[ -f "/etc/bash_completion" ]]; then
 	source "/etc/bash_completion"
 fi
 
-# Auto colored output
+# colored output
 if command -v dircolors > /dev/null; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
@@ -47,21 +47,7 @@ if command -v dircolors > /dev/null; then
 	alias diff='diff --color=auto'
 fi
 
-# Wayland
-export QT_QPA_PLATFORM="wayland"
-
-# Misc
-export STEAMROOT="${XDG_DATA_HOME}/Steam"
-
-export HTOPRC="${XDG_CONFIG_HOME}/htop/htoprc"
-
-export TERMINFO="${XDG_DATA_HOME}/terminfo"
-export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
-
-function vencord-install() {
-	sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-}
-
+# terminal navigation
 alias lsl="ls -blahs --time-style=long-iso --color=auto"
 
 alias ..="cd .."
@@ -69,11 +55,41 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 
-# Whale
+# terminfo
+export TERMINFO="${XDG_DATA_HOME}/terminfo"
+export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
+
+# tmux
+export TMUX_DIR="${XDG_CONFIG_HOME}/tmux"
+export TMUX_CONF="${TMUX_DIR}/tmux.conf"
+export TPM_DIR="${TMUX_DIR}/plugins/tpm"
+
+function tmux-setup() {
+	if [[ -d "${TPM_DIR}" ]]; then rm -rdf "${TPM_DIR}"; return $?; fi
+	if ! command -v git &> /dev/null; then echo "error: git not found" ; return 1 fi
+	if ! command -v tmux &> /dev/null; then echo "error: tmux not found" ; return 1 fi
+
+	git clone git@github.com:tmux-plugins/tpm.git "${TPM_DIR}" --quiet
+	tmux source-file "${TMUX_CONF}"
+	echo "Tmux setup successful."
+}
+
+# docker
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 
-# I don't need starship or zsh or nothing for my git prompt
+# wayland
+export QT_QPA_PLATFORM="wayland"
+
+# steam
+export STEAMROOT="${XDG_DATA_HOME}/Steam"
+
+# discord
+function vencord-install() {
+	sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+}
+
+# git
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
