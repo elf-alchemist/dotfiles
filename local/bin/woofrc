@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: Unlicense
+# SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright 2024 Guilherme M. Miranda <alchemist.software@proton.me>
 
 export DOOMWADDIR="${XDG_DATA_HOME}/doom"
