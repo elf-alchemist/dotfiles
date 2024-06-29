@@ -13,6 +13,8 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export PATH="/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export PATH="${HOME}/.local/games:${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
+export XDG_PICTURES_HOME="${XDG_PICTURES_HOME:-"${HOME}/Pictures"}"
+
 # bash
 export HISTFILE="${XDG_STATE_HOME}/bash/history"
 export HISTCONTROL="ignoreboth"
@@ -55,6 +57,45 @@ alias .4="cd ../../../.."
 export TERMINFO="${XDG_DATA_HOME}/terminfo"
 export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
 
+# git
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_STATESEPARATOR=" "
+export GIT_PS1_COMPRESSSPARSESTATE=true
+export GIT_PS1_SHOWCONFLICTSTATE="yes"
+export GIT_PS1_DESCRIBE_STYLE="default"
+export GIT_PS1_SHOWCOLORHINTS=true
+
+export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
+export GIT_COMPLETION_SHOW_ALL=1
+export GIT_COMPLETION_IGNORE_CASE=1
+
+export GIT_PATH="${XDG_DATA_HOME}/git"
+export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
+
+function git-ignore()
+{
+	curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
+}
+
+function git-license()
+{
+	curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
+}
+
+function symlinkage()
+{
+	imagicks="${GIT_PATH}/alchemist-imagicks"
+	ln -sfn "${imagicks}/profile"   "${XDG_PICTURES_HOME}/Profile"
+	ln -sfn "${imagicks}/picture"   "${XDG_PICTURES_HOME}/Misc"
+	ln -sfn "${imagicks}/wallpaper" "${XDG_PICTURES_HOME}/Wallpaper"
+	ln -sfn "${imagicks}/memery"    "${XDG_PICTURES_HOME}/Memes"
+	ln -sfn "${imagicks}/luma"      "${XDG_PICTURES_HOME}/Luma"
+}
+
 # tmux
 export TMUX_DIR="${XDG_CONFIG_HOME}/tmux"
 export TMUX_CONF="${TMUX_DIR}/tmux.conf"
@@ -86,34 +127,6 @@ function vencord-install() {
 	sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 }
 
-# git
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWSTASHSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWUPSTREAM="auto"
-export GIT_PS1_STATESEPARATOR=" "
-export GIT_PS1_COMPRESSSPARSESTATE=true
-export GIT_PS1_SHOWCONFLICTSTATE="yes"
-export GIT_PS1_DESCRIBE_STYLE="default"
-export GIT_PS1_SHOWCOLORHINTS=true
-
-export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
-export GIT_COMPLETION_SHOW_ALL_COMMANDS=1
-export GIT_COMPLETION_SHOW_ALL=1
-export GIT_COMPLETION_IGNORE_CASE=1
-
-export GIT_PATH="${XDG_DATA_HOME}/git"
-export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
-
-function git-ignore
-{
-	curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
-}
-
-function git-license
-{
-	curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
-}
 
 PROMPT_COMMAND='__git_ps1 "\[\e[1;34m\]\W\[\e[1;0m\]" " "'
 
