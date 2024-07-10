@@ -2,9 +2,7 @@
 
 source "${HOME}/dotfiles/local/bin/bashrc"
 
-if command -v nvm &> /dev/null; then
-	source "${HOME}/dotfiles/local/bin/esrc"
-fi
+source "${HOME}/dotfiles/local/bin/esrc"
 
 if command -v woof &> /dev/null; then
 	source "${HOME}/dotfiles/local/bin/woofrc"
