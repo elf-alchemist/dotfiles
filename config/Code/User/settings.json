@@ -74,7 +74,7 @@
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": true,
 	"explorer.fileNesting.patterns": {
-		"//": "Last update at 7/7/2024, 10:44:13 PM",
+		"//": "Last update at 7/11/2024, 4:59:19 AM",
 		".clang-tidy": ".clang-format, .clangd, compile_commands.json",
 		".env": "*.env, .env.*, .envrc, env.d.ts",
 		".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",

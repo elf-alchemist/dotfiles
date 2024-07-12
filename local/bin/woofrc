@@ -15,15 +15,16 @@ alias doom2="woof -iwad doom2 -gameversion 1.9"
 alias doomtnt="woof -iwad tnt -gameversion final"
 alias doomplut="woof -iwad plutonia -gameversion final"
 
-alias chex="woof -iwad chex3v -gameversion ultimate"
-alias hacx="woof -iwad hacx -gameversion final"
+alias woofchex="woof -iwad chex3v -gameversion ultimate"
+alias woofhacx="woof -iwad hacx -gameversion final"
 
 alias fdoom1="woof -iwad freedoom1 -gameversion 1.9"
 alias fdoomu="woof -iwad freedoom1 -gameversion ultimate"
 alias fdoom2="woof -iwad freedoom2 -gameversion 1.9"
 alias fdoomfinal="woof -iwad freedoom2 -gameversion final"
 
-alias nrftl="woof -file 02-hell-on-earth/nrftl.wad"
+alias doom2nerve="woof -file 02-hell-on-earth/nerve.wad"
+alias doom2nrftl="woof -file 02-hell-on-earth/nrftl.wad"
 
 alias master="woof -file 99-master/masterpack.wad"
 alias master-vanilla="woof -file 99-master/masterpack-vanilla.wad"

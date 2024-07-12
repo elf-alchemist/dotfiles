@@ -10,7 +10,9 @@ export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 
+export NPM_PATH="${XDG_DATA_HOME}/npm/bin"
 export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
+export PATH="${NPM_PATH}:${PATH}"
 export PATH="${PNPM_HOME}:${PATH}"
 
 export PNPM_COMPLETION="${XDG_CONFIG_HOME}/tabtab/bash"
