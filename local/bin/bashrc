@@ -123,7 +123,15 @@ export QT_QPA_PLATFORM="wayland"
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # discord
-function vencord-install() {
+function discord-setup() {
+	tmp_dir=`mktemp -d`
+	curl "https://discord.com/api/download?platform=linux&format=deb" \
+		--location \
+		--silent \
+		--show-error \
+		--output "${tmp_dir}/discord.deb"
+	sudo dpkg -i "${tmp_dir}/discord.deb" 2>/dev/null
+	rm -rdf "${tmp_dir}"
 	sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 }
 
