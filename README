@@ -1,20 +1,7 @@
 Base project containing all my settings for both Linux and MacOS systems.
-On a freshly installed sytem, clone this repo to $HOME:
+On a freshly installed sytem, clone this repo to $HOME, and run `make`:
 
 $ git clone git@github.com:elf-alchemist/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
+$ make install
 
-
-Symlink the respective directories, as per the following:
-
-$ ln -sfn ~/dotfiles/config ~/.config
-$ ln -sfn ~/dotfiles/local  ~/.local
-
-
-Now, let's the stubborn ones that do not conform to the XDG standard.
-
-$ ln -sfn ~/dotfiles/config/ssh      ~/.ssh
-$ ln -sfn ~/dotfiles/config/irssi    ~/.irssi
-$ ln -sfn ~/dotfiles/local/share/pki ~/.pki
-$ ln -sfn ~/dotfiles/bashrc          ~/.bashrc
-$ ln -sfn ~/dotfiles/bashrc          ~/.bash_profile
