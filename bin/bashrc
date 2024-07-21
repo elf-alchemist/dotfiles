@@ -86,16 +86,6 @@ function git-license()
 	curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
 }
 
-function symlinkage()
-{
-	imagicks="${GIT_PATH}/alchemist-imagicks"
-	ln -sfn "${imagicks}/profile"   "${XDG_PICTURES_HOME}/Profile"
-	ln -sfn "${imagicks}/picture"   "${XDG_PICTURES_HOME}/Misc"
-	ln -sfn "${imagicks}/wallpaper" "${XDG_PICTURES_HOME}/Wallpaper"
-	ln -sfn "${imagicks}/memery"    "${XDG_PICTURES_HOME}/Memes"
-	ln -sfn "${imagicks}/luma"      "${XDG_PICTURES_HOME}/Luma"
-}
-
 # tmux
 export TMUX_DIR="${XDG_CONFIG_HOME}/tmux"
 export TMUX_CONF="${TMUX_DIR}/tmux.conf"
