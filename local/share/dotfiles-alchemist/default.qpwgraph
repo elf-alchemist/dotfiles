@@ -1,0 +1,10 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.9" name="deafult">
+ <items>
+  <item port-type="pipewire-midi" node-type="pipewire">
+   <output node="Midi-Bridge" port="Client-130:port-0"/>
+   <input node="Midi-Bridge" port="Nuked SC55:Nuked SC55"/>
+  </item>
+ </items>
+</patchbay>
+
