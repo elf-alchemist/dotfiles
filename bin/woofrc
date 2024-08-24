@@ -5,6 +5,7 @@
 export DOOMWADDIR="${XDG_DATA_HOME}/doom"
 export DOOMWADPATH="${DOOMWADDIR}/04-final:${DOOMWADDIR}/03-ultimate:${DOOMWADDIR}/02-hell-on-earth:${DOOMWADDIR}/01-evil-unleashed"
 export DOOMWADPATH="${DOOMWADDIR}/99-master:${DOOMWADDIR}/12-zdoom:${DOOMWADDIR}/11-dehacked:${DOOMWADDIR}/10-vanilla:${DOOMWADPATH}"
+export SF2_SOUNDFONT="${XDG_DATA_HOME}/soundfonts/SCC1.sf2"
 
 alias cdoom="cd "${DOOMWADDIR}""
 alias woof="woof -verbose -shotdir ${HOME}/Pictures/Woof"
@@ -30,4 +31,26 @@ alias master="woof -file 99-master/masterpack.wad"
 alias master-vanilla="woof -file 99-master/masterpack-vanilla.wad"
 alias master-freedoom="woof -file 99-master/masterpack-freedoom.wad"
 alias master-psx="woof -file 99-master/masterpack-psx.wad"
+
+
+
+function batch_render_midi() {
+	for mid_file in *.mid; do
+		# simple render midi to wav
+		fluidsynth                        \
+			-ni "${SF2_SOUNDFONT}"    \
+			"${mid_file}"             \
+			-F "${mid_file%.mid}".wav \
+			-r 44100;
+		# convert wav to ogg
+		ffmpeg                            \
+			-i "${mid_file%.mid}".wav \
+			-b:a 64k i                \
+			-af "volume=10dB"         \
+			"${mid_file%.mid}".ogg    \
+			-y;
+		# clean up
+		rm "${mid_file%.mid}".wav;
+	done
+}
 
