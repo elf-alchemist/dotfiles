@@ -45,7 +45,7 @@ function batch_render_midi() {
 		# convert wav to ogg
 		ffmpeg                            \
 			-i "${mid_file%.mid}".wav \
-			-b:a 64k i                \
+			-b:a 64k                  \
 			-af "volume=10dB"         \
 			"${mid_file%.mid}".ogg    \
 			-y;
