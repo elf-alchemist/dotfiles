@@ -107,14 +107,40 @@ function tmux-setup() {
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 
-# wayland
-export QT_LOGGING_RULES=qt.qpa.*=true
-export QT_DEBUG_PLUGINS=1
-export QSG_INFO=1
-export QT_QPA_PLATFORM="wayland"
+# Qt
+# export QT_LOGGING_RULES=qt.qpa.*=true
+# export QT_DEBUG_PLUGINS=1
+# export QSG_INFO=1
+# export QT_QPA_PLATFORM="wayland"
 
 # steam
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
+
+# doom
+export DOOMWADDIR="${XDG_DATA_HOME}/doom"
+export SF2_SOUNDFONT="${XDG_DATA_HOME}/soundfonts/SCC1.sf2"
+
+alias cdoom="cd "${DOOMWADDIR}""
+
+function batch_render_midi() {
+	for mid_file in *.mid; do
+		# simple render midi to wav
+		fluidsynth                        \
+			-ni "${SF2_SOUNDFONT}"    \
+			"${mid_file}"             \
+			-F "${mid_file%.mid}".wav \
+			-r 44100;
+		# convert wav to ogg
+		ffmpeg                            \
+			-i "${mid_file%.mid}".wav \
+			-b:a 64k                  \
+			-af "volume=10dB"         \
+			"${mid_file%.mid}".ogg    \
+			-y;
+		# clean up
+		rm "${mid_file%.mid}".wav;
+	done
+}
 
 # discord
 function discord-setup() {
