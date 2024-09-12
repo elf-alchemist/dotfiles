@@ -5,18 +5,16 @@
 alias woof="woof -verbose -shotdir ${HOME}/Pictures/Woof"
 
 alias wd1="woof -iwad doom -gameversion 1.9"
-alias wdu="woof -iwad doom -gameversion ultimate"
-alias wd2="woof -iwad doom2 -gameversion 1.9"
+alias wdu="woof -iwad doom"
+alias wd2="woof -iwad doom2"
 alias wnerve="wd2 -file nerve.wad"
 
-alias wtnt="woof -iwad tnt -gameversion final"
-alias wplut="woof -iwad plutonia -gameversion final"
+alias wtnt="woof -iwad tnt"
+alias wplut="woof -iwad plutonia"
 
-alias wchex="woof -iwad chex3v -gameversion ultimate"
-alias whacx="woof -iwad hacx -gameversion final"
+alias wchex="woof -iwad chex3v"
+alias whacx="woof -iwad hacx"
 
-alias wfd1="woof -iwad freedoom1 -gameversion 1.9"
-alias wfd2="woof -iwad freedoom2 -gameversion 1.9"
-alias wfdu="woof -iwad freedoom1 -gameversion ultimate"
-alias wfdf="woof -iwad freedoom2 -gameversion final"
+alias wfd1="woof -iwad freedoom1"
+alias wfd2="woof -iwad freedoom2"
 

@@ -118,6 +118,8 @@ export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # doom
 export DOOMWADDIR="${XDG_DATA_HOME}/doom"
+export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
+
 export SF2_SOUNDFONT="${XDG_DATA_HOME}/soundfonts/SCC1.sf2"
 
 alias cdoom="cd "${DOOMWADDIR}""
