@@ -77,6 +77,8 @@ export GIT_COMPLETION_IGNORE_CASE=1
 export GIT_PATH="${XDG_DATA_HOME}/git"
 export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
 
+alias cdgit="cd "${GIT_PATH}""
+
 function git-ignore()
 {
 	curl -fsSL https://www.toptal.com/developers/gitignore/api/$@ > .gitignore
@@ -118,8 +120,10 @@ export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # doom
 export DOOMWADDIR="${XDG_DATA_HOME}/doom"
-export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
+export DOOMWADPATH="${DOOMWADDIR}:/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
+export DOOMPORT="chocolate-doom"
 
+export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
 export SF2_SOUNDFONT="${XDG_DATA_HOME}/soundfonts/SCC1.sf2"
 
 alias cdoom="cd "${DOOMWADDIR}""
