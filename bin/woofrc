@@ -18,3 +18,7 @@ alias whacx="woof -iwad hacx"
 alias wfd1="woof -iwad freedoom1"
 alias wfd2="woof -iwad freedoom2"
 
+alias wdoom="woof -iwad doom-all.wad"
+alias wdoom-psx="woof -iwad doom-all.wad -file doom-all-psx.wad"
+alias wdoom-plus="woof -iwad doom-all.wad -file doom-all-plus.wad"
+
