@@ -124,17 +124,25 @@ export DOOMWADPATH="${DOOMWADDIR}:/usr/local/share/games/doom:/usr/local/share/d
 export DOOMPORT="chocolate-doom"
 
 export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
-export SF2_SOUNDFONT="${XDG_DATA_HOME}/soundfonts/SCC1.sf2"
+export SOUNDFONT_DIR="${XDG_DATA_HOME}/soundfonts"
+export DEFAULT_SF2="${SOUNDFONT_DIR}/scc1-florestan.sf2"
 
 alias cdoom="cd "${DOOMWADDIR}""
+
+function play_midi() {
+	fluidsynth                           \
+		-ni "${SF2:-${DEFAULT_SF2}}" \
+		-r 44100                     \
+		"${1}"
+}
 
 function batch_render_midi() {
 	for mid_file in *.mid; do
 		# simple render midi to wav
-		fluidsynth                        \
-			-ni "${SF2_SOUNDFONT}"    \
-			"${mid_file}"             \
-			-F "${mid_file%.mid}".wav \
+		fluidsynth                           \
+			-ni "${SF2:-${DEFAULT_SF2}}" \
+			"${mid_file}"                \
+			-F "${mid_file%.mid}".wav    \
 			-r 44100;
 		# convert wav to ogg
 		ffmpeg                            \
