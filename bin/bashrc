@@ -119,7 +119,7 @@ export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # doom
-export DOOMWADDIR="${XDG_DATA_HOME}/doom"
+export DOOMWADDIR="${HOME}/doom"
 export DOOMWADPATH="${DOOMWADDIR}:/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
 export DOOMPORT="chocolate-doom"
 
@@ -155,6 +155,48 @@ function batch_render_midi() {
 		rm "${mid_file%.mid}".wav;
 	done
 }
+
+if command -v woof &> /dev/null; then
+	export DOOMPORT="woof"
+	alias woof="woof -verbose -shotdir ${HOME}/Pictures/Woof"
+
+	alias wd1="woof -iwad doom"
+	alias wd2="woof -iwad doom2"
+
+	alias wtnt="woof -iwad tnt"
+	alias wplut="woof -iwad plutonia"
+
+	alias wchex="woof -iwad chex3v"
+	alias whacx="woof -iwad hacx"
+
+	alias wfd1="woof -iwad freedoom1"
+	alias wfd2="woof -iwad freedoom2"
+
+	alias wdoom="woof -iwad doom-classic.wad"
+	alias wdoom-psx="woof -iwad doom-classic.wad -file doom-classic-psx.wad"
+	alias wdoom-plus="woof -iwad doom-classic.wad -file doom-classic-plus.wad"
+fi
+
+if command -v nugget-doom &> /dev/null; then
+	export DOOMPORT="nugget-doom"
+	alias nugget-doom="nugget-doom -verbose -shotdir ${HOME}/Pictures/Nugget"
+
+	alias nd1="nugget-doom -iwad doom"
+	alias nd2="nugget-doom -iwad doom2"
+
+	alias ntnt="nugget-doom -iwad tnt"
+	alias nplut="nugget-doom -iwad plutonia"
+
+	alias nchex="nugget-doom -iwad chex3v"
+	alias nhacx="nugget-doom -iwad hacx"
+
+	alias nfd1="nugget-doom -iwad freedoom1"
+	alias nfd2="nugget-doom -iwad freedoom2"
+
+	alias ndoom="nugget-doom -iwad doom-classic.wad"
+	alias ndoom-psx="nugget-doom -iwad doom-classic.wad -file doom-classic-psx.wad"
+	alias ndoom-plus="nugget-doom -iwad doom-classic.wad -file doom-classic-plus.wad"
+fi
 
 # discord
 function discord-setup() {
