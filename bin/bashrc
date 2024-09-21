@@ -129,6 +129,8 @@ export DEFAULT_SF2="${SOUNDFONT_DIR}/scc1-florestan.sf2"
 
 alias cdoom="cd "${DOOMWADDIR}""
 
+alias ffmpeg="ffmpeg -hide_banner"
+
 function play_midi() {
 	fluidsynth                           \
 		-ni "${SF2:-${DEFAULT_SF2}}" \
