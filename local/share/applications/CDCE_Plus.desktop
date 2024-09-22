@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=CDCE Plus
-Exec=/usr/local/bin/woof -iwad ~/doom/doom-classic.wad -shotdir ~/Pictures/Woof -file ~/doom/doom-classic-plus.wad
+Name=Classic Doom: Complete Edition Plus
+Exec=/usr/local/bin/woof -verbose -iwad ~/doom/doom-classic.wad -shotdir ~/Pictures/Woof -file ~/doom/doom-classic-plus.wad
 Icon=woof
 TryExec=woof
 Type=Application
-Comment=CDCE Plus is an audiovisual enhancement mod for CDCE
+Comment=CDCE Plus
 Categories=Game;ActionGame;
 MimeType=application/x-doom-wad;
 Keywords=first;person;shooter;vanilla;doom;boom;mbf;mbf21
