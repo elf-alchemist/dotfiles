@@ -174,9 +174,9 @@ if command -v woof &> /dev/null; then
 	alias wfd1="woof -iwad freedoom1"
 	alias wfd2="woof -iwad freedoom2"
 
-	alias wdoom="woof -iwad doom-classic.wad"
-	alias wdoom-psx="woof -iwad doom-classic.wad -file doom-classic-psx.wad"
-	alias wdoom-plus="woof -iwad doom-classic.wad -file doom-classic-plus.wad"
+	alias wdoom="woof -iwad cdce.wad"
+	alias wdoom-psx="woof -iwad cdce.wad -file cdce-psx.wad"
+	alias wdoom-plus="woof -iwad cdce.wad -file cdce-plus.wad"
 fi
 
 if command -v nugget-doom &> /dev/null; then
@@ -195,9 +195,9 @@ if command -v nugget-doom &> /dev/null; then
 	alias nfd1="nugget-doom -iwad freedoom1"
 	alias nfd2="nugget-doom -iwad freedoom2"
 
-	alias ndoom="nugget-doom -iwad doom-classic.wad"
-	alias ndoom-psx="nugget-doom -iwad doom-classic.wad -file doom-classic-psx.wad"
-	alias ndoom-plus="nugget-doom -iwad doom-classic.wad -file doom-classic-plus.wad"
+	alias ndoom="nugget-doom -iwad cdce.wad"
+	alias ndoom-psx="nugget-doom -iwad cdce.wad -file cdce-classic-psx.wad"
+	alias ndoom-plus="nugget-doom -iwad cdce.wad -file cdce-plus.wad"
 fi
 
 # discord
