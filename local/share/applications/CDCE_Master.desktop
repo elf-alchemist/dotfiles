@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=CDCE
-Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad
+Name=CDCE: Plus
+Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-master.wad
 Icon=woof
 TryExec=woof
 Type=Application

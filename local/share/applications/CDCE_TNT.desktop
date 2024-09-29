@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=CDCE: Plus
-Exec=/usr/local/bin/woof -verbose -iwad ~/doom/cdce.wad -shotdir ~/Pictures/Woof -file ~/doom/cdce-plus.wad
+Name=CDCE: TNT
+Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-tnt.wad
 Icon=woof
 TryExec=woof
 Type=Application

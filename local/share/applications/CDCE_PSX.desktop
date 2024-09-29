@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=CDCE
-Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad
+Name=CDCE: PSX
+Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-psx.wad
 Icon=woof
 TryExec=woof
 Type=Application

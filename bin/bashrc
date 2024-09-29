@@ -165,18 +165,23 @@ if command -v woof &> /dev/null; then
 	alias wd1="woof -iwad doom"
 	alias wd2="woof -iwad doom2"
 
-	alias wtnt="woof -iwad tnt"
-	alias wplut="woof -iwad plutonia"
+	alias wdtnt="woof -iwad tnt"
+	alias wdplut="woof -iwad plutonia"
 
-	alias wchex="woof -iwad chex3v"
-	alias whacx="woof -iwad hacx"
+	alias wdchex="woof -iwad chex3v"
+	alias wdhacx="woof -iwad hacx"
 
 	alias wfd1="woof -iwad freedoom1"
 	alias wfd2="woof -iwad freedoom2"
 
-	alias wdoom="woof -iwad cdce.wad"
-	alias wdoom-psx="woof -iwad cdce.wad -file cdce-psx.wad"
-	alias wdoom-plus="woof -iwad cdce.wad -file cdce-plus.wad"
+	alias wcdce="woof -iwad cdce.wad"
+
+	alias wcdce-extras="woof -iwad cdce.wad -file cdce-extras.wad"
+	alias wcdce-psx="woof -iwad cdce.wad -file cdce-psx.wad"
+
+	alias wcdce-tnt="woof -iwad cdce.wad -file cdce-addon-tnt.wad"
+	alias wcdce-plut="woof -iwad cdce.wad -file cdce-addon-plutonia.wad"
+	alias wcdce-master="woof -iwad cdce.wad -file cdce-addon-master.wad"
 fi
 
 if command -v nugget-doom &> /dev/null; then
@@ -186,18 +191,23 @@ if command -v nugget-doom &> /dev/null; then
 	alias nd1="nugget-doom -iwad doom"
 	alias nd2="nugget-doom -iwad doom2"
 
-	alias ntnt="nugget-doom -iwad tnt"
-	alias nplut="nugget-doom -iwad plutonia"
+	alias ndtnt="nugget-doom -iwad tnt"
+	alias ndplut="nugget-doom -iwad plutonia"
 
-	alias nchex="nugget-doom -iwad chex3v"
-	alias nhacx="nugget-doom -iwad hacx"
+	alias ndchex="nugget-doom -iwad chex3v"
+	alias ndhacx="nugget-doom -iwad hacx"
 
 	alias nfd1="nugget-doom -iwad freedoom1"
 	alias nfd2="nugget-doom -iwad freedoom2"
 
-	alias ndoom="nugget-doom -iwad cdce.wad"
-	alias ndoom-psx="nugget-doom -iwad cdce.wad -file cdce-classic-psx.wad"
-	alias ndoom-plus="nugget-doom -iwad cdce.wad -file cdce-plus.wad"
+	alias ncdce="nugget-doom -iwad cdce.wad"
+
+	alias ncdce-extras="nugget-doom -iwad cdce.wad -file cdce-extras.wad"
+	alias ncdce-psx="nugget-doom -iwad cdce.wad -file cdce-psx.wad"
+
+	alias ncdce-tnt="nugget-doom -iwad cdce.wad -file cdce-tnt.wad"
+	alias ncdce-plut="nugget-doom -iwad cdce.wad -file cdce-addon-plutonia.wad"
+	alias ncdce-master="nugget-doom -iwad cdce.wad -file cdce-addon-master.wad"
 fi
 
 # discord
