@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=CDCE
-Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad
+Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad -coop_spawns -fast -pistolstart
 Icon=woof
 TryExec=woof
 Type=Application

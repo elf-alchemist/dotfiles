@@ -158,6 +158,32 @@ function batch_render_midi() {
 	done
 }
 
+if command -v dsda-doom &> /dev/null; then
+	export DOOMPORT="dsda-doom"
+	alias dsda-doom="dsda-doom -verbose -shotdir ${HOME}/Pictures/DSDA"
+
+	alias prd1="dsda-doom -iwad doom"
+	alias prd2="dsda-doom -iwad doom2"
+
+	alias prdtnt="dsda-doom -iwad tnt"
+	alias prdplut="dsda-doom -iwad plutonia"
+
+	alias prdchex="dsda-doom -iwad chex3v"
+	alias prdhacx="dsda-doom -iwad hacx"
+
+	alias prfd1="dsda-doom -iwad freedoom1"
+	alias prfd2="dsda-doom -iwad freedoom2"
+
+	alias prcdce="dsda-doom -iwad cdce.wad"
+
+	alias prcdce-extras="dsda-doom -iwad cdce.wad -file cdce-extras.wad"
+	alias prcdce-psx="dsda-doom -iwad cdce.wad -file cdce-psx.wad"
+
+	alias prcdce-tnt="dsda-doom -iwad cdce.wad -file cdce-tnt.wad"
+	alias prcdce-plut="dsda-doom -iwad cdce.wad -file cdce-addon-plutonia.wad"
+	alias prcdce-master="dsda-doom -iwad cdce.wad -file cdce-addon-master.wad"
+fi
+
 if command -v woof &> /dev/null; then
 	export DOOMPORT="woof"
 	alias woof="woof -verbose -shotdir ${HOME}/Pictures/Woof"
@@ -182,32 +208,6 @@ if command -v woof &> /dev/null; then
 	alias wcdce-tnt="woof -iwad cdce.wad -file cdce-addon-tnt.wad"
 	alias wcdce-plut="woof -iwad cdce.wad -file cdce-addon-plutonia.wad"
 	alias wcdce-master="woof -iwad cdce.wad -file cdce-addon-master.wad"
-fi
-
-if command -v nugget-doom &> /dev/null; then
-	export DOOMPORT="nugget-doom"
-	alias nugget-doom="nugget-doom -verbose -shotdir ${HOME}/Pictures/Nugget"
-
-	alias nd1="nugget-doom -iwad doom"
-	alias nd2="nugget-doom -iwad doom2"
-
-	alias ndtnt="nugget-doom -iwad tnt"
-	alias ndplut="nugget-doom -iwad plutonia"
-
-	alias ndchex="nugget-doom -iwad chex3v"
-	alias ndhacx="nugget-doom -iwad hacx"
-
-	alias nfd1="nugget-doom -iwad freedoom1"
-	alias nfd2="nugget-doom -iwad freedoom2"
-
-	alias ncdce="nugget-doom -iwad cdce.wad"
-
-	alias ncdce-extras="nugget-doom -iwad cdce.wad -file cdce-extras.wad"
-	alias ncdce-psx="nugget-doom -iwad cdce.wad -file cdce-psx.wad"
-
-	alias ncdce-tnt="nugget-doom -iwad cdce.wad -file cdce-tnt.wad"
-	alias ncdce-plut="nugget-doom -iwad cdce.wad -file cdce-addon-plutonia.wad"
-	alias ncdce-master="nugget-doom -iwad cdce.wad -file cdce-addon-master.wad"
 fi
 
 # discord
