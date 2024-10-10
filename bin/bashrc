@@ -210,8 +210,8 @@ if command -v woof &> /dev/null; then
 	alias wcdce-master="woof -iwad cdce.wad -file cdce-addon-master.wad"
 fi
 
-# discord
-function discord-setup() {
+# misc
+function setup-discord() {
 	tmp_dir=`mktemp -d`
 	curl "https://discord.com/api/download?platform=linux&format=deb" \
 		--location \
@@ -223,6 +223,55 @@ function discord-setup() {
 	sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 }
 
+function rename_to_lowercase() {
+  # Check if the folder path is passed as an argument
+  if [ -z "$1" ]; then
+    echo "Please provide a directory path."
+    return 1
+  fi
+
+  DIR="$1"
+
+  # Loop through each file in the directory
+  for FILE in "$DIR"/*; do
+    # Get the filename without the path
+    FILENAME=$(basename "$FILE")
+
+    # Convert the filename to lowercase
+    LOWERCASE_FILENAME=$(echo "$FILENAME" | tr '[:upper:]' '[:lower:]')
+
+    # Rename the file if the lowercase version is different
+    if [[ "$FILENAME" != "$LOWERCASE_FILENAME" ]]; then
+      mv "$DIR/$FILENAME" "$DIR/$LOWERCASE_FILENAME"
+    fi
+  done
+
+  echo "All files in $DIR have been renamed to lowercase!"
+}
+
+remove_file_extension() {
+  # Check if the directory is provided, or use the current directory
+  DIR="${1:-.}"
+
+  # Loop through each file in the directory
+  for FILE in "$DIR"/*; do
+    # Check if it's a file
+    if [[ -f "$FILE" ]]; then
+      # Get the filename without the path
+      FILENAME=$(basename "$FILE")
+
+      # Remove the file extension (everything after the last dot)
+      FILENAME_NO_EXT="${FILENAME%.*}"
+
+      # Rename the file if it has an extension
+      if [[ "$FILENAME" != "$FILENAME_NO_EXT" ]]; then
+        mv "$FILE" "$DIR/$FILENAME_NO_EXT"
+      fi
+    fi
+  done
+
+  echo "All file extensions removed in $DIR!"
+}
 
 PROMPT_COMMAND='__git_ps1 "\[\e[1;34m\]\W\[\e[1;0m\]" " "'
 
