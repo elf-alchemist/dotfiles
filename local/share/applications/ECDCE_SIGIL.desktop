@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ECDCE: SIGIL
+Exec=/usr/local/bin/eternity -verbose -iwad cdce.wad -file cdce-extras.wad cdce-addon-sigil.wad
+Icon=eternity
+TryExec=eternity
+Type=Application
+Comment=Doom
+Categories=Game;ActionGame;
+MimeType=application/x-doom-wad;
+Keywords=first;person;shooter;vanilla;doom;boom;mbf;mbf21

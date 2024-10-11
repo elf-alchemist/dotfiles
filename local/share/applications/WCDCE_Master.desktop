@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=WCDCE: Master
+Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-master.wad
+Icon=woof
+TryExec=woof
+Type=Application
+Comment=Doom
+Categories=Game;ActionGame;
+MimeType=application/x-doom-wad;
+Keywords=first;person;shooter;vanilla;doom;boom;mbf;mbf21
