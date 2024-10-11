@@ -158,30 +158,24 @@ function batch_render_midi() {
 	done
 }
 
-if command -v dsda-doom &> /dev/null; then
-	export DOOMPORT="dsda-doom"
-	alias dsda-doom="dsda-doom -verbose -shotdir ${HOME}/Pictures/DSDA"
+if command -v eternity &> /dev/null; then
+	export DOOMPORT="eternity"
+	alias eternity="eternity -verbose -shotdir ${HOME}/Pictures/DSDA"
 
-	alias prd1="dsda-doom -iwad doom"
-	alias prd2="dsda-doom -iwad doom2"
+	alias ed1="eternity -iwad doom"
+	alias ed2="eternity -iwad doom2"
 
-	alias prdtnt="dsda-doom -iwad tnt"
-	alias prdplut="dsda-doom -iwad plutonia"
+	alias edtnt="eternity -iwad tnt"
+	alias edplut="eternity -iwad plutonia"
 
-	alias prdchex="dsda-doom -iwad chex3v"
-	alias prdhacx="dsda-doom -iwad hacx"
+	alias edchex="eternity -iwad chex3v"
+	alias edhacx="eternity -iwad hacx"
 
-	alias prfd1="dsda-doom -iwad freedoom1"
-	alias prfd2="dsda-doom -iwad freedoom2"
+	alias efd1="eternity -iwad freedoom1"
+	alias efd2="eternity -iwad freedoom2"
 
-	alias prcdce="dsda-doom -iwad cdce.wad"
-
-	alias prcdce-extras="dsda-doom -iwad cdce.wad -file cdce-extras.wad"
-	alias prcdce-psx="dsda-doom -iwad cdce.wad -file cdce-psx.wad"
-
-	alias prcdce-tnt="dsda-doom -iwad cdce.wad -file cdce-tnt.wad"
-	alias prcdce-plut="dsda-doom -iwad cdce.wad -file cdce-addon-plutonia.wad"
-	alias prcdce-master="dsda-doom -iwad cdce.wad -file cdce-addon-master.wad"
+	alias ecdce="eternity -iwad cdce.wad"
+	alias ecdce-extras="eternity -iwad cdce.wad -file cdce-extras.wad"
 fi
 
 if command -v woof &> /dev/null; then
@@ -201,13 +195,7 @@ if command -v woof &> /dev/null; then
 	alias wfd2="woof -iwad freedoom2"
 
 	alias wcdce="woof -iwad cdce.wad"
-
 	alias wcdce-extras="woof -iwad cdce.wad -file cdce-extras.wad"
-	alias wcdce-psx="woof -iwad cdce.wad -file cdce-psx.wad"
-
-	alias wcdce-tnt="woof -iwad cdce.wad -file cdce-addon-tnt.wad"
-	alias wcdce-plut="woof -iwad cdce.wad -file cdce-addon-plutonia.wad"
-	alias wcdce-master="woof -iwad cdce.wad -file cdce-addon-master.wad"
 fi
 
 # misc
