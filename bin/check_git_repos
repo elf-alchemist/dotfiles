@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Directory to start the search from
+SEARCH_DIR=${1:-$HOME}  # Default to home directory if no argument is provided
+
+# Function to check git status
+check_git_repo() {
+  local repo_path=$1
+  echo "Checking repo at $repo_path"
+
+  cd "$repo_path" || return
+
+  # Fetch updates from the remote
+  git fetch > /dev/null 2>&1
+
+  # Check the current branch status
+  LOCAL=$(git rev-parse @)
+  REMOTE=$(git rev-parse @{u})
+  BASE=$(git merge-base @ @{u})
+
+  if [ "$LOCAL" = "$REMOTE" ]; then
+    echo "✔️  Up-to-date"
+  elif [ "$LOCAL" = "$BASE" ]; then
+    echo "⬇️  Needs to pull"
+  elif [ "$REMOTE" = "$BASE" ]; then
+    echo "⬆️  Needs to push"
+  else
+    echo "⚠️  Diverged"
+  fi
+}
+
+# Find all directories that contain .git folder and check each
+find "$SEARCH_DIR" -name ".git" -type d | while read -r gitdir; do
+  repo_path=$(dirname "$gitdir")
+  check_git_repo "$repo_path"
+done

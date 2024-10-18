@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Check if the file list argument is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <file_list.txt>"
+  exit 1
+fi
+
+# Assign the first argument to a variable
+file_list="$1"
+
+# Check if the file exists
+if [ ! -f "$file_list" ]; then
+  echo "File not found: $file_list"
+  exit 1
+fi
+
+# Read the file line by line
+while IFS= read -r line
+do
+  # Check if the path exists before trying to delete it
+  if [ -e "$line" ]; then
+    # If it's a directory, delete it with 'rm -r' (recursive)
+    if [ -d "$line" ]; then
+      rm -r "$line"
+      echo "Deleted directory: $line"
+    else
+      # If it's a file, delete it
+      rm "$line"
+      echo "Deleted file: $line"
+    fi
+  else
+    echo "Path not found: $line"
+  fi
+done < "$file_list"

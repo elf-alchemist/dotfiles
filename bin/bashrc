@@ -127,7 +127,7 @@ export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
 export SOUNDFONT_DIR="${XDG_DATA_HOME}/soundfonts"
 export DEFAULT_SF2="${SOUNDFONT_DIR}/scc1-florestan.sf2"
 
-alias cdoom="cd "${DOOMWADDIR}""
+alias cdoom="cd \"${DOOMWADDIR}\""
 
 alias ffmpeg="ffmpeg -hide_banner"
 
