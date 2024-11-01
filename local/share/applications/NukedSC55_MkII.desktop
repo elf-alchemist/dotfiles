@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SC55: MkII
+Exec=/usr/local/bin/nuked-sc55 -mk2
+Icon=nukedsc55
+TryExec=nuked-sc55
+Type=Application
+Comment=NukedSC55
+Categories=Audio;Player;Sequencer;
+Keywords=Player;Audio;MIDI;
