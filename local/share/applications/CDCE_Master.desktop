@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=CDCE: Master
 Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-master.wad
-Icon=woof
+Icon=master
 TryExec=woof
 Type=Application
 Comment=Doom

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=CDCE: SIGIL
 Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-sigil.wad
-Icon=woof
+Icon=sigil
 TryExec=woof
 Type=Application
 Comment=Doom
