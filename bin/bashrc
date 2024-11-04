@@ -132,22 +132,22 @@ alias cdoom="cd \"${DOOMWADDIR}\""
 alias ffmpeg="ffmpeg -hide_banner"
 
 function play_midi() {
-	fluidsynth                           \
+	fluidsynth                       \
 		-ni "${SF2:-${DEFAULT_SF2}}" \
 		-r 44100                     \
 		"${1}"
 }
 
-function batch_render_midi() {
+function bulk_sf2_midi() {
 	for mid_file in *.mid; do
 		# simple render midi to wav
-		fluidsynth                           \
+		fluidsynth                       \
 			-ni "${SF2:-${DEFAULT_SF2}}" \
 			"${mid_file}"                \
 			-F "${mid_file%.mid}".wav    \
 			-r 44100;
 		# convert wav to ogg
-		ffmpeg                            \
+		ffmpeg                        \
 			-i "${mid_file%.mid}".wav \
 			-b:a 64k                  \
 			-af "volume=10dB"         \
@@ -155,6 +155,47 @@ function batch_render_midi() {
 			-y;
 		# clean up
 		rm "${mid_file%.mid}".wav;
+	done
+}
+
+function bulk_nuked_midi() {
+	for mid_file in *.mid; do
+
+		# simple render midi to wav
+		! [[ -d "./wav" ]] && mkdir wav;
+		nuked-sc55-render                                 \
+			--romset mk2                                  \
+			--rom-directory "/usr/local/share/nuked-sc55" \
+			--reset gs"${mid_file%.mid}".wav              \
+			-o ./wav/"${mid_file%.mid}".wav               \
+			"${mid_file}";
+
+			# convert wav to flac
+		! [[ -d "./flac" ]] && mkdir flac;
+		ffmpeg                              \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-ar 48000                       \
+			-af "volume=10dB"               \
+			./flac/"${mid_file%.mid}".flac  \
+			-y;
+
+		# convert wav to mp3
+		! [[ -d "./mp3" ]] && mkdir mp3;
+		ffmpeg                              \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-ar 44100                       \
+			-af "volume=10dB"               \
+			./mp3/"${mid_file%.mid}".mp3    \
+			-y;
+
+		# convert wav to ogg
+		! [[ -d "./ogg" ]] && mkdir ogg;
+		ffmpeg                              \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-af "volume=10dB"               \
+			./ogg/"${mid_file%.mid}".ogg    \
+			-y;
+		echo "Finished rendering ${mid_file}"
 	done
 }
 
