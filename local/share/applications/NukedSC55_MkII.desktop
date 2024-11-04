@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=SC55: MkII
-Exec=/usr/local/bin/nuked-sc55 -mk2
+Exec=/usr/local/bin/nuked-sc55 --reset gs --mk2 --rom-directory /usr/local/share/nuked-sc55
 Icon=nukedsc55
 TryExec=nuked-sc55
 Type=Application
