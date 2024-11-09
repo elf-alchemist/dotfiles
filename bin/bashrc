@@ -77,7 +77,7 @@ export GIT_COMPLETION_IGNORE_CASE=1
 export GIT_PATH="${HOME}/git"
 export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
 
-alias cdgit="cd "${GIT_PATH}""
+alias cdgit="cd \"${GIT_PATH}\""
 
 function git-ignore()
 {
@@ -127,9 +127,28 @@ export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
 export SOUNDFONT_DIR="${XDG_DATA_HOME}/soundfonts"
 export DEFAULT_SF2="${SOUNDFONT_DIR}/scc1-florestan.sf2"
 
-alias cdoom="cd \"${DOOMWADDIR}\""
+alias cdoom="cd \"\${DOOMWADDIR}\""
 
 alias ffmpeg="ffmpeg -hide_banner"
+
+function build_source_port() {
+	[[ -d "./build" ]] && cd "./build" || exit
+
+	cmake .. \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_C_FLAGS="-Ofast -flto -march=native -mtune=native" \
+		-DCMAKE_CXX_FLAGS="-Ofast -flto -march=native -mtune=native" \
+		-DCMAKE_EXE_LINKER_FLAGS="-flto" \
+		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
+		--fresh;
+
+    if [[ $? -eq 0 ]]; then
+        sudo make install -j$(nproc)
+    else
+        echo "CMake failed. Abort."
+        return 1
+    fi
+}
 
 function play_midi() {
 	fluidsynth                       \
@@ -238,6 +257,7 @@ if command -v woof &> /dev/null; then
 	alias wcdce="woof -iwad cdce.wad"
 	alias wcdce-extras="woof -iwad cdce.wad -file cdce-extras.wad"
 fi
+
 
 # misc
 function setup-discord() {
