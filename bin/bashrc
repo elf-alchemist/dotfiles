@@ -77,7 +77,7 @@ export GIT_COMPLETION_IGNORE_CASE=1
 export GIT_PATH="${HOME}/git"
 export GIT_CEILING_DIRECTORIES="${GIT_PATH}:${HOME}"
 
-alias cdgit="cd \"${GIT_PATH}\""
+alias cdgit="cd \"\${GIT_PATH}\""
 
 function git-ignore()
 {
@@ -86,7 +86,7 @@ function git-ignore()
 
 function git-license()
 {
-	curl -fsSL https://api.github.com/licenses/$1 | jq -r '.body' > LICENSE
+	curl -fsSL "https://api.github.com/licenses/$1" | jq -r '.body' > LICENSE
 }
 
 # tmux
@@ -218,29 +218,9 @@ function bulk_nuked_midi() {
 	done
 }
 
-if command -v eternity &> /dev/null; then
-	export DOOMPORT="eternity"
-	alias eternity="eternity -verbose -shotdir ${HOME}/Pictures/DSDA"
-
-	alias ed1="eternity -iwad doom"
-	alias ed2="eternity -iwad doom2"
-
-	alias edtnt="eternity -iwad tnt"
-	alias edplut="eternity -iwad plutonia"
-
-	alias edchex="eternity -iwad chex3v"
-	alias edhacx="eternity -iwad hacx"
-
-	alias efd1="eternity -iwad freedoom1"
-	alias efd2="eternity -iwad freedoom2"
-
-	alias ecdce="eternity -iwad cdce.wad"
-	alias ecdce-extras="eternity -iwad cdce.wad -file cdce-extras.wad"
-fi
-
 if command -v woof &> /dev/null; then
 	export DOOMPORT="woof"
-	alias woof="woof -verbose -shotdir ${HOME}/Pictures/Woof"
+	alias woof="woof -verbose -shotdir \${HOME}/Pictures/Woof"
 
 	alias wd1="woof -iwad doom"
 	alias wd2="woof -iwad doom2"
@@ -250,6 +230,9 @@ if command -v woof &> /dev/null; then
 
 	alias wdchex="woof -iwad chex3v"
 	alias wdhacx="woof -iwad hacx"
+
+	alias wdrekkr="woof -iwad rekkrsl"
+	alias wdvrekkr="woof -iwad rekkrsl -file vrekkr.wad"
 
 	alias wfd1="woof -iwad freedoom1"
 	alias wfd2="woof -iwad freedoom2"
