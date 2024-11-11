@@ -131,8 +131,12 @@ alias cdoom="cd \"\${DOOMWADDIR}\""
 
 alias ffmpeg="ffmpeg -hide_banner"
 
-function build_source_port() {
-	[[ -d "./build" ]] && cd "./build" || exit
+function doom-cmake() {
+	dir_name=$(basename "${PWD}")
+	if [[ "${dir_name}" != "build" ]]; then
+		echo "Not inside \`build/\` dir. Aborting.";
+		return;
+	fi
 
 	cmake .. \
 		-DCMAKE_BUILD_TYPE=Release \
@@ -228,11 +232,9 @@ if command -v woof &> /dev/null; then
 	alias wdtnt="woof -iwad tnt"
 	alias wdplut="woof -iwad plutonia"
 
-	alias wdchex="woof -iwad chex3v"
 	alias wdhacx="woof -iwad hacx"
-
+	alias wdchex="woof -iwad chex3v"
 	alias wdrekkr="woof -iwad rekkrsl"
-	alias wdvrekkr="woof -iwad rekkrsl -file vrekkr.wad"
 
 	alias wfd1="woof -iwad freedoom1"
 	alias wfd2="woof -iwad freedoom2"
