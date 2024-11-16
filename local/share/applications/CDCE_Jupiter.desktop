@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=CDCE: Jupiter
-Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-jupiter.wad
+Exec=/usr/local/bin/woof -verbose -noextras -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-jupiter.wad
 Icon=woof
 TryExec=woof
 Type=Application

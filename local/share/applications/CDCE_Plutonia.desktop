@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=CDCE: Plutonia
-Exec=/usr/local/bin/woof -verbose -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-plutonia.wad
+Exec=/usr/local/bin/woof -verbose -noextras -shotdir ~/Pictures/Woof -iwad cdce.wad -file cdce-extras.wad cdce-addon-plutonia.wad
 Icon=plutonia
 TryExec=woof
 Type=Application
