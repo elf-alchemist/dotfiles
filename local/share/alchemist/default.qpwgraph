@@ -1,13 +1,29 @@
 <!DOCTYPE patchbay>
-<patchbay name="default" version="0.3.9">
+<patchbay version="0.3.9" name="default">
  <items>
-  <item port-type="pipewire-video" node-type="pipewire">
-   <output node="Integrated IR Camera (V4L2)" port="Integrated IR Camera:out_0"/>
-   <input node="kwin_wayland" port="obs:in_0"/>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output port="nuked-sc55:output_FR" node="nuked-sc55"/>
+   <input port="K07:playback_FR" node="K07"/>
   </item>
-  <item port-type="pipewire-midi" node-type="pipewire">
-   <output node="Midi-Bridge" port="Client-130:port-0"/>
-   <input node="Midi-Bridge" port="Nuked SC55:Nuked SC55"/>
+  <item node-type="pipewire" port-type="pipewire-midi">
+   <output port="Client-130:port-0" node="Midi-Bridge"/>
+   <input port="Nuked SC55:Nuked SC55" node="Midi-Bridge"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output port="woof:output_FR" node="woof"/>
+   <input port="ALC257 Analog:playback_FR" node="Built-in Audio Analog Stereo"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-video">
+   <output port="Integrated IR Camera:out_0" node="Integrated IR Camera (V4L2)"/>
+   <input port="obs:in_0" node="kwin_wayland"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output port="woof:output_FL" node="woof"/>
+   <input port="ALC257 Analog:playback_FL" node="Built-in Audio Analog Stereo"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output port="nuked-sc55:output_FL" node="nuked-sc55"/>
+   <input port="K07:playback_FL" node="K07"/>
   </item>
  </items>
 </patchbay>
