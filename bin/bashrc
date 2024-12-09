@@ -131,7 +131,7 @@ alias cdoom="cd \"\${DOOMWADDIR}\""
 
 alias ffmpeg="ffmpeg -hide_banner"
 
-function doom-cmake-bare() {
+function cmake-build() {
 	dir_name=$(basename "${PWD}")
 	if [[ "${dir_name}" != "build" ]]; then
 		echo "Not inside \`build/\` dir. Aborting.";
@@ -150,7 +150,7 @@ function doom-cmake-bare() {
 	fi
 }
 
-function doom-cmake() {
+function cmake-build-flags() {
 	dir_name=$(basename "${PWD}")
 	if [[ "${dir_name}" != "build" ]]; then
 		echo "Not inside \`build/\` dir. Aborting.";
