@@ -139,7 +139,7 @@ function cmake-build() {
 	fi
 
 	cmake .. \
-		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_BUILD_TYPE="Release" \
 		--fresh;
 
 	if [[ $? -eq 0 ]]; then
@@ -158,11 +158,14 @@ function cmake-build-flags() {
 	fi
 
 	cmake .. \
-		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_BUILD_TYPE="Release" \
 		-DCMAKE_C_FLAGS="-Ofast -flto -march=native -mtune=native" \
 		-DCMAKE_CXX_FLAGS="-Ofast -flto -march=native -mtune=native" \
 		-DCMAKE_EXE_LINKER_FLAGS="-flto" \
-		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
+		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION="ON" \
+		-DENABLE_WERROR="ON" \
+		-DENABLE_HARDENING="ON" \
+		-DENABLE_LTO="ON" \
 		--fresh;
 
 	if [[ $? -eq 0 ]]; then
