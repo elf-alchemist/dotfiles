@@ -60,8 +60,10 @@
 	"files.trimTrailingWhitespace": false,
 	"files.trimFinalNewlines": false,
 	"files.defaultLanguage": "${activeEditorLanguage}",
-		"files.associations": {
-		"qapplication": "cpp"
+	"files.associations": {
+		"qapplication": "cpp",
+		"qwidget": "cpp",
+		"qpushbutton": "cpp"
 	},
 	"workbench.startupEditor": "none",
 	"workbench.settings.editor": "json",
