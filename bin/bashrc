@@ -120,7 +120,8 @@ export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # doom
 export DOOMWADDIR="${HOME}/doom"
-export DOOMWADPATH="${DOOMWADDIR}:/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
+export DOOMWADPATH="/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
+export DOOMWADPATH="${DOOMWADDIR}/mods:${DOOMWADDIR}:${DOOMWADPATH}"
 export DOOMPORT="chocolate-doom"
 
 export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
