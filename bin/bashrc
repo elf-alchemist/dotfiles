@@ -263,7 +263,6 @@ if command -v woof &> /dev/null; then
 	alias wfd2="woof -iwad freedoom2"
 
 	alias wcdce="woof -iwad cdce.wad"
-	alias wcdce-extras="woof -iwad cdce.wad -file cdce-extras.wad"
 fi
 
 
