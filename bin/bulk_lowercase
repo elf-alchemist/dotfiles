@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Bulk rename all files in the current directory to lowercase
+for file in *; do
+    if [ -f "$file" ]; then
+        # Convert the filename to lowercase
+        lowercase_file="$(echo "$file" | tr '[:upper:]' '[:lower:]')"
+
+        # Rename the file only if the lowercase version is different
+        if [ "$file" != "$lowercase_file" ]; then
+            mv "$file" "$lowercase_file"
+            echo "Renamed: $file -> $lowercase_file"
+        fi
+    fi
+done
+
+echo "Renaming complete!"
+
