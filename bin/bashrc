@@ -209,8 +209,8 @@ if command -v woof &> /dev/null; then
 	export DOOMPORT="woof"
 	alias woof="woof -verbose -shotdir \${HOME}/Pictures/Woof"
 
-	alias wd1="woof -iwad doom.wad -file"
-	alias wd2="woof -iwad doom2.wad -file"
+	alias wd="woof -iwad doom2.wad -file"
+	alias wdu="woof -iwad doom.wad -file"
 
 	alias wdtnt="woof -iwad tnt"
 	alias wdplut="woof -iwad plutonia"
