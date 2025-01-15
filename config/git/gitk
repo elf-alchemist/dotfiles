@@ -1,6 +1,6 @@
-set mainfont {{nimbus sans l} 9}
-set textfont {Courier 9}
-set uifont {Helvetica 9 bold}
+set mainfont {{Fira Code} 12}
+set textfont {{Fira Code} 12}
+set uifont {{Fira Code} 12 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -30,7 +30,7 @@ set diffcontext 3
 set selectbgcolor gray85
 set foundbgcolor yellow
 set currentsearchhitbgcolor orange
-set extdifftool meld
+set extdifftool {}
 set perfile_attrs 0
 set headbgcolor #00ff00
 set headfgcolor black
@@ -53,12 +53,12 @@ set linkfgcolor blue
 set circleoutlinecolor black
 set diffbgcolors {"#fff3f3" "#f0fff0"}
 set web_browser xdg-open
-set geometry(main) 1280x700+0+0
+set geometry(main) 1920x972+0+0
 set geometry(state) normal
-set geometry(topwidth) 1280
+set geometry(topwidth) 1920
 set geometry(topheight) 240
-set geometry(pwsash0) "399 1"
-set geometry(pwsash1) "599 1"
-set geometry(botwidth) 499
-set geometry(botheight) 455
+set geometry(pwsash0) "600 1"
+set geometry(pwsash1) "902 1"
+set geometry(botwidth) 748
+set geometry(botheight) 727
 set permviews {}
