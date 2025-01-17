@@ -115,6 +115,11 @@ export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 # export QSG_INFO=1
 # export QT_QPA_PLATFORM="wayland"
 
+# ffmpeg
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffmpeg-pal="ffmpeg -vf \"palettegen\" palette.png -i "
+alias ffmpeg-gif="ffmpeg -framerate 1 -pattern_type glob -i 'image*.png' outgif.gif"
+
 # steam
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
@@ -126,63 +131,25 @@ export DOOMPORT="chocolate-doom"
 
 export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
 export SOUNDFONT_DIR="${XDG_DATA_HOME}/soundfonts"
-export DEFAULT_SF2="${SOUNDFONT_DIR}/scc1-florestan.sf2"
+export DEFAULT_SF2="${SOUNDFONT_DIR}/gm-windows.sf2"
 
 alias cdoom="cd \"\${DOOMWADDIR}\""
 
 alias lsexp="ls \"\${DOOMWADDIR}\"/expansions | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lswads="ls \"\${DOOMWADDIR}\"/wads      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lsmods="ls \"\${DOOMWADDIR}\"/mods      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
-alias lsdoom="lsexp && lswads && lsmods"
+alias lsdoom="clear && lsexp && lswads && lsmods"
 
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3"
 
-alias ffmpeg="ffmpeg -hide_banner"
+alias cmake-make="sudo make install -j\$(nproc)"
 
-function cmake-build() {
-	dir_name=$(basename "${PWD}")
-	if [[ "${dir_name}" != "build" ]]; then
-		echo "Not inside \`build/\` dir. Aborting.";
-		return;
-	fi
+alias cmake-build="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" --fresh;"
 
-	cmake .. \
-		-DCMAKE_BUILD_TYPE="Release" \
-		--fresh;
-
-	if [[ $? -eq 0 ]]; then
-		sudo make install -j$(nproc)
-	else
-		echo "CMake failed. Abort."
-		return 1
-	fi
-}
-
-function cmake-build-flags() {
-	dir_name=$(basename "${PWD}")
-	if [[ "${dir_name}" != "build" ]]; then
-		echo "Not inside \`build/\` dir. Aborting.";
-		return;
-	fi
-
-	cmake .. \
-		-DCMAKE_BUILD_TYPE="Release" \
-		-DCMAKE_C_FLAGS="-Ofast -flto -march=native -mtune=native" \
-		-DCMAKE_CXX_FLAGS="-Ofast -flto -march=native -mtune=native" \
-		-DCMAKE_EXE_LINKER_FLAGS="-flto" \
-		-DCMAKE_INTERPROCEDURAL_OPTIMIZATION="ON" \
-		-DENABLE_WERROR="ON" \
-		-DENABLE_HARDENING="ON" \
-		-DENABLE_LTO="ON" \
-		--fresh;
-
-	if [[ $? -eq 0 ]]; then
-		sudo make install -j$(nproc)
-	else
-		echo "CMake failed. Abort."
-		return 1
-	fi
-}
+alias cmake-build-flags="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" \
+	-DCMAKE_C_FLAGS=\"-Ofast -flto -march=native -mtune=native\" -DCMAKE_CXX_FLAGS=\"-Ofast -flto -march=native -mtune=native\" \
+	-DCMAKE_EXE_LINKER_FLAGS=\"-flto\" -DENABLE_LTO=\"ON\" -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=\"ON\" \
+	-DENABLE_WERROR=\"ON\" -DENABLE_HARDENING=\"ON\" --fresh;"
 
 function bulk_nuked_midi() {
 	for mid_file in *.mid; do
