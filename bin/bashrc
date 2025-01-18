@@ -141,6 +141,7 @@ alias lsmods="ls \"\${DOOMWADDIR}\"/mods      | sed 's/\.wad$//' | tr '\n' ' ' &
 alias lsdoom="clear && lsexp && lswads && lsmods"
 
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3"
+alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
 alias cmake-make="sudo make install -j\$(nproc)"
 
