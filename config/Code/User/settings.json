@@ -270,8 +270,9 @@
 	"python.analysis.addImport.exactMatchOnly": true,
 	"python.analysis.autoImportCompletions": true,
 	"python.analysis.completeFunctionParens": true,
+	"python.analysis.include": [""],
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.defaultFormatter": "ms-python.python",
 		"editor.formatOnSave": false,
 		"editor.tabSize": 4,
 		"editor.indentSize": 4,

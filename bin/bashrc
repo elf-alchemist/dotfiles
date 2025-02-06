@@ -126,7 +126,7 @@ export STEAMROOT="${XDG_DATA_HOME}/Steam"
 # doom
 export DOOMWADDIR="${HOME}/doom"
 export DOOMWADPATH="/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
-export DOOMWADPATH="${DOOMWADDIR}/mods:${DOOMWADDIR}/wads:${DOOMWADDIR}/expansions:${DOOMWADDIR}:${DOOMWADPATH}"
+export DOOMWADPATH="${DOOMWADDIR}/playpals:${DOOMWADDIR}/mods:${DOOMWADDIR}/wads:${DOOMWADDIR}/expansions:${DOOMWADDIR}:${DOOMWADPATH}"
 export DOOMPORT="chocolate-doom"
 
 export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
@@ -138,7 +138,8 @@ alias cdoom="cd \"\${DOOMWADDIR}\""
 alias lsexp="ls \"\${DOOMWADDIR}\"/expansions | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lswads="ls \"\${DOOMWADDIR}\"/wads      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lsmods="ls \"\${DOOMWADDIR}\"/mods      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
-alias lsdoom="clear && lsexp && lswads && lsmods"
+alias lspals="ls \"\${DOOMWADDIR}\"/playpals  | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
+alias lsdoom="clear && lsexp && lswads && lsmods && lspals"
 
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
