@@ -151,7 +151,7 @@ alias cmake-build="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" --fresh;"
 alias cmake-build-flags="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" \
 	-DCMAKE_C_FLAGS=\"-Ofast -flto -march=native -mtune=native\" -DCMAKE_CXX_FLAGS=\"-Ofast -flto -march=native -mtune=native\" \
 	-DCMAKE_EXE_LINKER_FLAGS=\"-flto\" -DENABLE_LTO=\"ON\" -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=\"ON\" \
-	-DENABLE_WERROR=\"ON\" -DENABLE_HARDENING=\"ON\" --fresh;"
+	-DENABLE_WERROR=\"ON\" -DENABLE_HARDENING=\"ON\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" --fresh"
 
 function bulk_nuked_midi() {
 	for mid_file in *.mid; do
@@ -258,6 +258,22 @@ remove_file_extension() {
   done
 
   echo "All file extensions removed in $DIR!"
+}
+
+
+rename_underscores() {
+    # Loop through all files in the current directory
+    for file in *; do
+        # Check if the file name contains an underscore
+        if [[ "$file" == *"_"* ]]; then
+            # Replace underscores with hyphens
+            new_name="${file//_/-}"
+
+            # Rename the file
+            mv -- "$file" "$new_name"
+            echo "Renamed: $file -> $new_name"
+        fi
+    done
 }
 
 PROMPT_COMMAND='__git_ps1 "\[\e[1;34m\]\W\[\e[1;0m\]" " "'

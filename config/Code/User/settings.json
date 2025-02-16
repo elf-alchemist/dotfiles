@@ -69,7 +69,6 @@
 	"workbench.startupEditor": "none",
 	"workbench.settings.editor": "json",
 	"workbench.productIconTheme": "Default",
-	"workbench.preferredDarkColorTheme": "Default Dark Modern",
 	"scm.inputFontFamily": "FiraCode Nerd Font, Fira Code, monospace",
 	"chat.editor.fontFamily": "FiraCode Nerd Font, Fira Code, monospace",
 	"debug.console.fontFamily": "FiraCode Nerd Font, Fira Code, monospace",
@@ -304,6 +303,7 @@
 		"workbench.action.tasks.runTask"
 	],
 	"[c]": {
-		"editor.formatOnSave": true,
+		
+		"editor.formatOnSave": false,
 	},
 }
