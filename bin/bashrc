@@ -130,10 +130,6 @@ export DOOMWADPATH="${DOOMWADDIR}/wads:${DOOMWADDIR}/expansions:${DOOMWADDIR}:${
 export DOOMWADPATH="${DOOMWADDIR}/playpals:${DOOMWADDIR}/carousel:${DOOMWADDIR}/mods:${DOOMWADPATH}"
 export DOOMPORT="chocolate-doom"
 
-export ULTRADIR="${XDG_DATA_HOME}/gusppl161"
-export SOUNDFONT_DIR="${XDG_DATA_HOME}/soundfonts"
-export DEFAULT_SF2="${SOUNDFONT_DIR}/gm-windows.sf2"
-
 alias cdoom="cd \"\${DOOMWADDIR}\""
 
 alias lsexp="ls \"\${DOOMWADDIR}\"/expansions | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
@@ -146,32 +142,29 @@ alias lsdoom="clear && lsexp && lswads && lsmods && lscaro && lspals"
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
-alias cmake-make="sudo make install -j\$(nproc)"
-
-alias cmake-build="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" --fresh;"
-
-alias cmake-build-flags="cmake .. -DCMAKE_BUILD_TYPE=\"Release\" \
-	-DCMAKE_C_FLAGS=\"-Ofast -flto -march=native -mtune=native\" -DCMAKE_CXX_FLAGS=\"-Ofast -flto -march=native -mtune=native\" \
-	-DCMAKE_EXE_LINKER_FLAGS=\"-flto\" -DENABLE_LTO=\"ON\" -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=\"ON\" \
-	-DENABLE_WERROR=\"ON\" -DENABLE_HARDENING=\"ON\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" --fresh"
+alias cmake-make="sudo make install -j\$(nproc) -C build/"
+alias cmake-build="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -B build/ --fresh"
 
 function bulk_nuked_midi() {
+	count=${1:-1}
 	for mid_file in *.mid; do
 		# simple render midi to wav
-		! [[ -d "./wav" ]] && mkdir wav;
+		[[ -d "./wav" ]] || mkdir wav;
 		nuked-sc55-render \
+			--instances $count \
 			--romset mk2 \
 			--rom-directory "/usr/local/share/nuked-sc55" \
 			--reset gs"${mid_file%.mid}".wav \
+			--end release \
 			-o ./wav/"${mid_file%.mid}".wav \
 			"${mid_file}";
 		# convert wav to ogg
-		! [[ -d "./ogg" ]] && mkdir ogg;
+		[[ -d "./ogg" ]] || mkdir ogg;
 		ffmpeg \
+			-y \
 			-i ./wav/"${mid_file%.mid}".wav \
 			-af "volume=10dB" \
-			./ogg/"${mid_file%.mid}".ogg \
-			-y;
+			./ogg/"${mid_file%.mid}".ogg;
 		echo "Finished rendering ${mid_file}"
 	done
 }
