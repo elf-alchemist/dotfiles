@@ -139,13 +139,13 @@ alias lscaro="ls \"\${DOOMWADDIR}\"/carousel  | sed 's/\.wad$//' | tr '\n' ' ' &
 alias lspals="ls \"\${DOOMWADDIR}\"/playpals  | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lsdoom="clear && lsexp && lswads && lsmods && lscaro && lspals"
 
-alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3"
+alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3 && sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/nugget-doom/nugget-doom.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
 alias cmake-make="sudo make install -j\$(nproc) -C build/"
 alias cmake-build="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -B build/ --fresh"
 
-function bulk_nuked_midi() {
+function bulk_sc55mk2_gs() {
 	count=${1:-1}
 	for mid_file in *.mid; do
 		# simple render midi to wav
@@ -154,8 +154,7 @@ function bulk_nuked_midi() {
 			--instances $count \
 			--romset mk2 \
 			--rom-directory "/usr/local/share/nuked-sc55" \
-			--reset gs"${mid_file%.mid}".wav \
-			--end release \
+			--reset gs \
 			-o ./wav/"${mid_file%.mid}".wav \
 			"${mid_file}";
 		# convert wav to ogg
@@ -169,7 +168,77 @@ function bulk_nuked_midi() {
 	done
 }
 
-function bulk_fluidsynth_midi() {
+function bulk_sc55mk2_gm() {
+	count=${1:-1}
+	for mid_file in *.mid; do
+		# simple render midi to wav
+		[[ -d "./wav" ]] || mkdir wav;
+		nuked-sc55-render \
+			--instances $count \
+			--romset mk2 \
+			--rom-directory "/usr/local/share/nuked-sc55" \
+			--reset gm \
+			-o ./wav/"${mid_file%.mid}".wav \
+			"${mid_file}";
+		# convert wav to ogg
+		[[ -d "./ogg" ]] || mkdir ogg;
+		ffmpeg \
+			-y \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-af "volume=10dB" \
+			./ogg/"${mid_file%.mid}".ogg;
+		echo "Finished rendering ${mid_file}"
+	done
+}
+
+function bulk_sc55mk1_gs() {
+	count=${1:-1}
+	for mid_file in *.mid; do
+		# simple render midi to wav
+		[[ -d "./wav" ]] || mkdir wav;
+		nuked-sc55-render \
+			--instances $count \
+			--romset mk1 \
+			--rom-directory "/usr/local/share/nuked-sc55" \
+			--reset gs \
+			-o ./wav/"${mid_file%.mid}".wav \
+			"${mid_file}";
+		# convert wav to ogg
+		[[ -d "./ogg" ]] || mkdir ogg;
+		ffmpeg \
+			-y \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-af "volume=10dB" \
+			./ogg/"${mid_file%.mid}".ogg;
+		echo "Finished rendering ${mid_file}"
+	done
+}
+
+
+function bulk_sc55mk1_gm() {
+	count=${1:-1}
+	for mid_file in *.mid; do
+		# simple render midi to wav
+		[[ -d "./wav" ]] || mkdir wav;
+		nuked-sc55-render \
+			--instances $count \
+			--romset mk1 \
+			--rom-directory "/usr/local/share/nuked-sc55" \
+			--reset gm \
+			-o ./wav/"${mid_file%.mid}".wav \
+			"${mid_file}";
+		# convert wav to ogg
+		[[ -d "./ogg" ]] || mkdir ogg;
+		ffmpeg \
+			-y \
+			-i ./wav/"${mid_file%.mid}".wav \
+			-af "volume=10dB" \
+			./ogg/"${mid_file%.mid}".ogg;
+		echo "Finished rendering ${mid_file}"
+	done
+}
+
+function bulk_fluidsynth() {
 	SOUNDFONT="${HOME}/.local/share/soundfonts/gm-windows.sf2"
 	for mid_file in *.mid; do
 		# simple render midi to wav
