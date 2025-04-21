@@ -142,8 +142,8 @@ alias lsdoom="clear && lsexp && lswads && lsmods && lscaro && lspals"
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3 && sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/nugget-doom/nugget-doom.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
+alias cmake-build="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -B build/"
 alias cmake-make="sudo make install -j\$(nproc) -C build/"
-alias cmake-build="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -B build/ --fresh"
 
 function bulk_sc55mk2_gs() {
 	count=${1:-1}
