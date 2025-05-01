@@ -305,8 +305,17 @@
   "clangd.path": "/usr/bin/clangd-19",
   "clangd.enableCodeCompletion": true,
   "extensions.ignoreRecommendations": true,
-"git.blame.statusBarItem.enabled": true,
-"breadcrumbs.enabled": false,
-"window.customTitleBarVisibility": "never",
-"diffEditor.ignoreTrimWhitespace": false,
+  "git.blame.statusBarItem.enabled": true,
+  "breadcrumbs.enabled": false,
+  "window.customTitleBarVisibility": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+"workbench.editor.enablePreviewFromQuickOpen": true,
+"[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+},
+"cmake.showConfigureWithDebuggerNotification": false,
+"files.associations": {
+        "*.h": "c"
+},
 }
