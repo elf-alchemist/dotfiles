@@ -8,3 +8,4 @@ if command -v brew &> /dev/null; then
 	source "${HOME}/dotfiles/bin/brewrc"
 fi
 
+. "$HOME/.cargo/env"

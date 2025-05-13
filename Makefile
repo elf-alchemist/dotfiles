@@ -1,4 +1,4 @@
-.PHONY: install
+.PHONY: clean install setup post-setup
 
 DOTFILES := $(HOME)/dotfiles
 XDG_CONFIG_HOME := $(HOME)/.config
