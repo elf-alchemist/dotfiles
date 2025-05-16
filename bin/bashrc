@@ -136,8 +136,7 @@ alias lsexp="ls \"\${DOOMWADDIR}\"/expansions | sed 's/\.wad$//' | tr '\n' ' ' &
 alias lswads="ls \"\${DOOMWADDIR}\"/wads      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lsmods="ls \"\${DOOMWADDIR}\"/mods      | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
 alias lscaro="ls \"\${DOOMWADDIR}\"/carousel  | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
-alias lspals="ls \"\${DOOMWADDIR}\"/playpals  | sed 's/\.wad$//' | tr '\n' ' ' && echo -e '\n'"
-alias lsdoom="clear && lsexp && lswads && lsmods && lscaro && lspals"
+alias lsdoom="clear && lsexp && lswads && lsmods && lscaro"
 
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3 && sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/nugget-doom/nugget-doom.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
