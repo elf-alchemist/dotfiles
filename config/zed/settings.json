@@ -8,11 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "base_keymap": "VSCode",
+
+  "show_whitespaces": "selection",
+  "tab_size": 2,
   "format_on_save": "off",
+  "remove_trailing_whitespace_on_save": false,
+
   "buffer_font_size": 16,
   "ui_font_size": 16,
   "ui_font_family": "Fira Code",
   "icon_theme": "Catppuccin Latte",
+
+
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",

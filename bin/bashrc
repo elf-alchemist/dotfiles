@@ -261,13 +261,13 @@ function bulk_fluidsynth() {
 
 if command -v woof &> /dev/null; then
 	export DOOMPORT="woof"
-	alias woof="woof -verbose -shotdir \${HOME}/Pictures/Woof"
+	alias woof="woof -verbose -noextras -shotdir \${HOME}/Pictures/Woof"
 
 	alias wd="woof -iwad doom2 -file"
 	alias wdu="woof -iwad doomu -file"
 
-	alias wdtnt="woof -iwad tnt"
-	alias wdplut="woof -iwad plutonia"
+	alias wdtnt="woof -iwad tnt -file"
+	alias wdplut="woof -iwad plutonia -file"
 
 	alias wdhacx="woof -iwad hacx"
 	alias wdrekkr="woof -iwad rekkrsl"
