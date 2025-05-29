@@ -120,6 +120,8 @@ alias ffmpeg="ffmpeg -hide_banner"
 alias ffmpeg-pal="ffmpeg -vf \"palettegen\" palette.png -i "
 alias ffmpeg-gif="ffmpeg -framerate 1 -pattern_type glob -i 'image*.png' outgif.gif"
 
+alias icon-maker="convert -define icon:auto-resize=\"16,24,32,40,48,56,60,64,72,80,128,192,256\" "
+
 # steam
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
