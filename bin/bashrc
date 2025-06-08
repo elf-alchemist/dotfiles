@@ -285,6 +285,10 @@ fi
 
 
 # misc
+
+export VCPKG_ROOT="${GIT_PATH}/misc-vcpkg"
+export PATH="${VCPKG_ROOT}:${PATH}"
+
 function setup-discord() {
 	tmp_dir=$(mktemp -d)
 	curl "https://discord.com/api/download?platform=linux&format=deb" \
