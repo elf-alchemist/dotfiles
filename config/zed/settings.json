@@ -9,8 +9,8 @@
 {
   "base_keymap": "VSCode",
 
-  "show_whitespaces": "selection",
-  "tab_size": 2,
+  "show_whitespaces": "trailing",
+  "tab_size": 4,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": false,
 

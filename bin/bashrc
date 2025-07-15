@@ -283,7 +283,9 @@ if command -v woof &> /dev/null; then
 	alias wcdce="woof -iwad cdce"
 fi
 
-
+if command -v dsda-doom &> /dev/null; then
+	alias dsda="dsda-doom -verbose -shotdir \${HOME}/Pictures/DSDA"
+fi
 # misc
 
 export VCPKG_ROOT="${GIT_PATH}/misc-vcpkg"
