@@ -115,6 +115,11 @@ export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 # export QSG_INFO=1
 # export QT_QPA_PLATFORM="wayland"
 
+# export SDL_RENDER_DRIVER="opengl" && export SDL_VIDEO_DRIVER="x11"
+export SDL_RENDER_DRIVER="vulkan" && export SDL_VIDEO_DRIVER="wayland"
+
+export VCPKG_ROOT="${GIT_PATH}/misc-vcpkg"
+
 # ffmpeg
 alias ffmpeg="ffmpeg -hide_banner"
 alias ffmpeg-pal="ffmpeg -vf \"palettegen\" palette.png -i "
@@ -143,8 +148,10 @@ alias lsdoom="clear && lsexp && lswads && lsmods && lscaro"
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3 && sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/nugget-doom/nugget-doom.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
-alias cmake-build="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -B build/"
-alias cmake-make="sudo make install -j\$(nproc) -C build/"
+alias cmake-release="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
+alias cmake-debug="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_UBSAN=\"ON\" -DWOOF_DEBUG=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
+alias cmake-debug-ubsan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_UBSAN=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
+alias cmake-debug-asan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_ASAN=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
 
 function bulk_sc55mk2_gs() {
 	count=${1:-1}
@@ -370,4 +377,3 @@ rename_underscores() {
 }
 
 PROMPT_COMMAND='__git_ps1 "\[\e[1;34m\]\W\[\e[1;0m\]" " "'
-
