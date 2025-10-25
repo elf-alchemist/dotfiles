@@ -11,6 +11,7 @@
 
   "show_whitespaces": "trailing",
   "tab_size": 2,
+  "auto_indent": false,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": false,
 
@@ -19,11 +20,14 @@
   "ui_font_family": "Fira Code",
   "icon_theme": "Catppuccin Latte",
   "scroll_sensitivity": 0.5,
+  "unnecessary_code_fade": 0.6,
   "soft_wrap": "none",
+
+  "formatter": "language_server",
 
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "dark": "VSCode Dark Polished"
   }
 }
