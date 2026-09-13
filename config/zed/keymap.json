@@ -18,5 +18,11 @@
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-shift-u": "editor::RedoSelection"
+    }
   }
 ]

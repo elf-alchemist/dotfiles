@@ -7,18 +7,85 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ensure_final_newline_on_save": false,
+  "markdown_preview_code_font_family": "Comic Code Ligatures",
+  "markdown_preview_font_family": "Comic Code Ligatures",
+  "buffer_font_family": "Comic Code Ligatures",
+  "terminal": {
+    "font_family": "Comic Code Ligatures"
+  },
+  "auto_indent": "none",
+  "show_edit_predictions": false,
+  "zoomed_padding": false,
+  "tab_bar": {
+    "show_tab_bar_buttons": true
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "diff_view_style": "unified",
+  "git_panel": {
+    "dock": "left",
+    "tree_view": true
+  },
+  "show_wrap_guides": true,
+  "agent": {
+    "dock": "right",
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-5.2"
+    },
+    "inline_assistant_model": {
+      "provider": "openai",
+      "model": "gpt-5.2"
+    },
+    "model_parameters": []
+  },
+  "git": {
+    "inline_blame": {
+      "padding": 4
+    }
+  },
+  "extend_comment_on_newline": true,
+  "inlay_hints": {
+    "show_value_hints": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": true,
+    "enabled": false
+  },
+  "edit_predictions": {
+    "provider": "zed",
+    "allow_data_collection": "no"
+  },
   "base_keymap": "VSCode",
 
   "show_whitespaces": "trailing",
   "tab_size": 2,
-  "auto_indent": false,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": false,
 
   "buffer_font_size": 16,
   "ui_font_size": 16,
-  "ui_font_family": "Fira Code",
-  "icon_theme": "Catppuccin Latte",
+  "ui_font_family": "Comic Code Ligatures",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Colored Zed Icons Theme Light",
+    "dark": "Colored Zed Icons Theme Light"
+  },
   "scroll_sensitivity": 0.5,
   "unnecessary_code_fade": 0.6,
   "soft_wrap": "none",
@@ -26,8 +93,8 @@
   "formatter": "language_server",
 
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "VSCode Dark Polished"
+    "mode": "dark",
+    "light": "Everforest Light Hard (regular)",
+    "dark": "Everforest Dark Hard (regular)"
   }
 }

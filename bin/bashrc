@@ -13,6 +13,7 @@ export XDG_DATA_DIRS="/home/alchemist/.local/share/flatpak/exports/share:/var/li
 
 export PATH="/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export PATH="${HOME}/.local/games:${HOME}/.local/bin:${HOME}/games:${HOME}/bin:${PATH}"
+export PATH="/usr/local/go/bin:${PATH}"
 
 export XDG_PICTURES_HOME="${XDG_PICTURES_HOME:-"${HOME}/Pictures"}"
 
@@ -114,11 +115,18 @@ export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
 # export QT_DEBUG_PLUGINS=1
 # export QSG_INFO=1
 # export QT_QPA_PLATFORM="wayland"
+alias krita='QT_QPA_PLATFORM=xwayland krita'
 
-# export SDL_RENDER_DRIVER="opengl" && export SDL_VIDEO_DRIVER="x11"
-export SDL_RENDER_DRIVER="vulkan" && export SDL_VIDEO_DRIVER="wayland"
+# SDL
+#export SDL_RENDER_DRIVER="opengl" && export SDL_VIDEO_DRIVER="x11,wayland"
+#export SDL_RENDER_DRIVER="vulkan" && export SDL_VIDEO_DRIVER="x11,wayland"
+#export SDL_RENDER_DRIVER="opengl" && export SDL_VIDEO_DRIVER="wayland,x11"
+#export SDL_RENDER_DRIVER="vulkan" && export SDL_VIDEO_DRIVER="wayland,x11"
+
+alias mango_hud="MANGOHUD_DLSYM=1 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/mangohud/libMangoHud.so mangohud"
 
 export VCPKG_ROOT="${GIT_PATH}/misc-vcpkg"
+export VCPKG_CONCURRENCY="$(nproc)"
 
 # ffmpeg
 alias ffmpeg="ffmpeg -hide_banner"
@@ -131,6 +139,7 @@ alias icon-maker="convert -define icon:auto-resize=\"16,24,32,40,48,56,60,64,72,
 export STEAMROOT="${XDG_DATA_HOME}/Steam"
 
 # doom
+export DMXOPTION="-opl3"
 export DOOMWADDIR="${HOME}/doom"
 export DOOMWADPATH="/usr/local/share/games/doom:/usr/local/share/doom:/usr/share/games/doom:/usr/share/doom"
 export DOOMWADPATH="${DOOMWADDIR}/wads:${DOOMWADDIR}/expansions:${DOOMWADDIR}:${DOOMWADPATH}"
@@ -148,10 +157,12 @@ alias lsdoom="clear && lsexp && lswads && lsmods && lscaro"
 alias symwoof="sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/woof/woof.pk3 && sudo ln -sfn \"\${DOOMWADDIR}\"/woof.pk3 /usr/local/share/nugget-doom/nugget-doom.pk3"
 alias symslade="sudo ln -sfn \"\${DOOMWADDIR}\"/slade.pk3 /usr/share/slade/slade.pk3"
 
-alias cmake-release="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
-alias cmake-debug="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_UBSAN=\"ON\" -DWOOF_DEBUG=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
-alias cmake-debug-ubsan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_UBSAN=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
-alias cmake-debug-asan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_ASAN=\"ON\" -G Ninja -B build/ && sudo ninja install -j\$(nproc) -C build/"
+alias ninja-build="sudo ninja install -j$(nproc) -C build/"
+alias cmake-release="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -G Ninja -B build/"
+alias cmake-release-fresh="cmake -DCMAKE_BUILD_TYPE=\"Release\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" --fresh -G Ninja -B build/"
+alias cmake-debug="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -G Ninja -B build/"
+alias cmake-debug-ubsan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_UBSAN=\"ON\" -G Ninja -B build/"
+alias cmake-debug-asan="cmake -DCMAKE_BUILD_TYPE=\"Debug\" -DCMAKE_EXPORT_COMPILE_COMMANDS=\"ON\" -DENABLE_ASAN=\"ON\" -G Ninja -B build/"
 
 function bulk_sc55mk2_gs() {
 	count=${1:-1}
@@ -170,7 +181,6 @@ function bulk_sc55mk2_gs() {
 		ffmpeg \
 			-y \
 			-i ./wav/"${mid_file%.mid}".wav \
-			-af "volume=10dB" \
 			./ogg/"${mid_file%.mid}".ogg;
 		echo "Finished rendering ${mid_file}"
 	done
@@ -193,7 +203,6 @@ function bulk_sc55mk2_gm() {
 		ffmpeg \
 			-y \
 			-i ./wav/"${mid_file%.mid}".wav \
-			-af "volume=10dB" \
 			./ogg/"${mid_file%.mid}".ogg;
 		echo "Finished rendering ${mid_file}"
 	done
@@ -216,7 +225,6 @@ function bulk_sc55mk1_gs() {
 		ffmpeg \
 			-y \
 			-i ./wav/"${mid_file%.mid}".wav \
-			-af "volume=10dB" \
 			./ogg/"${mid_file%.mid}".ogg;
 		echo "Finished rendering ${mid_file}"
 	done
@@ -240,22 +248,20 @@ function bulk_sc55mk1_gm() {
 		ffmpeg \
 			-y \
 			-i ./wav/"${mid_file%.mid}".wav \
-			-af "volume=10dB" \
 			./ogg/"${mid_file%.mid}".ogg;
 		echo "Finished rendering ${mid_file}"
 	done
 }
 
 function bulk_fluidsynth() {
-	SOUNDFONT="${HOME}/.local/share/soundfonts/gm-windows.sf2"
+	SOUNDFONT="${HOME}/.local/share/soundfonts/gm.dls"
 	for mid_file in *.mid; do
 		# simple render midi to wav
 		! [[ -d "./wav" ]] && mkdir wav;
 		fluidsynth \
-			-ni "$SOUNDFONT" \
-			"$mid_file" \
 			-F "./wav/${mid_file%.mid}.wav" \
-			-r 44100;
+			"$SOUNDFONT" \
+			./"$mid_file";
 
 		# convert wav to ogg
 		! [[ -d "./ogg" ]] && mkdir ogg;
@@ -270,7 +276,7 @@ function bulk_fluidsynth() {
 
 if command -v woof &> /dev/null; then
 	export DOOMPORT="woof"
-	alias woof="woof -verbose -noextras -shotdir \${HOME}/Pictures/Woof"
+	alias woof="woof -verbose -shotdir \${HOME}/Pictures/Woof"
 
 	alias wd="woof -iwad doom2 -file"
 	alias wdu="woof -iwad doomu -file"
@@ -295,8 +301,9 @@ if command -v dsda-doom &> /dev/null; then
 fi
 # misc
 
+export RUBY_PATH="${XDG_DATA_HOME}/gem/ruby/3.3.0/bin"
 export VCPKG_ROOT="${GIT_PATH}/misc-vcpkg"
-export PATH="${VCPKG_ROOT}:${PATH}"
+export PATH="${RUBY_PATH}:${VCPKG_ROOT}:${PATH}"
 
 function setup-discord() {
 	tmp_dir=$(mktemp -d)
