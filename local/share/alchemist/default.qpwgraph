@@ -1,29 +1,29 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.9" name="default">
+<patchbay name="default" version="0.8.2">
  <items>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output port="nuked-sc55:output_FR" node="nuked-sc55"/>
-   <input port="K07:playback_FR" node="K07"/>
+   <output node="nuked-sc55" port="nuked-sc55:output_FL"/>
+   <input node="K07" port="K07:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="woof" port="woof:output_FR"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FR"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-midi">
-   <output port="Client-130:port-0" node="Midi-Bridge"/>
-   <input port="Nuked SC55:Nuked SC55" node="Midi-Bridge"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output port="woof:output_FR" node="woof"/>
-   <input port="ALC257 Analog:playback_FR" node="Built-in Audio Analog Stereo"/>
+   <output node="Midi-Bridge" port="Client-130:port-0"/>
+   <input node="Midi-Bridge" port="Nuked SC55:Nuked SC55"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-video">
-   <output port="Integrated IR Camera:out_0" node="Integrated IR Camera (V4L2)"/>
-   <input port="obs:in_0" node="kwin_wayland"/>
+   <output node="Integrated IR Camera (V4L2)" port="Integrated IR Camera:out_0"/>
+   <input node="kwin_wayland" port="obs:in_0"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output port="woof:output_FL" node="woof"/>
-   <input port="ALC257 Analog:playback_FL" node="Built-in Audio Analog Stereo"/>
+   <output node="nuked-sc55" port="nuked-sc55:output_FR"/>
+   <input node="K07" port="K07:playback_FR"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output port="nuked-sc55:output_FL" node="nuked-sc55"/>
-   <input port="K07:playback_FL" node="K07"/>
+   <output node="woof" port="woof:output_FL"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FL"/>
   </item>
  </items>
 </patchbay>

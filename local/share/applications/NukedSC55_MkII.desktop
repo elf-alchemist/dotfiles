@@ -1,9 +1,17 @@
 [Desktop Entry]
-Name=SC55: MkII
-Exec=/usr/local/bin/nuked-sc55 --reset gs --mk2 --rom-directory /usr/local/share/nuked-sc55
+Categories=Audio;Player;Sequencer;
+Comment=NukedSC55
+Exec=/usr/local/bin/nuked-sc55 --reset gs --romset mk2 --rom-directory /usr/local/share/nuked-sc55
 Icon=nukedsc55
+Keywords=Player;Audio;MIDI;
+Name=SC55: MkII
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
 TryExec=nuked-sc55
 Type=Application
-Comment=NukedSC55
-Categories=Audio;Player;Sequencer;
-Keywords=Player;Audio;MIDI;
+X-KDE-SubstituteUID=false
+X-KDE-Username=
